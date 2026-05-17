@@ -1,7 +1,7 @@
 import './Navbar.css';
 import './Navbar.desktop.css';
 import './Navbar.mobile.css';
-import { ExternalLink, Menu, Phone, X } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
@@ -46,9 +46,6 @@ export default function Navbar() {
           <button className="site-nav__language" type="button" onClick={toggleLanguage} aria-label="Switch language">
             {language.toUpperCase()} / {copy.toggleLabel}
           </button>
-          <a className="site-nav__external" href="https://secuguard-security.com/" target="_blank" rel="noreferrer">
-            SecuGuard <ExternalLink size={13} />
-          </a>
           <a className="site-nav__cta" href="tel:03021467832">
             <Phone size={14} /> 030 21467832
           </a>
@@ -63,7 +60,6 @@ export default function Navbar() {
             </a>
           ))}
           <button type="button" onClick={toggleLanguage}>{copy.toggleLabel}</button>
-          <a href="https://secuguard-security.com/" target="_blank" rel="noreferrer">SecuGuard ↗</a>
           <a href="tel:03021467832">030 21467832</a>
         </div>
       </div>

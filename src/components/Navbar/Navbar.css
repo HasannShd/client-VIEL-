@@ -96,7 +96,6 @@
 }
 
 .site-nav__cta,
-.site-nav__external,
 .site-nav__language {
   display: inline-flex;
   align-items: center;
@@ -119,28 +118,8 @@
   color: var(--viel-blue);
 }
 
-.site-nav__external {
-  gap: 7px;
-  padding: 0 13px;
-  border: 1px solid rgba(98, 182, 203, 0.5);
-  color: currentColor;
-  font-size: 0.7rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.site-nav__external:hover {
-  background: var(--viel-cyan);
-  color: var(--viel-blue);
-}
-
 .site-nav.is-scrolled .site-nav__language {
   background: rgba(27, 73, 101, 0.08);
-}
-
-.site-nav.is-scrolled .site-nav__external {
-  background: #fff;
 }
 
 .site-nav__toggle,

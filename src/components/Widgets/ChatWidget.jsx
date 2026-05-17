@@ -3,6 +3,19 @@ import { MessageCircle, Send, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/languageStore.js';
 
+const contactEmail = import.meta.env.VITE_CHAT_EMAIL || 'info@viel-gs.de';
+const whatsappNumber = (import.meta.env.VITE_CHAT_WHATSAPP_NUMBER || '').replace(/\D/g, '');
+
+const buildContactLink = (text, copy) => {
+  const body = `${copy.widgets.chatOwnerIntro}\n\n${text}`;
+
+  if (whatsappNumber) {
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`;
+  }
+
+  return `mailto:${contactEmail}?subject=${encodeURIComponent(copy.widgets.chatEmailSubject)}&body=${encodeURIComponent(body)}`;
+};
+
 export default function ChatWidget() {
   const { copy } = useLanguage();
   const [open, setOpen] = useState(false);
@@ -12,13 +25,21 @@ export default function ChatWidget() {
   ]);
 
   const send = () => {
-    if (!message.trim()) return;
-    const next = [...messages, { role: 'user', text: message.trim() }];
-    setMessages(next);
+    const trimmedMessage = message.trim();
+
+    if (!trimmedMessage) return;
+
+    setMessages((currentMessages) => [
+      ...currentMessages,
+      { role: 'user', text: trimmedMessage },
+      {
+        role: 'bot',
+        text: whatsappNumber ? copy.widgets.chatWhatsAppConfirm : copy.widgets.chatEmailConfirm
+      }
+    ]);
     setMessage('');
-    window.setTimeout(() => {
-      setMessages([...next, { role: 'bot', text: copy.widgets.replies[Math.floor(Math.random() * copy.widgets.replies.length)] }]);
-    }, 500);
+
+    window.open(buildContactLink(trimmedMessage, copy), whatsappNumber ? '_blank' : '_self', 'noopener,noreferrer');
   };
 
   return (

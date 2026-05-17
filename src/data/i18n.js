@@ -67,8 +67,7 @@ export const dictionary = {
     nav: [
       { label: 'Start', href: '/#home' },
       { label: 'Über uns', href: '/#ueber-uns' },
-      { label: 'Winterdienst', href: '/winterdienst' },
-      { label: 'SecuGuard', href: '/secuguard' },
+      { label: 'Leistungen', href: '/#leistungen' },
       { label: 'Blog', href: '/blog' },
       { label: 'Kontakt', href: '/#kontakt' }
     ],
@@ -311,6 +310,10 @@ export const dictionary = {
       chatPlaceholder: 'Schreib eine Nachricht...',
       chatSend: 'Nachricht senden',
       chatHello: 'Hallo! Wie können wir helfen?',
+      chatOwnerIntro: 'Neue Chat-Anfrage von der Website:',
+      chatEmailSubject: 'Neue Chat-Anfrage von der Website',
+      chatWhatsAppConfirm: 'Danke. Die Nachricht wird jetzt direkt an WhatsApp weitergeleitet, damit wir persönlich antworten können.',
+      chatEmailConfirm: 'Danke. Die Nachricht wird jetzt per E-Mail weitergeleitet, damit wir persönlich antworten können.',
       replies: ['Danke für deine Nachricht! Ein Mitarbeiter wird sich bald bei dir melden.', 'Gerne helfen wir dir weiter. Welche Dienstleistung interessiert dich?', 'Wir sind Mo-Fr von 8-18 Uhr erreichbar. Wie können wir dir helfen?']
     }
   },
@@ -320,8 +323,7 @@ export const dictionary = {
     nav: [
       { label: 'Home', href: '/#home' },
       { label: 'About', href: '/#ueber-uns' },
-      { label: 'Winter Service', href: '/winterdienst' },
-      { label: 'SecuGuard', href: '/secuguard' },
+      { label: 'Services', href: '/#leistungen' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact', href: '/#kontakt' }
     ],
@@ -564,6 +566,10 @@ export const dictionary = {
       chatPlaceholder: 'Write a message...',
       chatSend: 'Send message',
       chatHello: 'Hello! How can we help?',
+      chatOwnerIntro: 'New website chat request:',
+      chatEmailSubject: 'New website chat request',
+      chatWhatsAppConfirm: 'Thanks. Your message is being forwarded to WhatsApp so we can reply personally.',
+      chatEmailConfirm: 'Thanks. Your message is being forwarded by email so we can reply personally.',
       replies: ['Thanks for your message. A team member will get back to you soon.', 'We are happy to help. Which service are you interested in?', 'We are available Mon-Fri from 8-18. How can we help?']
     }
   }
