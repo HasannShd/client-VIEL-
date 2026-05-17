@@ -1,0 +1,86 @@
+.site-footer {
+  background: #0f3148;
+  color: #fff;
+  padding: 72px 0 28px;
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 44px;
+}
+
+.site-footer__logo {
+  height: 58px;
+}
+
+.site-footer__logo-link {
+  display: inline-flex;
+  margin-bottom: 22px;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.site-footer__logo-link:hover {
+  opacity: 0.78;
+  transform: translateY(-2px);
+}
+
+.site-footer__logo-link:focus-visible {
+  outline: 2px solid var(--viel-cyan);
+  outline-offset: 8px;
+}
+
+.site-footer p,
+.site-footer li,
+.site-footer a,
+.site-footer span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.site-footer h3 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-footer ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a:hover {
+  color: var(--viel-cyan);
+}
+
+.site-footer__contact {
+  display: grid;
+  gap: 14px;
+}
+
+.site-footer__contact p,
+.site-footer__contact a {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 54px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer__bottom div {
+  display: flex;
+  gap: 24px;
+}

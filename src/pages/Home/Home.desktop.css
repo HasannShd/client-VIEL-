@@ -1,0 +1,63 @@
+@media (min-width: 860px) {
+  .about-section__grid,
+  .contact-section__grid {
+    grid-template-columns: 1fr 0.92fr;
+  }
+
+  .quote-section__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.88fr);
+    align-items: start;
+    gap: 48px;
+  }
+
+  .quote-form__split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .winter-security {
+    display: block;
+  }
+
+  .winter-security__grid {
+    grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
+  }
+
+  .winter-security__features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quality-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cases-grid,
+  .testimonials-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonials-section__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .blog-preview__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .newsletter-section__inner {
+    grid-template-columns: 1fr 0.8fr;
+  }
+
+  .contact-form__split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  .hero-section__content {
+    padding-top: 160px;
+  }
+}

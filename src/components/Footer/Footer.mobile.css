@@ -1,0 +1,13 @@
+@media (max-width: 760px) {
+  .site-footer {
+    padding-top: 56px;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+  }
+
+  .site-footer__bottom div {
+    flex-wrap: wrap;
+  }
+}

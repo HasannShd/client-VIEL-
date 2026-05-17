@@ -1,0 +1,10 @@
+@media (max-width: 760px) {
+  .blog-hero,
+  .article-page__hero {
+    padding-top: 130px;
+  }
+
+  .blog-list {
+    padding: 64px 0;
+  }
+}

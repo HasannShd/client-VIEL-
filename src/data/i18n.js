@@ -1,0 +1,570 @@
+import { asset } from './siteData.js';
+
+const serviceImages = {
+  office: asset('office-cleaning-pro.jpg'),
+  glass: asset('glass-cleaning-highrise.jpg'),
+  deep: asset('bauendreinigung-pro.webp'),
+  maintenance: asset('viel-unterhaltsreinigung.jpg'),
+  stairs: asset('viel-treppenhaus.jpg'),
+  construction: asset('viel-bauend-original.jpg')
+};
+
+const sharedImages = {
+  logoWhite: asset('logo-white.png'),
+  logoBlue: asset('logo-blue.png'),
+  hero: asset('modern-glass-building.jpg'),
+  winter: asset('winter-snow-removal.jpeg'),
+  team: asset('cleaning-team-pro.webp'),
+  worker: asset('viel-mitarbeiter-1.png'),
+  workerTwo: asset('viel-mitarbeiterin-2.png'),
+  caseOffice: asset('office-cleaning-team.jpg')
+};
+
+const servicesDe = [
+  { value: 'Büroreinigung', title: 'Büroreinigung', desc: 'Tägliche, wöchentliche oder individuelle Reinigung Ihrer Büroflächen nach höchsten Hygienestandards.', image: serviceImages.office },
+  { value: 'Glasreinigung', title: 'Glas- & Fensterreinigung', desc: 'Streifenfreie Reinigung von Fenstern, Glasfassaden und Schaufenstern mit professioneller Ausrüstung.', image: serviceImages.glass },
+  { value: 'Grundreinigung', title: 'Grundreinigung', desc: 'Intensive Reinigung stark beanspruchter Flächen bis ins Detail, ideal bei besonderen Anforderungen.', image: serviceImages.deep },
+  { value: 'Unterhaltsreinigung', title: 'Unterhaltsreinigung', desc: 'Regelmäßige Reinigung für dauerhaft gepflegte Immobilien, Büros und Wohnanlagen.', image: serviceImages.maintenance },
+  { value: 'Treppenhausreinigung', title: 'Treppenhausreinigung', desc: 'Zuverlässige Pflege von Eingängen, Fluren, Handläufen, Aufzügen und Gemeinschaftsflächen.', image: serviceImages.stairs },
+  { value: 'Bauendreinigung', title: 'Bauendreinigung', desc: 'Professionelle Endreinigung nach Bau, Umbau oder Renovierung bis zur sauberen Übergabe.', image: serviceImages.construction }
+];
+
+const servicesEn = [
+  { value: 'Büroreinigung', title: 'Office Cleaning', desc: 'Daily, weekly, or custom cleaning for office spaces with high hygiene standards.', image: serviceImages.office },
+  { value: 'Glasreinigung', title: 'Glass & Window Cleaning', desc: 'Streak-free cleaning for windows, glass facades, and storefronts with professional equipment.', image: serviceImages.glass },
+  { value: 'Grundreinigung', title: 'Deep Cleaning', desc: 'Intensive cleaning for heavily used surfaces and spaces that need detailed care.', image: serviceImages.deep },
+  { value: 'Unterhaltsreinigung', title: 'Maintenance Cleaning', desc: 'Regular cleaning for consistently well-kept offices, properties, and residential buildings.', image: serviceImages.maintenance },
+  { value: 'Treppenhausreinigung', title: 'Stairwell Cleaning', desc: 'Reliable care for entrances, corridors, handrails, elevators, and shared areas.', image: serviceImages.stairs },
+  { value: 'Bauendreinigung', title: 'Post-Construction Cleaning', desc: 'Professional final cleaning after construction, remodeling, or renovation before handover.', image: serviceImages.construction }
+];
+
+const makeBlogArticles = (posts, paragraphs) => Object.fromEntries(
+  posts.map((post) => [post.id, { ...post, content: paragraphs[post.id] }])
+);
+
+const blogPostsDe = [
+  { id: 1, title: 'Professionelle Büroreinigung - Warum sie wichtig ist', excerpt: 'Eine saubere Büroumgebung steigert die Produktivität und das Wohlbefinden Ihrer Mitarbeiter.', date: '15. März 2026', author: 'VIEL Team', category: 'Büroreinigung', image: serviceImages.office },
+  { id: 2, title: 'Glas- und Fensterreinigung - Tipps für strahlende Fassaden', excerpt: 'Saubere Fenster und Glasflächen geben Ihrem Gebäude ein professionelles Aussehen.', date: '10. März 2026', author: 'VIEL Team', category: 'Glas & Fenster', image: serviceImages.glass },
+  { id: 3, title: 'Winterdienste - Sicherheit und Sauberkeit das ganze Jahr', excerpt: 'Der Winter stellt besondere Anforderungen an die Gebäudereinigung.', date: '5. März 2026', author: 'VIEL Team', category: 'Winterdienst', image: sharedImages.winter },
+  { id: 4, title: 'Grundreinigung - Der Neuanfang für Ihre Immobilie', excerpt: 'Eine professionelle Grundreinigung bringt Ihre Immobilie wieder in neuen Glanz.', date: '1. März 2026', author: 'VIEL Team', category: 'Grundreinigung', image: serviceImages.deep },
+  { id: 5, title: 'Nachhaltigkeit in der Gebäudereinigung', excerpt: 'Umweltfreundliche Reinigungsmethoden sind gut für Umwelt, Gebäude und Gesundheit.', date: '25. Februar 2026', author: 'VIEL Team', category: 'Nachhaltigkeit', image: sharedImages.hero },
+  { id: 6, title: 'Qualitätsstandards in der Gebäudereinigung', excerpt: 'Hohe Qualitätsstandards sind das Fundament unserer Arbeit.', date: '20. Februar 2026', author: 'VIEL Team', category: 'Qualität', image: sharedImages.team }
+];
+
+const blogPostsEn = [
+  { id: 1, title: 'Professional Office Cleaning - Why It Matters', excerpt: 'A clean office improves productivity, wellbeing, and the impression your business makes.', date: 'March 15, 2026', author: 'VIEL Team', category: 'Office Cleaning', image: serviceImages.office },
+  { id: 2, title: 'Glass and Window Cleaning - Tips for Bright Facades', excerpt: 'Clean windows and glass surfaces give your building a sharper, more professional look.', date: 'March 10, 2026', author: 'VIEL Team', category: 'Glass & Windows', image: serviceImages.glass },
+  { id: 3, title: 'Winter Services - Safety and Cleanliness All Season', excerpt: 'Winter creates specific demands for property owners, managers, and commercial spaces.', date: 'March 5, 2026', author: 'VIEL Team', category: 'Winter Service', image: sharedImages.winter },
+  { id: 4, title: 'Deep Cleaning - A Fresh Start for Your Property', excerpt: 'Professional deep cleaning restores heavily used areas and prepares spaces for new use.', date: 'March 1, 2026', author: 'VIEL Team', category: 'Deep Cleaning', image: serviceImages.deep },
+  { id: 5, title: 'Sustainability in Building Cleaning', excerpt: 'Environmentally friendly cleaning methods protect buildings, people, and the environment.', date: 'February 25, 2026', author: 'VIEL Team', category: 'Sustainability', image: sharedImages.hero },
+  { id: 6, title: 'Quality Standards in Building Cleaning', excerpt: 'High quality standards are the foundation of reliable cleaning services.', date: 'February 20, 2026', author: 'VIEL Team', category: 'Quality', image: sharedImages.team }
+];
+
+export const dictionary = {
+  de: {
+    languageName: 'Deutsch',
+    toggleLabel: 'English',
+    nav: [
+      { label: 'Start', href: '/#home' },
+      { label: 'Über uns', href: '/#ueber-uns' },
+      { label: 'Winterdienst', href: '/winterdienst' },
+      { label: 'SecuGuard', href: '/secuguard' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Kontakt', href: '/#kontakt' }
+    ],
+    footer: {
+      tagline: 'VIEL Qualität. VIEL Liebe. VIEL Sicherheit.',
+      description: 'Gebäudereinigung für Gewerbeimmobilien und Immobilienverwaltungen in Berlin.',
+      navigation: 'Navigation',
+      services: 'Leistungen',
+      contact: 'Kontakt',
+      rights: 'Alle Rechte vorbehalten.',
+      privacy: 'Datenschutzerklärung',
+      imprint: 'Impressum'
+    },
+    home: {
+      heroEyebrow: 'Professionelle Gebäudereinigung Berlin',
+      heroLines: ['Reinigung.', 'Winterdienst.', 'Sicherheit.'],
+      heroText: 'Gebäudereinigung für Gewerbeimmobilien und Immobilienverwaltungen - mit über 20 Jahren Erfahrung.',
+      heroPrimary: 'Kostenlos beraten lassen',
+      heroSecondary: 'Leistungen ansehen',
+      aboutEyebrow: 'Über uns',
+      years: 'Jahre Erfahrung',
+      aboutTitle: 'Service auf höchstem Niveau.',
+      aboutTextOne: 'VIEL Gebäudeservice bietet professionelle Gebäudereinigung nach höchsten Qualitätsstandards. Unsere geschulten Mitarbeiter sorgen für hygienische, gepflegte und repräsentative Objekte, zuverlässig und flexibel nach Ihren Anforderungen.',
+      aboutTextTwo: 'Bei VIEL Gebäudeservice ist es unsere Vision, einen klaren Standard für zuverlässige und hochwertige Gebäudereinigung zu setzen. Wir sind überzeugt, dass saubere und gepflegte Immobilien bessere Arbeits- und Lebensumgebungen schaffen.',
+      aboutButton: 'Kontakt aufnehmen',
+      servicesEyebrow: 'Dienstleistungen',
+      servicesTitle: 'Unsere Leistungen',
+      servicesIntro: 'VIEL Gebäudeservice bietet professionelle Gebäudereinigung nach höchsten Qualitätsstandards. Unsere geschulten Mitarbeiter sorgen für hygienische, gepflegte und repräsentative Objekte.',
+      winterEyebrow: 'VIEL Winterdienst',
+      winterTitle: 'Zuverlässiger Winterdienst.',
+      winterText: 'Wir sorgen dafür, dass Ihre Wege, Zufahrten und Außenflächen auch im Winter sicher bleiben.',
+      winterPageButton: 'Winterdienst ansehen',
+      securityEyebrow: 'VIEL Sicherheit',
+      securityTitle: 'Sicherheit für Ihre Immobilie.',
+      securityText: 'Mit unseren Sicherheitsdiensten schützen wir Ihre Immobilien und sorgen für ein sicheres Umfeld - professionell und diskret.',
+      qualityEyebrow: 'Qualität',
+      qualityTitle: 'Qualität',
+      qualitySuffix: 'in jedem Detail.',
+      qualityText: 'Bei der Wahl eines Reinigungsdienstleisters kommt es vor allem auf Vertrauen, Erfahrung und Zuverlässigkeit an.',
+      quoteEyebrow: 'Angebot',
+      quoteTitle: 'Schnelle Kalkulation.',
+      quoteText: 'Berechnen Sie eine erste Orientierung für Ihre Gebäudereinigung. Wählen Sie einfach Leistung, Fläche und Häufigkeit.',
+      quoteGeneratorTitle: 'Angebots-Generator',
+      quoteGeneratorText: 'Berechnen Sie sofort eine unverbindliche Schätzung für Ihre Gebäudereinigung. Wählen Sie einfach Ihre Leistung, Fläche und Häufigkeit.',
+      quoteNamePlaceholder: 'Ihr Name',
+      quoteEmailPlaceholder: 'ihre@email.de',
+      quoteCompanyPlaceholder: 'Ihr Unternehmen',
+      quotePhonePlaceholder: '030 12345678',
+      quoteNotesLabel: 'Zusätzliche Notizen',
+      quoteNotesPlaceholder: 'Besonderheiten, spezielle Anforderungen...',
+      quoteRequest: 'Angebot anfordern',
+      quoteSummaryTitle: 'Ihre Schätzung',
+      quoteSummaryService: 'Dienstleistung:',
+      quoteSummaryArea: 'Fläche:',
+      quoteSummaryFrequency: 'Häufigkeit:',
+      quotePriceLabel: 'Geschätzter Preis pro Einsatz:',
+      quotePerMonth: 'ca. {value} €/Monat',
+      quoteWarning: 'Dies ist eine unverbindliche Schätzung. Der endgültige Preis wird nach einer kostenlosen Besichtigung festgelegt.',
+      quoteNextTitle: 'Nächste Schritte:',
+      quoteNextSteps: [
+        'Füllen Sie das Formular aus und fordern Sie ein Angebot an.',
+        'Wir melden uns innerhalb von 24 Stunden bei Ihnen.',
+        'Kostenlose Besichtigung und detailliertes Angebot.',
+        'Vertrag und Beginn der Zusammenarbeit.'
+      ],
+      serviceLabel: 'Leistung',
+      areaLabel: 'Fläche in m²',
+      frequencyLabel: 'Häufigkeit',
+      estimated: 'Geschätzter Richtwert',
+      blogEyebrow: 'Blog',
+      blogTitle: 'Aktuelles & Wissen',
+      allPosts: 'Alle Beiträge',
+      newsletterEyebrow: 'Newsletter',
+      newsletterTitle: 'Gebäudereinigung, Angebote und Branchennews direkt in Ihren Posteingang.',
+      emailPlaceholder: 'Ihre E-Mail-Adresse',
+      subscribe: 'Anmelden',
+      contactEyebrow: 'Kontakt',
+      contactTitle: 'Wir sind für Sie da.',
+      contactText: 'Haben Sie Fragen oder wünschen ein unverbindliches Angebot? Wir beraten Sie gerne persönlich und bieten Ihnen auf Wunsch eine kostenlose Erstbesichtigung Ihrer Immobilie an.',
+      hours: 'Mo-Fr 08:00-18:00',
+      name: 'Name *',
+      company: 'Firma',
+      email: 'E-Mail *',
+      message: 'Ihre Nachricht *',
+      privacyConsent: 'Ich habe die Datenschutzerklärung gelesen und akzeptiere sie. *',
+      dataConsent: 'Einwilligung zur Verarbeitung meiner Daten zum Zweck der Kontaktaufnahme. *',
+      send: 'Senden',
+      services: servicesDe,
+      winterBenefits: [
+        { title: '24/7 Bereitschaft', desc: 'Unsere Einsatzteams sind bei Schnee und Eis zuverlässig erreichbar.' },
+        { title: 'Professionelle Ausrüstung', desc: 'Moderne Räumtechnik sorgt für schnelle und gründliche Ergebnisse.' },
+        { title: 'Umweltschonendes Streugut', desc: 'Wir setzen auf nachhaltige Materialien und saubere Ausführung.' },
+        { title: 'Gesetzliche Räumpflicht', desc: 'Wir übernehmen Räum- und Streupflichten zuverlässig für Ihre Immobilie.' }
+      ],
+      securityBenefits: [
+        { title: 'Objektschutz', desc: 'Professionelle Überwachung für Gewerbeimmobilien und Wohnanlagen.' },
+        { title: 'Kontrollgänge', desc: 'Regelmäßige Rundgänge schaffen Sicherheit und dokumentierte Abläufe.' },
+        { title: 'Zugangskontrolle', desc: 'Diskrete Kontrolle sensibler Bereiche und kontrollierter Besucherzugänge.' },
+        { title: 'Sicherheitsberatung', desc: 'Individuelle Konzepte für Objekte, Mieter und Betreiber.' }
+      ],
+      qualityPoints: ['Erfahrenes und geschultes Fachpersonal', 'Sorgfältige und gründliche Reinigung', 'Individuelle Reinigungspläne', 'Zuverlässige und termingerechte Ausführung', 'Faire und transparente Preise', 'Persönlicher Ansprechpartner'],
+      cases: [
+        { title: 'Großflächige Büroreinigung Berlin-Mitte', client: 'Technologie-Startup, 5.000 m²', challenge: 'Tägliche Reinigung für 200+ Mitarbeiter mit höchsten Hygienestandards', result: 'Flexible Abendteams und messbar sauberere Arbeitsbereiche', image: sharedImages.caseOffice },
+        { title: 'Winterdienst Gewerbeparkanlage', client: 'Gewerbepark Friedrichshain, 50.000 m²', challenge: '24/7 Schneeräumung und Streudienste während Extremwetter', result: 'Sichere Wege, pünktliche Öffnung und volle Dokumentation', image: sharedImages.winter }
+      ],
+      testimonials: [
+        { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice hat unsere Erwartungen weit übertroffen. Die Zuverlässigkeit und Professionalität sind beeindruckend. Wir arbeiten seit 3 Jahren zusammen.' },
+        { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Sehr gute Kommunikation, faire Preise und flexible Lösungen. VIEL Gebäudeservice ist unser verlässlicher Partner für alle Reinigungsaufgaben.' },
+        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'Die Winterdienste von VIEL sind hervorragend. Schnell, zuverlässig und immer pünktlich. Wir sind sehr zufrieden mit der Zusammenarbeit.' }
+      ],
+      serviceOptions: [
+        { value: 'Büroreinigung', label: 'Büroreinigung' },
+        { value: 'Glasreinigung', label: 'Glasreinigung' },
+        { value: 'Grundreinigung', label: 'Grundreinigung' },
+        { value: 'Unterhaltsreinigung', label: 'Unterhaltsreinigung' },
+        { value: 'Treppenhausreinigung', label: 'Treppenhausreinigung' },
+        { value: 'Bauendreinigung', label: 'Bauendreinigung' },
+        { value: 'Winterdienst', label: 'Winterdienst' },
+        { value: 'Sicherheitsdienste', label: 'Sicherheitsdienste' }
+      ],
+      frequencyOptions: [
+        { value: 'täglich', label: 'Täglich' },
+        { value: 'wöchentlich', label: 'Wöchentlich' },
+        { value: 'monatlich', label: 'Monatlich' },
+        { value: 'einmalig', label: 'Einmalig' }
+      ]
+    },
+    blog: {
+      posts: blogPostsDe,
+      articles: makeBlogArticles(blogPostsDe, {
+        1: ['Ein sauberes Büro ist mehr als nur eine Frage der Optik. Es schafft Vertrauen, schützt Mitarbeitende und sorgt dafür, dass Kunden Ihre Räume als professionell wahrnehmen.', 'Professionelle Büroreinigung umfasst Arbeitsplätze, Böden, Sanitärbereiche, Küchen, Oberflächen und Technik. Der wichtigste Punkt ist ein klarer Reinigungsplan, der zu den Abläufen des Unternehmens passt.', 'VIEL Gebäudeservice bietet maßgeschneiderte Büroreinigungslösungen, die perfekt zu Ihren Anforderungen passen.'],
+        2: ['Glasflächen prägen die Außenwirkung einer Immobilie. Saubere Fenster bringen mehr Licht in Räume und lassen Fassaden gepflegt wirken.', 'Wir arbeiten mit professioneller Ausrüstung und materialschonenden Reinigungsmitteln, um auch große Glasflächen sicher und streifenfrei zu reinigen.'],
+        3: ['Der Winter bringt besondere Herausforderungen für Eigentümer, Gewerbeflächen und Hausverwaltungen mit sich.', 'Winterdienste von VIEL Gebäudeservice umfassen Schneeräumung, Streudienst, Kontrollfahrten und zuverlässige Dokumentation.', 'Professionelle Winterdienste schützen Ihre Immobilie und Ihre Besucher vor Unfällen und Beschädigungen.'],
+        4: ['Grundreinigung ist ideal, wenn reguläre Unterhaltsreinigung nicht mehr ausreicht oder ein Objekt neu vorbereitet werden soll.', 'Wir entfernen hartnäckige Verschmutzungen, behandeln Böden und reinigen stark beanspruchte Bereiche gründlich.'],
+        5: ['Nachhaltigkeit ist ein Kernwert von VIEL Gebäudeservice. Wir setzen auf umweltfreundliche Reinigungsmethoden, effiziente Abläufe und passende Reinigungsmittel.', 'Gute Reinigung und Umweltschutz sind kein Widerspruch. Sie ergänzen sich, wenn Planung, Material und Ausführung stimmen.'],
+        6: ['Qualität ist nicht verhandelbar. Bei VIEL Gebäudeservice setzen wir auf geschulte Teams, klare Checklisten und persönliche Ansprechpartner.', 'So sichern wir wiederholbare Ergebnisse und langfristige Zufriedenheit unserer Kunden.']
+      }),
+      heroEyebrow: 'VIEL Blog',
+      heroTitle: 'Aktuelles aus Reinigung, Winterdienst und Sicherheit.',
+      heroText: 'Tipps, Einblicke und Branchennews für gepflegte Immobilien und bessere Abläufe.',
+      readMore: 'Weiterlesen',
+      ctaTitle: 'Bereit für ein sauberes Objekt?',
+      ctaText: 'Kontaktieren Sie uns für eine kostenlose Beratung.',
+      ctaButton: 'Kontakt aufnehmen',
+      notFound: 'Beitrag nicht gefunden',
+      back: 'Zurück zum Blog',
+      articleCtaTitle: 'Jetzt Beratung anfragen',
+      articleCtaButton: 'Jetzt Kontakt aufnehmen'
+    },
+    legal: {
+      privacyTitle: 'Datenschutzerklärung',
+      imprintTitle: 'Impressum',
+      sections: [
+        ['1. Verantwortlicher', 'VIEL Gebäudeservice\nKontaktinformationen: info@viel-gs.de | 030 21467832'],
+        ['2. Allgemeine Hinweise', 'Wir verarbeiten personenbezogene Daten nur im Einklang mit den geltenden Datenschutzgesetzen, insbesondere der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).'],
+        ['3. Erhebung und Verarbeitung personenbezogener Daten', 'Personenbezogene Daten werden verarbeitet, wenn Sie unser Kontaktformular nutzen, uns per E-Mail kontaktieren oder unsere Website besuchen.'],
+        ['4. Cookies', 'Unsere Website nutzt notwendige Cookies. Optionale Cookies werden nur nach Ihrer Einwilligung eingesetzt.'],
+        ['5. Kontaktformular', 'Die Daten aus unserem Kontaktformular werden nur zur Beantwortung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Zustimmung.'],
+        ['6. Externe Links', 'Unsere Website enthält Links zu externen Websites. Wir sind nicht verantwortlich für deren Datenschutzpraktiken.'],
+        ['7. Änderungen dieser Datenschutzerklärung', 'Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Die aktuelle Version ist auf dieser Seite verfügbar.'],
+        ['8. Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter: info@viel-gs.de.']
+      ],
+      imprintSections: [
+        ['Angaben gemäß § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Deutschland'],
+        ['Kontakt', 'Telefon: 030 21467832\nE-Mail: info@viel-gs.de'],
+        ['Verantwortlich für den Inhalt', 'VIEL Gebäudeservice'],
+        ['Haftung für Inhalte', 'Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich.'],
+        ['Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zu dieser Website kontaktieren Sie uns bitte unter: info@viel-gs.de.']
+      ],
+      fullPrivacy: 'Unsere vollständige Datenschutzerklärung finden Sie hier.'
+    },
+    secuguard: {
+      eyebrow: 'Partnerunternehmen',
+      heroTitle: 'SecuGuard Security Service',
+      heroText: 'Professionelle Sicherheitsdienstleistungen für Objektschutz, Eventsicherheit, Brandschutz und moderne Sicherheitslösungen in Berlin und bundesweit.',
+      primary: 'Anfrage senden',
+      secondary: 'Leistungen ansehen',
+      phone: '+49 30 75 444 733 0',
+      email: 'info@secuguard-security.com',
+      address: 'Helmholtzstraße 2-9, 10587 Berlin',
+      introTitle: 'Ihr professioneller Schutz. Persönlich. Verlässlich.',
+      introText: 'SecuGuard ist ein modernes und kundenorientiertes Sicherheitsunternehmen mit Hauptsitz in Berlin. Die Kernkompetenzen liegen in Objektschutz, Eventsicherheit und Brandschutz, ergänzt durch Baustellenüberwachung, Interventionsdienste, Empfangsdienste, Doormen, Ladendetektive, Einkaufszentrenbewachung und City-Streifen.',
+      servicesTitle: 'Sicherheitsdienstleistungen',
+      servicesText: 'Sicherheitslösungen werden individuell auf Objekt, Risiko und gewünschte Abläufe abgestimmt.',
+      services: [
+        ['Objektschutz', 'Rund-um-die-Uhr Schutz für Gebäude, Anlagen und sensible Bereiche.'],
+        ['Eventschutz', 'Sicherheitskonzepte für Veranstaltungen, Gäste und geregelte Abläufe.'],
+        ['Brandwache', 'Präsenz bei erhöhtem Brandrisiko, Ausfällen oder besonderen Auflagen.'],
+        ['Doormen', 'Diskreter Empfang, Zugangskontrolle und professioneller erster Eindruck.'],
+        ['Citystreife', 'Präsente Streifen für öffentliche, gewerbliche und sensible Bereiche.'],
+        ['Mobile Revierstreife', 'Flexible Kontrollfahrten und dokumentierte Objektkontrollen.'],
+        ['Baustellenabsicherung', 'Schutz vor Diebstahl, Vandalismus und unbefugtem Zutritt.'],
+        ['Laden- und Kaufhausdetektiv', 'Prävention, Beobachtung und professionelle Unterstützung im Handel.'],
+        ['Pförtner- und Empfangsdienst', 'Besuchermanagement, Ausweise, Telefon, Post und Schlüsselverwaltung.'],
+        ['Moderne Sicherheitstechnik', 'Technische Lösungen für Überwachung, Kontrolle und zusätzliche Sicherheit.']
+      ],
+      standardsTitle: 'Qualifikation & Anspruch',
+      standards: ['§34a GewO Unterrichtung', 'Sachkundeprüfung §34a GewO', 'Brandschutzhelfer', 'Ersthelfer', 'Deeskalation', 'Interkulturelle Kompetenz', 'Behördliche Zuverlässigkeitsprüfung', 'Deutsch mindestens B2'],
+      contactTitle: 'Wir stehen Ihnen zur Seite',
+      contactText: 'Benötigen Sie einen zuverlässigen und seriösen Sicherheitsdienstleister? SecuGuard unterstützt Sie in Berlin und bundesweit.'
+    },
+    winterdienst: {
+      eyebrow: 'Winterdienst Berlin',
+      heroTitle: 'Sichere Wege. Zuverlässig geräumt.',
+      heroText: 'Professioneller Winterdienst für Gewerbeimmobilien, Hausverwaltungen, Wohnanlagen und öffentliche Zugänge in Berlin.',
+      primary: 'Winterdienst anfragen',
+      secondary: 'Leistungen ansehen',
+      introTitle: 'Bereit, bevor Schnee und Eis zum Risiko werden.',
+      introText: 'VIEL Gebäudeservice übernimmt Schneeräumung, Streudienst, Kontrollfahrten und Dokumentation mit planbaren Abläufen. So bleiben Eingänge, Gehwege, Zufahrten und Außenflächen verkehrssicher und gepflegt.',
+      phone: '030 21467832',
+      email: 'info@viel-gs.de',
+      address: 'Erich-Kuttner-Straße 31, 10369 Berlin',
+      servicesTitle: 'Winterdienst Leistungen',
+      servicesText: 'Jede Fläche wird nach Objekt, Nutzungszeiten und Räumpflicht geplant.',
+      services: [
+        ['Schneeräumung', 'Gehwege, Eingänge, Zufahrten und Parkflächen werden zuverlässig freigehalten.'],
+        ['Streudienst', 'Geeignetes Streugut reduziert Glätte und erhöht die Sicherheit Ihrer Flächen.'],
+        ['Kontrollfahrten', 'Regelmäßige Objektkontrollen bei winterlicher Witterung und kritischen Wetterlagen.'],
+        ['24/7 Bereitschaft', 'Einsatzbereite Teams für Schnee, Eis und plötzliche Wetteränderungen.'],
+        ['Dokumentation', 'Nachvollziehbare Einsatz- und Kontrollnachweise für Verwaltung und Eigentümer.'],
+        ['Gewerbe & Hausverwaltung', 'Winterdienst für Bürogebäude, Wohnanlagen, Gewerbeparks und verwaltete Immobilien.']
+      ],
+      standardsTitle: 'Ihre Vorteile',
+      standards: ['Verlässliche Räum- und Streupläne', 'Schnelle Einsatzbereitschaft bei Wetterumschwung', 'Professionelle Ausrüstung', 'Objektbezogene Dokumentation', 'Sichere Wege für Mieter, Kunden und Mitarbeiter', 'Planbare Betreuung über die Wintersaison'],
+      standardsEyebrow: 'Saisonservice',
+      contactEyebrow: 'Kontakt',
+      contactTitle: 'Winterdienst jetzt planen',
+      contactText: 'Senden Sie uns Ihre Objektinformationen. Wir erstellen ein passendes Angebot für Ihre Winterdienstflächen.'
+    },
+    widgets: {
+      cookieTitle: 'Datenschutz & Cookies',
+      cookieText: 'Wir nutzen Cookies, um Ihre Erfahrung zu verbessern. Notwendige Cookies sind immer aktiv.',
+      necessary: 'Notwendig',
+      settings: 'Einstellungen',
+      accept: 'Akzeptieren',
+      chatTitle: 'VIEL Gebäudeservice Chat',
+      chatSubtitle: 'Wir antworten normalerweise innerhalb von Minuten',
+      chatClose: 'Chat schließen',
+      chatOpen: 'Chat öffnen',
+      chatPlaceholder: 'Schreib eine Nachricht...',
+      chatSend: 'Nachricht senden',
+      chatHello: 'Hallo! Wie können wir helfen?',
+      replies: ['Danke für deine Nachricht! Ein Mitarbeiter wird sich bald bei dir melden.', 'Gerne helfen wir dir weiter. Welche Dienstleistung interessiert dich?', 'Wir sind Mo-Fr von 8-18 Uhr erreichbar. Wie können wir dir helfen?']
+    }
+  },
+  en: {
+    languageName: 'English',
+    toggleLabel: 'Deutsch',
+    nav: [
+      { label: 'Home', href: '/#home' },
+      { label: 'About', href: '/#ueber-uns' },
+      { label: 'Winter Service', href: '/winterdienst' },
+      { label: 'SecuGuard', href: '/secuguard' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Contact', href: '/#kontakt' }
+    ],
+    footer: {
+      tagline: 'VIEL Quality. VIEL Care. VIEL Security.',
+      description: 'Building cleaning for commercial properties and property managers in Berlin.',
+      navigation: 'Navigation',
+      services: 'Services',
+      contact: 'Contact',
+      rights: 'All rights reserved.',
+      privacy: 'Privacy Policy',
+      imprint: 'Legal Notice'
+    },
+    home: {
+      heroEyebrow: 'Professional building cleaning in Berlin',
+      heroLines: ['Cleaning.', 'Winter Service.', 'Security.'],
+      heroText: 'Building cleaning for commercial properties and property managers - backed by more than 20 years of experience.',
+      heroPrimary: 'Get a free consultation',
+      heroSecondary: 'View services',
+      aboutEyebrow: 'About us',
+      years: 'Years of experience',
+      aboutTitle: 'Service at the highest level.',
+      aboutTextOne: 'VIEL Gebäudeservice provides professional building cleaning to high quality standards. Our trained staff keep properties hygienic, well maintained, and representative, with reliable and flexible service.',
+      aboutTextTwo: 'Our vision is to set a clear standard for dependable, high quality building cleaning. Clean and well-kept properties create better working and living environments.',
+      aboutButton: 'Contact us',
+      servicesEyebrow: 'Services',
+      servicesTitle: 'Our Services',
+      servicesIntro: 'VIEL Gebäudeservice provides professional building cleaning to high quality standards with trained teams and dependable processes.',
+      winterEyebrow: 'VIEL Winter Service',
+      winterTitle: 'Reliable winter service.',
+      winterText: 'We keep paths, entrances, driveways, and outdoor areas safe during winter weather.',
+      winterPageButton: 'View winter service',
+      securityEyebrow: 'VIEL Security',
+      securityTitle: 'Security for your property.',
+      securityText: 'Our security services protect your properties and create a safer environment - professionally and discreetly.',
+      qualityEyebrow: 'Quality',
+      qualityTitle: 'Quality',
+      qualitySuffix: 'in every detail.',
+      qualityText: 'Choosing a cleaning partner depends on trust, experience, and reliability.',
+      quoteEyebrow: 'Quote',
+      quoteTitle: 'Quick calculation.',
+      quoteText: 'Calculate an initial estimate for your building cleaning. Select the service, area, and frequency.',
+      quoteGeneratorTitle: 'Quote Generator',
+      quoteGeneratorText: 'Instantly calculate a non-binding estimate for your building cleaning. Select your service, area, and frequency.',
+      quoteNamePlaceholder: 'Your name',
+      quoteEmailPlaceholder: 'your@email.com',
+      quoteCompanyPlaceholder: 'Your company',
+      quotePhonePlaceholder: '030 12345678',
+      quoteNotesLabel: 'Additional Notes',
+      quoteNotesPlaceholder: 'Special features, specific requirements...',
+      quoteRequest: 'Request Quote',
+      quoteSummaryTitle: 'Your Estimate',
+      quoteSummaryService: 'Service:',
+      quoteSummaryArea: 'Area:',
+      quoteSummaryFrequency: 'Frequency:',
+      quotePriceLabel: 'Estimated price per visit:',
+      quotePerMonth: 'approx. {value} €/month',
+      quoteWarning: 'This is a non-binding estimate. The final price is determined after a free site inspection.',
+      quoteNextTitle: 'Next Steps:',
+      quoteNextSteps: [
+        'Fill out the form and request a quote.',
+        'We will contact you within 24 hours.',
+        'Free site inspection and detailed quote.',
+        'Contract and start of cooperation.'
+      ],
+      serviceLabel: 'Service',
+      areaLabel: 'Area in m²',
+      frequencyLabel: 'Frequency',
+      estimated: 'Estimated guide price',
+      blogEyebrow: 'Blog',
+      blogTitle: 'News & Insights',
+      allPosts: 'All posts',
+      newsletterEyebrow: 'Newsletter',
+      newsletterTitle: 'Cleaning insights, offers, and industry news directly in your inbox.',
+      emailPlaceholder: 'Your email address',
+      subscribe: 'Subscribe',
+      contactEyebrow: 'Contact',
+      contactTitle: 'We are here for you.',
+      contactText: 'Do you have questions or need a non-binding quote? We will gladly advise you personally and can arrange a free first inspection of your property.',
+      hours: 'Mon-Fri 08:00-18:00',
+      name: 'Name *',
+      company: 'Company',
+      email: 'Email *',
+      message: 'Your message *',
+      privacyConsent: 'I have read and accept the Privacy Policy. *',
+      dataConsent: 'I consent to the processing of my data for the purpose of contact. *',
+      send: 'Send',
+      services: servicesEn,
+      winterBenefits: [
+        { title: '24/7 Readiness', desc: 'Our response teams are available reliably during snow and ice.' },
+        { title: 'Professional Equipment', desc: 'Modern clearing equipment ensures fast and thorough results.' },
+        { title: 'Eco-conscious Grit', desc: 'We use sustainable materials and clean execution wherever possible.' },
+        { title: 'Legal Clearing Duties', desc: 'We reliably handle clearing and gritting obligations for your property.' }
+      ],
+      securityBenefits: [
+        { title: 'Property Protection', desc: 'Professional monitoring for commercial properties and residential buildings.' },
+        { title: 'Patrols', desc: 'Regular patrols create security and documented procedures.' },
+        { title: 'Access Control', desc: 'Discreet control of sensitive areas and managed visitor access.' },
+        { title: 'Security Consulting', desc: 'Individual concepts for properties, tenants, and operators.' }
+      ],
+      qualityPoints: ['Experienced and trained staff', 'Careful and thorough cleaning', 'Individual cleaning plans', 'Reliable and punctual execution', 'Fair and transparent prices', 'Personal point of contact'],
+      cases: [
+        { title: 'Large-scale Office Cleaning in Berlin-Mitte', client: 'Technology startup, 5,000 m²', challenge: 'Daily cleaning for 200+ employees with high hygiene standards', result: 'Flexible evening teams and measurably cleaner work areas', image: sharedImages.caseOffice },
+        { title: 'Winter Service for a Commercial Park', client: 'Commercial park in Friedrichshain, 50,000 m²', challenge: '24/7 snow clearing and gritting during severe weather', result: 'Safe paths, punctual opening, and full documentation', image: sharedImages.winter }
+      ],
+      testimonials: [
+        { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice exceeded our expectations. Their reliability and professionalism are impressive. We have worked together for 3 years.' },
+        { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Very good communication, fair prices, and flexible solutions. VIEL Gebäudeservice is our reliable partner for all cleaning tasks.' },
+        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'VIEL winter services are excellent. Fast, reliable, and always punctual. We are very satisfied with the cooperation.' }
+      ],
+      serviceOptions: [
+        { value: 'Büroreinigung', label: 'Office Cleaning' },
+        { value: 'Glasreinigung', label: 'Glass Cleaning' },
+        { value: 'Grundreinigung', label: 'Deep Cleaning' },
+        { value: 'Unterhaltsreinigung', label: 'Maintenance Cleaning' },
+        { value: 'Treppenhausreinigung', label: 'Stairwell Cleaning' },
+        { value: 'Bauendreinigung', label: 'Post-Construction Cleaning' },
+        { value: 'Winterdienst', label: 'Winter Service' },
+        { value: 'Sicherheitsdienste', label: 'Security Services' }
+      ],
+      frequencyOptions: [
+        { value: 'täglich', label: 'Daily' },
+        { value: 'wöchentlich', label: 'Weekly' },
+        { value: 'monatlich', label: 'Monthly' },
+        { value: 'einmalig', label: 'One-time' }
+      ]
+    },
+    blog: {
+      posts: blogPostsEn,
+      articles: makeBlogArticles(blogPostsEn, {
+        1: ['A clean office is more than a visual detail. It builds trust, protects employees, and gives clients a professional impression.', 'Professional office cleaning covers desks, floors, washrooms, kitchens, surfaces, and equipment. The key is a clear cleaning plan that fits the company workflow.', 'VIEL Gebäudeservice provides tailored office cleaning solutions that match your requirements.'],
+        2: ['Glass surfaces shape the appearance of a property. Clean windows bring more light into rooms and make facades look well maintained.', 'We use professional equipment and surface-friendly cleaning products to clean large glass areas safely and without streaks.'],
+        3: ['Winter creates specific challenges for owners, commercial properties, and property managers.', 'VIEL winter services include snow clearing, gritting, inspection routes, and reliable documentation.', 'Professional winter services protect your property and visitors from accidents and damage.'],
+        4: ['Deep cleaning is ideal when regular maintenance cleaning is no longer enough or when a property needs to be prepared for new use.', 'We remove stubborn dirt, treat floors, and thoroughly clean heavily used areas.'],
+        5: ['Sustainability is a core value at VIEL Gebäudeservice. We focus on eco-friendly methods, efficient processes, and suitable cleaning products.', 'Good cleaning and environmental responsibility work together when planning, materials, and execution are aligned.'],
+        6: ['Quality is non-negotiable. VIEL Gebäudeservice relies on trained teams, clear checklists, and personal contacts.', 'This helps us deliver repeatable results and long-term customer satisfaction.']
+      }),
+      heroEyebrow: 'VIEL Blog',
+      heroTitle: 'Updates from cleaning, winter service, and security.',
+      heroText: 'Tips, insights, and industry news for well-kept properties and better operations.',
+      readMore: 'Read more',
+      ctaTitle: 'Ready for a clean property?',
+      ctaText: 'Contact us for a free consultation.',
+      ctaButton: 'Contact us',
+      notFound: 'Post not found',
+      back: 'Back to blog',
+      articleCtaTitle: 'Request consultation now',
+      articleCtaButton: 'Contact us now'
+    },
+    legal: {
+      privacyTitle: 'Privacy Policy',
+      imprintTitle: 'Legal Notice',
+      sections: [
+        ['1. Controller', 'VIEL Gebäudeservice\nContact information: info@viel-gs.de | 030 21467832'],
+        ['2. General Information', 'We process personal data only in accordance with applicable data protection laws, especially the GDPR and German federal data protection law.'],
+        ['3. Collection and Processing of Personal Data', 'Personal data is processed when you use our contact form, contact us by email, or visit our website.'],
+        ['4. Cookies', 'Our website uses necessary cookies. Optional cookies are only used after your consent.'],
+        ['5. Contact Form', 'Data from our contact form is used only to respond to your request. It is not shared with third parties without your consent.'],
+        ['6. External Links', 'Our website contains links to external websites. We are not responsible for their privacy practices.'],
+        ['7. Changes to this Privacy Policy', 'We reserve the right to change this Privacy Policy at any time. The current version is available on this page.'],
+        ['8. Data Protection Contact', 'For privacy questions or to exercise your rights, please contact us at: info@viel-gs.de.']
+      ],
+      imprintSections: [
+        ['Information according to § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Germany'],
+        ['Contact', 'Phone: 030 21467832\nEmail: info@viel-gs.de'],
+        ['Responsible for Content', 'VIEL Gebäudeservice'],
+        ['Liability for Content', 'As a service provider, we are responsible for our own content on these pages according to general laws.'],
+        ['Data Protection Contact', 'For privacy questions or questions about this website, please contact us at: info@viel-gs.de.']
+      ],
+      fullPrivacy: 'You can find our full Privacy Policy here.'
+    },
+    secuguard: {
+      eyebrow: 'Partner Company',
+      heroTitle: 'SecuGuard Security Service',
+      heroText: 'Professional security services for property protection, event security, fire watch, and modern security solutions in Berlin and across Germany.',
+      primary: 'Send Inquiry',
+      secondary: 'View Services',
+      phone: '+49 30 75 444 733 0',
+      email: 'info@secuguard-security.com',
+      address: 'Helmholtzstraße 2-9, 10587 Berlin',
+      introTitle: 'Your professional protection. Personal. Reliable.',
+      introText: 'SecuGuard is a modern, customer-focused security company headquartered in Berlin. Its core competencies include property protection, event security, and fire protection, complemented by construction-site monitoring, intervention services, reception services, doormen, retail detectives, shopping-center guarding, and city patrols.',
+      servicesTitle: 'Security Services',
+      servicesText: 'Security solutions are tailored to each property, risk profile, and operating process.',
+      services: [
+        ['Property Protection', 'Around-the-clock protection for buildings, facilities, and sensitive areas.'],
+        ['Event Security', 'Security concepts for events, guests, access, and orderly operations.'],
+        ['Fire Watch', 'On-site presence for increased fire risk, outages, or special requirements.'],
+        ['Doormen', 'Discreet reception, access control, and a professional first impression.'],
+        ['City Patrols', 'Visible patrols for public, commercial, and sensitive areas.'],
+        ['Mobile Patrols', 'Flexible patrol routes and documented property inspections.'],
+        ['Construction Site Security', 'Protection against theft, vandalism, and unauthorized access.'],
+        ['Retail Detectives', 'Prevention, observation, and professional support for retail spaces.'],
+        ['Gatehouse & Reception', 'Visitor management, badges, telephone, post, and key control.'],
+        ['Modern Security Technology', 'Technical solutions for monitoring, control, and additional security.']
+      ],
+      standardsTitle: 'Qualification & Standards',
+      standards: ['§34a GewO instruction', '§34a GewO competence exam', 'Fire safety assistant', 'First aider', 'De-escalation', 'Intercultural competence', 'Official reliability check', 'German at least B2'],
+      contactTitle: 'We Are at Your Side',
+      contactText: 'Need a reliable and professional security provider? SecuGuard supports clients in Berlin and across Germany.'
+    },
+    winterdienst: {
+      eyebrow: 'Winter Service Berlin',
+      heroTitle: 'Safe paths. Reliably cleared.',
+      heroText: 'Professional winter service for commercial properties, property managers, residential buildings, and public access areas in Berlin.',
+      primary: 'Request winter service',
+      secondary: 'View services',
+      introTitle: 'Ready before snow and ice become a risk.',
+      introText: 'VIEL Gebäudeservice handles snow clearing, gritting, inspection rounds, and documentation with predictable processes. Entrances, sidewalks, driveways, and outdoor areas stay safe and well maintained.',
+      phone: '030 21467832',
+      email: 'info@viel-gs.de',
+      address: 'Erich-Kuttner-Straße 31, 10369 Berlin',
+      servicesTitle: 'Winter Service Scope',
+      servicesText: 'Each area is planned around the property, usage times, and clearing obligations.',
+      services: [
+        ['Snow Clearing', 'Sidewalks, entrances, driveways, and parking areas are kept reliably clear.'],
+        ['Gritting Service', 'Suitable grit reduces ice risk and improves safety across your property.'],
+        ['Inspection Rounds', 'Regular property checks during winter weather and critical conditions.'],
+        ['24/7 Readiness', 'Available response teams for snow, ice, and sudden weather changes.'],
+        ['Documentation', 'Clear service and inspection records for managers and owners.'],
+        ['Commercial & Property Management', 'Winter service for offices, residential buildings, commercial parks, and managed properties.']
+      ],
+      standardsTitle: 'Your Advantages',
+      standards: ['Reliable clearing and gritting plans', 'Fast response when weather changes', 'Professional equipment', 'Property-specific documentation', 'Safe paths for tenants, customers, and staff', 'Predictable support throughout the winter season'],
+      standardsEyebrow: 'Seasonal service',
+      contactEyebrow: 'Contact',
+      contactTitle: 'Plan winter service now',
+      contactText: 'Send us your property details. We will prepare a suitable offer for your winter service areas.'
+    },
+    widgets: {
+      cookieTitle: 'Privacy & Cookies',
+      cookieText: 'We use cookies to improve your experience. Necessary cookies are always active.',
+      necessary: 'Necessary',
+      settings: 'Settings',
+      accept: 'Accept',
+      chatTitle: 'VIEL Gebäudeservice Chat',
+      chatSubtitle: 'We normally reply within a few minutes',
+      chatClose: 'Close chat',
+      chatOpen: 'Open chat',
+      chatPlaceholder: 'Write a message...',
+      chatSend: 'Send message',
+      chatHello: 'Hello! How can we help?',
+      replies: ['Thanks for your message. A team member will get back to you soon.', 'We are happy to help. Which service are you interested in?', 'We are available Mon-Fri from 8-18. How can we help?']
+    }
+  }
+};

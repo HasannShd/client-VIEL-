@@ -1,0 +1,5 @@
+@media (min-width: 900px) {
+  .legal-page__inner {
+    margin-inline: auto;
+  }
+}

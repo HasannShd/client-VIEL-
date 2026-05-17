@@ -1,0 +1,77 @@
+:root {
+  --viel-blue: #1b4965;
+  --viel-cyan: #62b6cb;
+  --viel-slate: #455a64;
+  --viel-ice: #f4f9fb;
+  --viel-line: #e5eef2;
+  --viel-white: #ffffff;
+  --viel-shadow: 0 30px 60px rgba(27, 73, 101, 0.2);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: var(--viel-blue);
+  background: var(--viel-white);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #8ee8ff;
+  color: #0f3148;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--viel-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--viel-cyan);
+  border-radius: 4px;
+}

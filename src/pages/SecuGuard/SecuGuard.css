@@ -1,0 +1,213 @@
+.secuguard-page {
+  background: #fff;
+}
+
+.secuguard-hero {
+  position: relative;
+  min-height: 720px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #091823;
+}
+
+.secuguard-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 20, 31, 0.92), rgba(9, 24, 35, 0.72), rgba(27, 73, 101, 0.42)),
+    url('/assets/viel/modern-glass-building.jpg') center/cover;
+  transform: scale(1.04);
+}
+
+.secuguard-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: 86px;
+}
+
+.secuguard-hero h1,
+.secuguard-intro h2,
+.secuguard-services__head h2,
+.secuguard-standards h2,
+.secuguard-contact h2 {
+  margin: 16px 0 22px;
+  font-size: clamp(2.8rem, 6vw, 6.2rem);
+  line-height: 0.96;
+  font-weight: 800;
+}
+
+.secuguard-hero p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
+
+.secuguard-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 38px;
+}
+
+.secuguard-intro,
+.secuguard-services,
+.secuguard-standards,
+.secuguard-contact {
+  padding: 100px 0;
+}
+
+.secuguard-intro__grid,
+.secuguard-standards__grid {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+.secuguard-intro h2,
+.secuguard-services__head h2,
+.secuguard-standards h2,
+.secuguard-contact h2 {
+  color: var(--viel-blue);
+  font-size: clamp(2.3rem, 4.7vw, 4.5rem);
+}
+
+.secuguard-intro p,
+.secuguard-services__head p,
+.secuguard-contact p {
+  color: var(--viel-slate);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.secuguard-contact-card {
+  display: grid;
+  gap: 16px;
+  padding: 34px;
+  background: #f4f9fb;
+  border: 1px solid var(--viel-line);
+}
+
+.secuguard-contact-card a,
+.secuguard-contact-card p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: var(--viel-blue);
+  font-weight: 800;
+}
+
+.secuguard-contact-card svg {
+  color: var(--viel-cyan);
+}
+
+.secuguard-services {
+  background: #0f3148;
+  color: #fff;
+}
+
+.secuguard-services__head {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.secuguard-services__head h2 {
+  color: #fff;
+}
+
+.secuguard-services__head p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.secuguard-services__grid {
+  display: grid;
+  gap: 18px;
+}
+
+.secuguard-service-card {
+  min-height: 220px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.secuguard-service-card svg {
+  color: var(--viel-cyan);
+}
+
+.secuguard-service-card h3 {
+  margin: 22px 0 12px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.secuguard-service-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  line-height: 1.65;
+}
+
+.secuguard-standards {
+  background: #f6fbfd;
+}
+
+.secuguard-standards__image {
+  overflow: hidden;
+  min-height: 480px;
+  box-shadow: var(--viel-shadow);
+}
+
+.secuguard-standards__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.secuguard-standards__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.secuguard-standards__list div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 16px;
+  background: #fff;
+  color: var(--viel-blue);
+  font-weight: 800;
+}
+
+.secuguard-standards__list svg {
+  flex: 0 0 auto;
+  color: var(--viel-cyan);
+}
+
+.secuguard-contact {
+  background: var(--viel-blue);
+  color: #fff;
+  text-align: center;
+}
+
+.secuguard-contact h2 {
+  color: #fff;
+}
+
+.secuguard-contact p {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.secuguard-contact__inner > div {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}

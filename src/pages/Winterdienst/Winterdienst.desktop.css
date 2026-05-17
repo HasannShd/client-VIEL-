@@ -1,0 +1,10 @@
+@media (min-width: 900px) {
+  .winterdienst-intro__grid,
+  .winterdienst-standards__grid {
+    grid-template-columns: 1fr 0.92fr;
+  }
+
+  .winterdienst-services__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

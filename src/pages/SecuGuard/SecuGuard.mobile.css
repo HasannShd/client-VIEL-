@@ -1,0 +1,25 @@
+@media (max-width: 760px) {
+  .secuguard-hero {
+    min-height: 680px;
+  }
+
+  .secuguard-hero__actions,
+  .secuguard-contact__inner > div {
+    flex-direction: column;
+  }
+
+  .secuguard-intro,
+  .secuguard-services,
+  .secuguard-standards,
+  .secuguard-contact {
+    padding: 72px 0;
+  }
+
+  .secuguard-standards__list {
+    grid-template-columns: 1fr;
+  }
+
+  .secuguard-standards__image {
+    min-height: 300px;
+  }
+}

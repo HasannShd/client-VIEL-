@@ -1,0 +1,10 @@
+@media (min-width: 900px) {
+  .secuguard-intro__grid,
+  .secuguard-standards__grid {
+    grid-template-columns: 1fr 0.92fr;
+  }
+
+  .secuguard-services__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

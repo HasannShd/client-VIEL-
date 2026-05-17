@@ -1,0 +1,25 @@
+@media (max-width: 760px) {
+  .winterdienst-hero {
+    min-height: 680px;
+  }
+
+  .winterdienst-hero__actions,
+  .winterdienst-contact__inner > div {
+    flex-direction: column;
+  }
+
+  .winterdienst-intro,
+  .winterdienst-services,
+  .winterdienst-standards,
+  .winterdienst-contact {
+    padding: 72px 0;
+  }
+
+  .winterdienst-standards__list {
+    grid-template-columns: 1fr;
+  }
+
+  .winterdienst-standards__image {
+    min-height: 300px;
+  }
+}

@@ -1,0 +1,9 @@
+@media (max-width: 760px) {
+  .legal-page {
+    padding-top: 118px;
+  }
+
+  .legal-page__inner {
+    padding: 28px;
+  }
+}

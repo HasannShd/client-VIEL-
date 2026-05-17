@@ -1,0 +1,124 @@
+@media (max-width: 859px) {
+  .hero-section {
+    min-height: 760px;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.65rem, 13vw, 5.1rem);
+  }
+
+  .hero-section__line {
+    white-space: normal;
+  }
+
+  .hero-section__content {
+    padding-top: 118px;
+  }
+
+  .hero-section__actions,
+  .newsletter-section form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .viel-button {
+    width: 100%;
+  }
+
+  .about-section,
+  .services-section,
+  .quality-section,
+  .quote-section,
+  .blog-preview,
+  .contact-section {
+    padding: 72px 0;
+  }
+
+  .about-section__grid,
+  .quote-section__grid,
+  .contact-section__grid {
+    gap: 46px;
+  }
+
+  .about-section__media {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section__image.large,
+  .about-section__image.small,
+  .about-section__image.tall {
+    grid-column: auto;
+    grid-row: auto;
+    height: 240px;
+    margin-top: 0;
+  }
+
+  .about-section__badge {
+    left: 18px;
+    bottom: 18px;
+  }
+
+  .service-card {
+    min-height: 310px;
+  }
+
+  .winter-security {
+    padding: 72px 0;
+  }
+
+  .winter-security__head {
+    text-align: left;
+    margin-bottom: 34px;
+  }
+
+  .winter-panel__content,
+  .feature-column {
+    padding: 24px;
+  }
+
+  .blog-preview__head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quote-form,
+  .quote-generator-form,
+  .contact-form {
+    padding: 24px;
+  }
+
+  .quote-generator-form {
+    padding: 0;
+  }
+
+  .quote-section__head {
+    margin-bottom: 40px;
+  }
+
+  .quote-section__head h2 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .quote-frequency div {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-summary {
+    padding: 24px;
+  }
+
+  .quote-summary dl div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .quote-summary dd {
+    text-align: left;
+  }
+
+  .quote-price-card {
+    padding: 22px;
+  }
+}
