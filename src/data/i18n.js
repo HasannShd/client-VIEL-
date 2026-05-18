@@ -102,7 +102,6 @@ export const dictionary = {
       winterText: 'Wir sorgen dafür, dass Ihre Wege, Zufahrten und Außenflächen auch im Winter sicher bleiben.',
       winterPageButton: 'Winterdienst ansehen',
       securityPageButton: 'Sicherheitsservice ansehen',
-      securityExternalButton: 'secuguard-security.com',
       securityEyebrow: 'VIEL Sicherheit',
       securityTitle: 'Sicherheit für Ihre Immobilie.',
       securityText: 'Mit unseren Sicherheitsdiensten schützen wir Ihre Immobilien und sorgen für ein sicheres Umfeld - professionell und diskret.',
@@ -272,16 +271,13 @@ export const dictionary = {
       fullPrivacy: 'Unsere vollständige Datenschutzerklärung finden Sie hier.'
     },
     secuguard: {
-      eyebrow: 'Partnerunternehmen',
-      heroTitle: 'SecuGuard Security Service',
+      eyebrow: 'VIEL Sicherheit',
+      heroTitle: 'Sicherheit für Ihre Immobilie.',
       heroText: 'Professionelle Sicherheitsdienstleistungen für Objektschutz, Eventsicherheit, Brandschutz und moderne Sicherheitslösungen in Berlin und bundesweit.',
       primary: 'Anfrage senden',
       secondary: 'Leistungen ansehen',
-      phone: '+49 30 75 444 733 0',
-      email: 'info@secuguard-security.com',
-      address: 'Helmholtzstraße 2-9, 10587 Berlin',
       introTitle: 'Ihr professioneller Schutz. Persönlich. Verlässlich.',
-      introText: 'SecuGuard ist ein modernes und kundenorientiertes Sicherheitsunternehmen mit Hauptsitz in Berlin. Die Kernkompetenzen liegen in Objektschutz, Eventsicherheit und Brandschutz, ergänzt durch Baustellenüberwachung, Interventionsdienste, Empfangsdienste, Doormen, Ladendetektive, Einkaufszentrenbewachung und City-Streifen.',
+      introText: 'VIEL Gebäudeservice bietet professionelle Sicherheitsdienstleistungen für Gewerbeimmobilien, Wohnanlagen und öffentliche Einrichtungen in Berlin. Unsere Kernkompetenzen umfassen Objektschutz, Eventsicherheit und Brandschutz, ergänzt durch Baustellenüberwachung, Interventionsdienste, Empfangsdienste, Doormen, Ladendetektive, Einkaufszentrenbewachung und City-Streifen.',
       servicesTitle: 'Sicherheitsdienstleistungen',
       servicesText: 'Sicherheitslösungen werden individuell auf Objekt, Risiko und gewünschte Abläufe abgestimmt.',
       services: [
@@ -298,8 +294,8 @@ export const dictionary = {
       ],
       standardsTitle: 'Qualifikation & Anspruch',
       standards: ['§34a GewO Unterrichtung', 'Sachkundeprüfung §34a GewO', 'Brandschutzhelfer', 'Ersthelfer', 'Deeskalation', 'Interkulturelle Kompetenz', 'Behördliche Zuverlässigkeitsprüfung', 'Deutsch mindestens B2'],
-      contactTitle: 'Wir stehen Ihnen zur Seite',
-      contactText: 'Benötigen Sie einen zuverlässigen und seriösen Sicherheitsdienstleister? SecuGuard unterstützt Sie in Berlin und bundesweit.'
+      contactTitle: 'Wir stehen Ihnen zur Seite.',
+      contactText: 'Benötigen Sie einen zuverlässigen Sicherheitsdienstleister? VIEL Gebäudeservice unterstützt Sie in Berlin und bundesweit.'
     },
     winterdienst: {
       eyebrow: 'Winterdienst Berlin',
@@ -390,7 +386,6 @@ export const dictionary = {
       winterText: 'We keep paths, entrances, driveways, and outdoor areas safe during winter weather.',
       winterPageButton: 'View winter service',
       securityPageButton: 'View security service',
-      securityExternalButton: 'secuguard-security.com',
       securityEyebrow: 'VIEL Security',
       securityTitle: 'Security for your property.',
       securityText: 'Our security services protect your properties and create a safer environment - professionally and discreetly.',
@@ -560,16 +555,13 @@ export const dictionary = {
       fullPrivacy: 'You can find our full Privacy Policy here.'
     },
     secuguard: {
-      eyebrow: 'Partner Company',
-      heroTitle: 'SecuGuard Security Service',
+      eyebrow: 'VIEL Security',
+      heroTitle: 'Security for your property.',
       heroText: 'Professional security services for property protection, event security, fire watch, and modern security solutions in Berlin and across Germany.',
       primary: 'Send Inquiry',
       secondary: 'View Services',
-      phone: '+49 30 75 444 733 0',
-      email: 'info@secuguard-security.com',
-      address: 'Helmholtzstraße 2-9, 10587 Berlin',
       introTitle: 'Your professional protection. Personal. Reliable.',
-      introText: 'SecuGuard is a modern, customer-focused security company headquartered in Berlin. Its core competencies include property protection, event security, and fire protection, complemented by construction-site monitoring, intervention services, reception services, doormen, retail detectives, shopping-center guarding, and city patrols.',
+      introText: 'VIEL Gebäudeservice provides professional security services for commercial properties, residential buildings, and public facilities in Berlin. Our core competencies include property protection, event security, and fire protection, complemented by construction-site monitoring, intervention services, reception services, doormen, retail detectives, shopping-centre guarding, and city patrols.',
       servicesTitle: 'Security Services',
       servicesText: 'Security solutions are tailored to each property, risk profile, and operating process.',
       services: [
@@ -586,8 +578,8 @@ export const dictionary = {
       ],
       standardsTitle: 'Qualification & Standards',
       standards: ['§34a GewO instruction', '§34a GewO competence exam', 'Fire safety assistant', 'First aider', 'De-escalation', 'Intercultural competence', 'Official reliability check', 'German at least B2'],
-      contactTitle: 'We Are at Your Side',
-      contactText: 'Need a reliable and professional security provider? SecuGuard supports clients in Berlin and across Germany.'
+      contactTitle: 'We are at your side.',
+      contactText: 'Need a reliable security service provider? VIEL Gebäudeservice supports clients in Berlin and across Germany.'
     },
     winterdienst: {
       eyebrow: 'Winter Service Berlin',

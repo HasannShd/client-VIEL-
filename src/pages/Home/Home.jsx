@@ -158,6 +158,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Security Section ── */}
+      <section className="home-security">
+        <div className="container home-security__inner">
+          <div className="home-security__text">
+            <span className="section-eyebrow">{home.securityEyebrow}</span>
+            <h2>{home.securityTitle}</h2>
+            <p>{home.securityText}</p>
+            <ul className="security-panel__list">
+              {home.securityBenefits.map((item) => (
+                <li key={item.title}>
+                  <Shield size={15} />
+                  <div>
+                    <strong>{item.title}</strong>
+                    <span>{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="security-panel__actions">
+              <a className="viel-button" href="/secuguard">{home.securityPageButton} <ArrowRight size={18} /></a>
+            </div>
+          </div>
+          <div className="home-security__image">
+            <img src={asset('secuguard-officer.png')} alt="VIEL Sicherheit – Professioneller Sicherheitsdienst" />
+            <div className="home-security__image-overlay" />
+          </div>
+        </div>
+      </section>
+
       {/* ── Winter Service Section ── */}
       <section className="home-winter">
         <div className="container home-winter__head">
@@ -184,36 +213,6 @@ export default function Home() {
               <p>{item.desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── Security Section ── */}
-      <section className="home-security">
-        <div className="container home-security__inner">
-          <div className="home-security__text">
-            <span className="section-eyebrow">{home.securityEyebrow}</span>
-            <h2>{home.securityTitle}</h2>
-            <p>{home.securityText}</p>
-            <ul className="security-panel__list">
-              {home.securityBenefits.map((item) => (
-                <li key={item.title}>
-                  <Shield size={15} />
-                  <div>
-                    <strong>{item.title}</strong>
-                    <span>{item.desc}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="security-panel__actions">
-              <a className="viel-button" href="/secuguard">{home.securityPageButton} <ArrowRight size={18} /></a>
-              <a className="viel-button outline security-panel__ext" href="https://secuguard-security.com/" target="_blank" rel="noreferrer">{home.securityExternalButton}</a>
-            </div>
-          </div>
-          <div className="home-security__image">
-            <img src={asset('secuguard-officer.png')} alt="SecuGuard – Professional security officer" />
-            <div className="home-security__image-overlay" />
-          </div>
         </div>
       </section>
 
