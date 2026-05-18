@@ -74,6 +74,39 @@
     margin-bottom: 34px;
   }
 
+  .home-winter {
+    padding: 72px 0;
+  }
+
+  .home-winter__head {
+    text-align: left;
+    margin-bottom: 36px;
+  }
+
+  .home-winter__grid {
+    display: flex;
+    flex-direction: column;
+    min-height: unset;
+    gap: 0;
+  }
+
+  .winter-panel {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .winter-panel__image {
+    min-height: 260px;
+  }
+
+  .winter-panel__content {
+    padding: 28px 24px;
+  }
+
+  .feature-item {
+    padding: 24px;
+  }
+
   .winter-panel__content,
   .feature-column {
     padding: 24px;
