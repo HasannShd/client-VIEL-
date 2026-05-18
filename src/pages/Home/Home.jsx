@@ -122,8 +122,8 @@ export default function Home() {
       <section className="about-section" id="ueber-uns">
         <div className="container about-section__grid">
           <div className="about-section__media">
-            <div className="about-section__image large"><img src={asset('cleaning-team-pro.webp')} alt="VIEL Gebäudeservice Team" /></div>
-            <div className="about-section__image small"><img src={asset('viel-mitarbeiter-1.png')} alt="VIEL Team bei der Arbeit" /></div>
+            <div className="about-section__image large"><img src={asset('viel-cleaning-robot.jpg')} alt="VIEL Gebäudeservice – Professionelle Reinigungstechnik" /></div>
+            <div className="about-section__image small"><img src={asset('cleaning-team-pro.webp')} alt="VIEL Gebäudeservice Team" /></div>
             <div className="about-section__image tall"><img src={asset('viel-mitarbeiterin-2.png')} alt="VIEL Gebäudeservice Fahrzeug" /></div>
             <div className="about-section__badge"><strong>20+</strong><span>{home.years}</span></div>
           </div>
