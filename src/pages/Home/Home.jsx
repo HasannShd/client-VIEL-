@@ -181,7 +181,7 @@ export default function Home() {
             </div>
           </div>
           <div className="home-security__image">
-            <img src={asset('secuguard-officer.png')} alt="VIEL Sicherheit – Professioneller Sicherheitsdienst" />
+            <img src={asset('viel-security-officer.png')} alt="VIEL Sicherheit – Professioneller Sicherheitsdienst" />
             <div className="home-security__image-overlay" />
           </div>
         </div>

@@ -17,7 +17,7 @@
   inset: 0;
   background:
     linear-gradient(100deg, rgba(6, 18, 30, 0.96) 0%, rgba(9, 24, 35, 0.82) 45%, rgba(27, 73, 101, 0.5) 100%),
-    url('/assets/viel/glass-cleaning-highrise.jpg') center/cover;
+    url('/assets/viel/viel-security-officer.png') center 20%/cover;
   transform: scale(1.04);
 }
 
@@ -203,15 +203,19 @@
 }
 
 .secuguard-standards__image {
+  position: relative;
   overflow: hidden;
   min-height: 480px;
   box-shadow: var(--viel-shadow);
 }
 
 .secuguard-standards__image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .secuguard-standards__list {
