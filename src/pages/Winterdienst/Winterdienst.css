@@ -17,7 +17,7 @@
   inset: 0;
   background:
     linear-gradient(90deg, rgba(6, 20, 31, 0.92), rgba(9, 24, 35, 0.68), rgba(98, 182, 203, 0.28)),
-    url('/assets/viel/winter-snow-removal.jpeg') center/cover;
+    url('/assets/viel/snowplow.png') center/cover;
   transform: scale(1.05);
 }
 
@@ -59,11 +59,16 @@
   padding: 100px 0;
 }
 
-.winterdienst-intro__grid,
-.winterdienst-standards__grid {
+.winterdienst-intro__grid {
   display: grid;
   gap: 48px;
   align-items: center;
+}
+
+.winterdienst-standards__grid {
+  display: grid;
+  gap: 48px;
+  align-items: stretch;
 }
 
 .winterdienst-intro h2,
@@ -157,14 +162,17 @@
 
 .winterdienst-standards__image {
   overflow: hidden;
-  min-height: 480px;
+  align-self: stretch;
   box-shadow: var(--viel-shadow);
 }
 
 .winterdienst-standards__image img {
   width: 100%;
   height: 100%;
+  min-height: 400px;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .winterdienst-standards__list {

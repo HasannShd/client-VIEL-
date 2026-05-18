@@ -22,25 +22,32 @@
     display: block;
   }
 
-  .winter-security__grid {
-    grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
+  .home-winter__grid {
+    grid-template-columns: minmax(440px, 1.1fr) repeat(2, minmax(0, 1fr));
   }
 
-  .winter-security__features {
+  .home-security__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .promises-section__inner {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  }
+
+  .promises-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .quality-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .cases-grid,
   .testimonials-section__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .testimonials-section__grid {
+  .projects-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .project-card {
+    grid-template-rows: 240px 1fr;
   }
 
   .blog-preview__grid {
@@ -51,6 +58,19 @@
     grid-template-columns: 1fr 0.8fr;
   }
 
+  .location-info__inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .location-info__item {
+    border-top: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .location-info__item:last-child {
+    border-right: none;
+  }
+
   .contact-form__split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -59,5 +79,9 @@
 @media (min-width: 1180px) {
   .hero-section__content {
     padding-top: 160px;
+  }
+
+  .testimonials-section__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

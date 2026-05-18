@@ -1,7 +1,7 @@
 import './Home.css';
 import './Home.desktop.css';
 import './Home.mobile.css';
-import { AlertCircle, ArrowRight, Building2, Calculator, Check, Clock, Euro, Mail, MapPin, Phone, Shield, Snowflake, Sparkles, Star } from 'lucide-react';
+import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Euro, FileText, Leaf, Mail, MapPin, Phone, Shield, Snowflake, Sparkles, Star, ThumbsUp, Users } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
 import { useLanguage } from '../../context/languageStore.js';
 import { asset, frequencyRate, serviceRate } from '../../data/siteData.js';
@@ -158,16 +158,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="winter-security">
-        <div className="container winter-security__head">
-          <span className="section-eyebrow">{home.winterEyebrow} · {home.securityEyebrow}</span>
-          <h2>{home.winterTitle} {home.securityTitle}</h2>
-          <p>{home.winterText} {home.securityText}</p>
+      {/* ── Winter Service Section ── */}
+      <section className="home-winter">
+        <div className="container home-winter__head">
+          <span className="section-eyebrow">{home.winterEyebrow}</span>
+          <h2>{home.winterTitle}</h2>
+          <p>{home.winterText}</p>
         </div>
-        <div className="container winter-security__grid">
+        <div className="container home-winter__grid">
           <article className="winter-panel">
             <div className="winter-panel__image">
-              <img src={asset('modern-glass-building.jpg')} alt="VIEL winter service and building protection" />
+              <img src={asset('snowplow.png')} alt="VIEL Winterdienst – Schneepflug im Einsatz" />
             </div>
             <div className="winter-panel__content">
               <span className="section-eyebrow">{home.winterEyebrow}</span>
@@ -176,68 +177,130 @@ export default function Home() {
               <a className="viel-button" href="/winterdienst">{home.winterPageButton} <ArrowRight size={18} /></a>
             </div>
           </article>
-          <div className="winter-security__features">
-            <div className="feature-column">
-              <div className="feature-column__label"><Snowflake size={18} /> {home.winterEyebrow}</div>
-              {home.winterBenefits.map((item) => (
-                <div className="feature-item" key={item.title}>
-                  <Snowflake size={22} />
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              ))}
+          {home.winterBenefits.map((item) => (
+            <div className="feature-item" key={item.title}>
+              <Snowflake size={22} />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
-            <div className="feature-column security-column">
-              <div className="feature-column__label"><Shield size={18} /> {home.securityEyebrow}</div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Security Section ── */}
+      <section className="home-security">
+        <div className="container home-security__inner">
+          <div className="home-security__text">
+            <span className="section-eyebrow">{home.securityEyebrow}</span>
+            <h2>{home.securityTitle}</h2>
+            <p>{home.securityText}</p>
+            <ul className="security-panel__list">
               {home.securityBenefits.map((item) => (
-                <div className="feature-item light" key={item.title}>
-                  <Shield size={22} />
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
+                <li key={item.title}>
+                  <Shield size={15} />
+                  <div>
+                    <strong>{item.title}</strong>
+                    <span>{item.desc}</span>
+                  </div>
+                </li>
               ))}
+            </ul>
+            <div className="security-panel__actions">
+              <a className="viel-button" href="/secuguard">{home.securityPageButton} <ArrowRight size={18} /></a>
+              <a className="viel-button outline security-panel__ext" href="https://secuguard-security.com/" target="_blank" rel="noreferrer">{home.securityExternalButton}</a>
             </div>
+          </div>
+          <div className="home-security__image">
+            <img src={asset('secuguard-officer.png')} alt="SecuGuard – Professional security officer" />
+            <div className="home-security__image-overlay" />
           </div>
         </div>
       </section>
 
-      <section className="quality-section" id="qualitaet">
-        <div className="container quality-section__head">
-          <span className="section-eyebrow">{home.qualityEyebrow}</span>
-          <h2><span>VIEL</span> {home.qualityTitle}<br />{home.qualitySuffix}</h2>
-          <p>{home.qualityText}</p>
-        </div>
-        <div className="container quality-section__grid">
-          {home.qualityPoints.map((point) => (
-            <div className="quality-point" key={point}>
-              <Check size={19} />
-              <span>{point}</span>
-            </div>
-          ))}
-        </div>
-        <div className="container cases-grid">
-          {home.cases.map((item) => (
-            <article className="case-card" key={item.title}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <span>{item.client}</span>
-                <h3>{item.title}</h3>
-                <p>{item.challenge}</p>
-                <strong>{item.result}</strong>
-              </div>
-            </article>
-          ))}
+      {/* ── Quality Promises Section ── */}
+      <section className="promises-section" id="qualitaet">
+        <div className="container promises-section__inner">
+          <div className="promises-section__lead">
+            <span className="section-eyebrow promises-eyebrow">{home.promisesEyebrow}</span>
+            <h2>{home.promisesTitle}</h2>
+            <p>{home.promisesSubtitle}</p>
+            <a href="#kontakt" className="viel-button promises-cta">{home.aboutButton} <ArrowRight size={18} /></a>
+          </div>
+          <div className="promises-grid">
+            {home.qualityPromises.map((item, i) => {
+              const icons = [Users, Check, FileText, Clock, Euro, Phone, Award, Leaf];
+              const Icon = icons[i] || Check;
+              return (
+                <div className="promise-card" key={item.title}>
+                  <div className="promise-card__icon"><Icon size={20} /></div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
+      {/* ── Testimonials Section ── */}
       <section className="testimonials-section">
-        <div className="container testimonials-section__grid">
-          {home.testimonials.map((item) => (
-            <article className="testimonial-card" key={item.name}>
-              <div className="testimonial-card__stars">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={16} fill="currentColor" />)}</div>
-              <p>{item.text}</p>
-              <h3>{item.name}</h3>
-              <span>{item.company}</span>
+        <div className="container">
+          <div className="testimonials-section__head">
+            <span className="section-eyebrow">{home.testimonialsEyebrow}</span>
+            <h2>{home.testimonialsTitle}</h2>
+            <p>{home.testimonialsSubtitle}</p>
+          </div>
+          <div className="testimonials-section__grid">
+            {home.testimonials.map((item) => (
+              <article className="testimonial-card" key={item.name}>
+                <div className="testimonial-card__quote">&ldquo;</div>
+                <div className="testimonial-card__stars">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={15} fill="currentColor" />)}</div>
+                <p>{item.text}</p>
+                <div className="testimonial-card__author">
+                  <div className="testimonial-card__avatar">{item.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}</div>
+                  <div>
+                    <h3>{item.name}</h3>
+                    <span>{item.company}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Projects / References Section ── */}
+      <section className="projects-section">
+        <div className="container projects-section__head">
+          <span className="section-eyebrow">{home.projectsEyebrow}</span>
+          <h2>{home.projectsTitle}</h2>
+          <p>{home.projectsSubtitle}</p>
+        </div>
+        <div className="container projects-grid">
+          {home.cases.map((item) => (
+            <article className="project-card" key={item.title}>
+              <div className="project-card__image">
+                <img src={item.image} alt={item.title} />
+              </div>
+              <div className="project-card__body">
+                <span className="project-card__client"><Building2 size={13} /> {item.client}</span>
+                <h3>{item.title}</h3>
+                <div className="project-card__rows">
+                  <div>
+                    <strong>{language === 'de' ? 'Herausforderung' : 'Challenge'}</strong>
+                    <p>{item.challenge}</p>
+                  </div>
+                  <div>
+                    <strong>{language === 'de' ? 'Lösung' : 'Solution'}</strong>
+                    <p>{item.solution}</p>
+                  </div>
+                  <div className="project-card__result">
+                    <ThumbsUp size={14} />
+                    <p>{item.result}</p>
+                  </div>
+                </div>
+                <a href="#kontakt" className="viel-button dark project-card__cta">{home.projectsInquiry} <ArrowRight size={16} /></a>
+              </div>
             </article>
           ))}
         </div>
@@ -344,6 +407,57 @@ export default function Home() {
             <input required type="email" name="newsletterEmail" placeholder={home.emailPlaceholder} aria-label={home.emailPlaceholder} />
             <button className="viel-button" type="submit">{home.subscribe}</button>
           </form>
+        </div>
+      </section>
+
+      {/* ── Location Section ── */}
+      <section className="location-section">
+        <div className="container location-section__head">
+          <span className="section-eyebrow">{home.locationEyebrow}</span>
+          <h2>{home.locationTitle}</h2>
+        </div>
+        <div className="location-map-wrap">
+          <a
+            href="https://www.google.com/maps/place/VIEL+Geb%C3%A4udeservice+GmbH/@52.445743,13.3468907,45213m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4a475e4723f0ae89:0x7da483ab59e83d08!2sVIEL+Geb%C3%A4udeservice+GmbH!8m2!3d52.5068766!4d13.4247534!16s%2Fg%2F11z21c7w7l!3m5!1s0x4a475e4723f0ae89:0x7da483ab59e83d08!8m2!3d52.5068766!4d13.4247534!16s%2Fg%2F11z21c7w7l?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noreferrer"
+            className="location-map-link"
+            aria-label={home.locationOpen}
+          >
+            <iframe
+              title="VIEL Gebäudeservice – Standort Berlin"
+              src="https://maps.google.com/maps?q=52.5068766,13.4247534&hl=de&z=16&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: 'block', pointerEvents: 'none' }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="location-map-overlay">
+              <MapPin size={28} />
+              <span>{home.locationOpen}</span>
+            </div>
+          </a>
+        </div>
+        <div className="location-info">
+          <div className="container location-info__inner">
+            <div className="location-info__item">
+              <strong>{home.locationAddress}</strong>
+              <p>Erich-Kuttner-Straße 31<br />10369 Berlin, Deutschland</p>
+            </div>
+            <div className="location-info__item">
+              <strong>{home.locationPhone}</strong>
+              <a href="tel:03021467832">030 21467832</a>
+            </div>
+            <div className="location-info__item">
+              <strong>{home.locationEmail}</strong>
+              <a href="mailto:info@viel-gs.de">info@viel-gs.de</a>
+            </div>
+            <div className="location-info__item">
+              <strong>{home.locationHours}</strong>
+              <p>{home.hours}</p>
+            </div>
+          </div>
         </div>
       </section>
 

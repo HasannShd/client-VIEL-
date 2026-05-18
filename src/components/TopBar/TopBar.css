@@ -1,0 +1,45 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  height: 38px;
+  background: var(--viel-blue);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 clamp(18px, 3.8vw, 58px);
+}
+
+.top-bar__contact {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.top-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 180ms ease;
+}
+
+.top-bar__item:hover {
+  color: var(--viel-cyan);
+}
+
+.top-bar__social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}

@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar.jsx';
+import TopBar from './components/TopBar/TopBar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import BackToTop from './components/Widgets/BackToTop.jsx';
 import CookieConsent from './components/Widgets/CookieConsent.jsx';
@@ -16,18 +17,26 @@ import Winterdienst from './pages/Winterdienst/Winterdienst.jsx';
 
 const ScrollReset = () => {
   const { pathname } = useLocation();
+  const navType = useNavigationType();
 
   useEffect(() => {
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0 }));
-  }, [pathname]);
+    if (navType === 'PUSH') {
+      window.requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0 }));
+    }
+  }, [pathname, navType]);
 
   return null;
 };
+
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'auto';
+}
 
 export default function App() {
   return (
     <div className="app">
       <ScrollReset />
+      <TopBar />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

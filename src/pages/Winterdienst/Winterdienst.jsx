@@ -65,7 +65,7 @@ export default function Winterdienst() {
       <section className="winterdienst-standards">
         <div className="container winterdienst-standards__grid">
           <div className="winterdienst-standards__image">
-            <img src={asset('winter-snow-removal.jpeg')} alt="VIEL Winterdienst Schneeräumung" />
+            <img src={asset('snowplow.png')} alt="VIEL Winterdienst Schneeräumung" />
           </div>
           <div>
             <span className="section-eyebrow">{page.standardsEyebrow}</span>

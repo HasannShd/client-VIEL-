@@ -68,6 +68,7 @@ export const dictionary = {
       { label: 'Start', href: '/#home' },
       { label: 'Über uns', href: '/#ueber-uns' },
       { label: 'Leistungen', href: '/#leistungen' },
+      { label: 'Qualität', href: '/#qualitaet' },
       { label: 'Blog', href: '/blog' },
       { label: 'Kontakt', href: '/#kontakt' }
     ],
@@ -100,6 +101,8 @@ export const dictionary = {
       winterTitle: 'Zuverlässiger Winterdienst.',
       winterText: 'Wir sorgen dafür, dass Ihre Wege, Zufahrten und Außenflächen auch im Winter sicher bleiben.',
       winterPageButton: 'Winterdienst ansehen',
+      securityPageButton: 'Sicherheitsservice ansehen',
+      securityExternalButton: 'secuguard-security.com',
       securityEyebrow: 'VIEL Sicherheit',
       securityTitle: 'Sicherheit für Ihre Immobilie.',
       securityText: 'Mit unseren Sicherheitsdiensten schützen wir Ihre Immobilien und sorgen für ein sicheres Umfeld - professionell und diskret.',
@@ -144,6 +147,13 @@ export const dictionary = {
       newsletterTitle: 'Gebäudereinigung, Angebote und Branchennews direkt in Ihren Posteingang.',
       emailPlaceholder: 'Ihre E-Mail-Adresse',
       subscribe: 'Anmelden',
+      locationEyebrow: 'Standort',
+      locationTitle: 'Besuchen Sie uns in Berlin.',
+      locationOpen: 'In Google Maps öffnen',
+      locationAddress: 'Adresse',
+      locationPhone: 'Telefon',
+      locationEmail: 'E-Mail',
+      locationHours: 'Öffnungszeiten',
       contactEyebrow: 'Kontakt',
       contactTitle: 'Wir sind für Sie da.',
       contactText: 'Haben Sie Fragen oder wünschen ein unverbindliches Angebot? Wir beraten Sie gerne persönlich und bieten Ihnen auf Wunsch eine kostenlose Erstbesichtigung Ihrer Immobilie an.',
@@ -157,10 +167,10 @@ export const dictionary = {
       send: 'Senden',
       services: servicesDe,
       winterBenefits: [
-        { title: '24/7 Bereitschaft', desc: 'Unsere Einsatzteams sind bei Schnee und Eis zuverlässig erreichbar.' },
-        { title: 'Professionelle Ausrüstung', desc: 'Moderne Räumtechnik sorgt für schnelle und gründliche Ergebnisse.' },
-        { title: 'Umweltschonendes Streugut', desc: 'Wir setzen auf nachhaltige Materialien und saubere Ausführung.' },
-        { title: 'Gesetzliche Räumpflicht', desc: 'Wir übernehmen Räum- und Streupflichten zuverlässig für Ihre Immobilie.' }
+        { title: '24/7 Bereitschaft', desc: 'Unsere Winterdienst-Teams sind rund um die Uhr einsatzbereit. Bei Schnee und Eis in der Nacht sind wir bereits vor Ort, bevor Ihre Mieter und Mitarbeiter ankommen.' },
+        { title: 'Professionelle Ausrüstung', desc: 'Wir setzen moderne Schneepflüge, Streufahrzeuge und kompakte Räumtechnik ein – für schnelle, gründliche Ergebnisse auch bei extremer Witterung und großen Flächen.' },
+        { title: 'Umweltschonendes Streugut', desc: 'Wir verwenden umweltverträgliche Abstumpfungsmittel und Taumittel, die wirksam gegen Glatteis sind und gleichzeitig Oberflächen, Bepflanzung und Grundwasser schonen.' },
+        { title: 'Gesetzliche Räumpflicht', desc: 'Als Eigentümer sind Sie gesetzlich verpflichtet, Wege und Zugänge freizuhalten. Wir übernehmen die volle Verantwortung für Ihre Räum- und Streupflichten – dokumentiert und zuverlässig.' }
       ],
       securityBenefits: [
         { title: 'Objektschutz', desc: 'Professionelle Überwachung für Gewerbeimmobilien und Wohnanlagen.' },
@@ -169,14 +179,36 @@ export const dictionary = {
         { title: 'Sicherheitsberatung', desc: 'Individuelle Konzepte für Objekte, Mieter und Betreiber.' }
       ],
       qualityPoints: ['Erfahrenes und geschultes Fachpersonal', 'Sorgfältige und gründliche Reinigung', 'Individuelle Reinigungspläne', 'Zuverlässige und termingerechte Ausführung', 'Faire und transparente Preise', 'Persönlicher Ansprechpartner'],
+      promisesEyebrow: 'Qualitätsversprechen',
+      promisesTitle: 'Was Sie von uns erwarten können.',
+      promisesSubtitle: 'Jedes Objekt wird mit dem gleichen Anspruch betreut – gründlich, verlässlich und transparent.',
+      qualityPromises: [
+        { title: 'Erfahrenes Fachpersonal', desc: 'Über 20 Jahre Erfahrung in Gebäudereinigung, Winterdienst und Sicherheit – jeden Tag.' },
+        { title: 'Gründliche Reinigung', desc: 'Sorgfältige Durchführung nach festgelegten Checklisten und geprüften Qualitätsstandards.' },
+        { title: 'Individuelle Reinigungspläne', desc: 'Abgestimmt auf Ihre Objekte, Nutzungszeiten und besonderen Anforderungen.' },
+        { title: 'Termingerechte Ausführung', desc: 'Verlässliche Durchführung aller vereinbarten Leistungen – pünktlich und ohne Überraschungen.' },
+        { title: 'Faire & transparente Preise', desc: 'Klare Kalkulationen ohne versteckte Kosten. Was besprochen ist, gilt.' },
+        { title: 'Persönlicher Ansprechpartner', desc: 'Ein direkter Kontakt für Fragen, Anpassungen und neue Anforderungen.' },
+        { title: 'Dokumentierte Abläufe', desc: 'Nachvollziehbare Berichte und Protokolle für Verwaltungen und Eigentümer.' },
+        { title: 'Umweltbewusstes Vorgehen', desc: 'Einsatz geprüfter, umweltverträglicher Reinigungsmittel und Verfahren.' }
+      ],
+      testimonialsEyebrow: 'Kundenstimmen',
+      testimonialsTitle: 'Was unsere Kunden sagen.',
+      testimonialsSubtitle: 'Echte Rückmeldungen von Unternehmen und Verwaltungen, die auf VIEL vertrauen.',
+      projectsEyebrow: 'Referenzen',
+      projectsTitle: 'Erfolgreiche Projekte.',
+      projectsSubtitle: 'Eine Auswahl realisierter Objekte und Einsätze in Berlin und Umgebung.',
+      projectsInquiry: 'Anfrage stellen',
       cases: [
-        { title: 'Großflächige Büroreinigung Berlin-Mitte', client: 'Technologie-Startup, 5.000 m²', challenge: 'Tägliche Reinigung für 200+ Mitarbeiter mit höchsten Hygienestandards', result: 'Flexible Abendteams und messbar sauberere Arbeitsbereiche', image: sharedImages.caseOffice },
-        { title: 'Winterdienst Gewerbeparkanlage', client: 'Gewerbepark Friedrichshain, 50.000 m²', challenge: '24/7 Schneeräumung und Streudienste während Extremwetter', result: 'Sichere Wege, pünktliche Öffnung und volle Dokumentation', image: sharedImages.winter }
+        { title: 'Großflächige Büroreinigung Berlin-Mitte', client: 'Technologie-Startup, 5.000 m²', challenge: 'Tägliche Reinigung für 200+ Mitarbeiter mit höchsten Hygienestandards', solution: 'Strukturierte Abendteams mit objektbezogenen Checklisten und wöchentlichen Qualitätskontrollen', result: 'Messbar sauberere Arbeitsbereiche und dauerhaft zufriedene Belegschaft', image: sharedImages.caseOffice },
+        { title: 'Winterdienst Gewerbeparkanlage', client: 'Gewerbepark Friedrichshain, 50.000 m²', challenge: '24/7 Schneeräumung und Streudienste bei Extremwetter über die gesamte Saison', solution: 'Bereitschaftsplan mit dokumentierten Kontrollfahrten und direkter Wetterlagereaktion', result: 'Sichere Wege, pünktliche Öffnungszeiten und vollständige Nachweisdokumentation', image: sharedImages.winter },
+        { title: 'Bauendreinigung nach Kernsanierung', client: 'Privatinvestor, Berlin-Prenzlauer Berg, 800 m²', challenge: 'Vollständige Baureinigung eines Wohnobjekts nach monatelanger Sanierung', solution: '2-Tages-Einsatz mit spezialisierter Reinigungstechnik und sorgfältigem Detailfinish', result: 'Makellos saubere Übergabe an neue Mieter – termingerecht und ohne Beanstandungen', image: serviceImages.deep }
       ],
       testimonials: [
         { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice hat unsere Erwartungen weit übertroffen. Die Zuverlässigkeit und Professionalität sind beeindruckend. Wir arbeiten seit 3 Jahren zusammen.' },
         { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Sehr gute Kommunikation, faire Preise und flexible Lösungen. VIEL Gebäudeservice ist unser verlässlicher Partner für alle Reinigungsaufgaben.' },
-        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'Die Winterdienste von VIEL sind hervorragend. Schnell, zuverlässig und immer pünktlich. Wir sind sehr zufrieden mit der Zusammenarbeit.' }
+        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'Die Winterdienste von VIEL sind hervorragend. Schnell, zuverlässig und immer pünktlich. Wir sind sehr zufrieden mit der Zusammenarbeit.' },
+        { name: 'Marcus König', company: 'König Facilities GmbH, Berlin', text: 'Seit Jahren verlassen wir uns auf VIEL Gebäudeservice für alle Reinigungsarbeiten in unseren Gewerbeimmobilien. Sauber, pünktlich und immer erreichbar.' }
       ],
       serviceOptions: [
         { value: 'Büroreinigung', label: 'Büroreinigung' },
@@ -324,6 +356,7 @@ export const dictionary = {
       { label: 'Home', href: '/#home' },
       { label: 'About', href: '/#ueber-uns' },
       { label: 'Services', href: '/#leistungen' },
+      { label: 'Quality', href: '/#qualitaet' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact', href: '/#kontakt' }
     ],
@@ -356,6 +389,8 @@ export const dictionary = {
       winterTitle: 'Reliable winter service.',
       winterText: 'We keep paths, entrances, driveways, and outdoor areas safe during winter weather.',
       winterPageButton: 'View winter service',
+      securityPageButton: 'View security service',
+      securityExternalButton: 'secuguard-security.com',
       securityEyebrow: 'VIEL Security',
       securityTitle: 'Security for your property.',
       securityText: 'Our security services protect your properties and create a safer environment - professionally and discreetly.',
@@ -400,6 +435,13 @@ export const dictionary = {
       newsletterTitle: 'Cleaning insights, offers, and industry news directly in your inbox.',
       emailPlaceholder: 'Your email address',
       subscribe: 'Subscribe',
+      locationEyebrow: 'Location',
+      locationTitle: 'Visit us in Berlin.',
+      locationOpen: 'Open in Google Maps',
+      locationAddress: 'Address',
+      locationPhone: 'Phone',
+      locationEmail: 'Email',
+      locationHours: 'Opening hours',
       contactEyebrow: 'Contact',
       contactTitle: 'We are here for you.',
       contactText: 'Do you have questions or need a non-binding quote? We will gladly advise you personally and can arrange a free first inspection of your property.',
@@ -413,10 +455,10 @@ export const dictionary = {
       send: 'Send',
       services: servicesEn,
       winterBenefits: [
-        { title: '24/7 Readiness', desc: 'Our response teams are available reliably during snow and ice.' },
-        { title: 'Professional Equipment', desc: 'Modern clearing equipment ensures fast and thorough results.' },
-        { title: 'Eco-conscious Grit', desc: 'We use sustainable materials and clean execution wherever possible.' },
-        { title: 'Legal Clearing Duties', desc: 'We reliably handle clearing and gritting obligations for your property.' }
+        { title: '24/7 Readiness', desc: 'Our winter service teams are on standby around the clock. When snow and ice hit overnight, we are already on-site before your tenants and staff arrive in the morning.' },
+        { title: 'Professional Equipment', desc: 'We deploy modern snow ploughs, spreaders and compact machinery to clear large surfaces efficiently — even under the most demanding winter conditions.' },
+        { title: 'Eco-conscious Grit', desc: 'We use environmentally responsible grit and de-icing materials that are effective against ice while being gentle on surfaces, vegetation and groundwater.' },
+        { title: 'Legal Clearing Duties', desc: 'As a property owner you are legally required to keep paths and entrances clear. We take full responsibility for your clearing and gritting obligations — documented and reliable.' }
       ],
       securityBenefits: [
         { title: 'Property Protection', desc: 'Professional monitoring for commercial properties and residential buildings.' },
@@ -425,14 +467,36 @@ export const dictionary = {
         { title: 'Security Consulting', desc: 'Individual concepts for properties, tenants, and operators.' }
       ],
       qualityPoints: ['Experienced and trained staff', 'Careful and thorough cleaning', 'Individual cleaning plans', 'Reliable and punctual execution', 'Fair and transparent prices', 'Personal point of contact'],
+      promisesEyebrow: 'Quality promises',
+      promisesTitle: 'What you can expect from us.',
+      promisesSubtitle: 'Every property is managed with the same high standard — thorough, reliable, and transparent.',
+      qualityPromises: [
+        { title: 'Experienced staff', desc: 'Over 20 years of experience in building cleaning, winter service, and security — every day.' },
+        { title: 'Thorough cleaning', desc: 'Careful execution based on defined checklists and verified quality standards.' },
+        { title: 'Individual cleaning plans', desc: 'Tailored to your properties, usage times, and specific requirements.' },
+        { title: 'Punctual execution', desc: 'All agreed services are carried out on time — reliably and without surprises.' },
+        { title: 'Fair & transparent pricing', desc: 'Clear calculations with no hidden costs. What is agreed is what you pay.' },
+        { title: 'Personal point of contact', desc: 'One direct contact for questions, adjustments, and new requirements.' },
+        { title: 'Documented procedures', desc: 'Clear service reports and records for property managers and owners.' },
+        { title: 'Environmentally conscious', desc: 'Use of tested, eco-friendly cleaning agents and methods throughout.' }
+      ],
+      testimonialsEyebrow: 'Customer reviews',
+      testimonialsTitle: 'What our customers say.',
+      testimonialsSubtitle: 'Real feedback from businesses and property managers who rely on VIEL.',
+      projectsEyebrow: 'References',
+      projectsTitle: 'Successful projects.',
+      projectsSubtitle: 'A selection of completed properties and deployments in Berlin and the surrounding area.',
+      projectsInquiry: 'Send enquiry',
       cases: [
-        { title: 'Large-scale Office Cleaning in Berlin-Mitte', client: 'Technology startup, 5,000 m²', challenge: 'Daily cleaning for 200+ employees with high hygiene standards', result: 'Flexible evening teams and measurably cleaner work areas', image: sharedImages.caseOffice },
-        { title: 'Winter Service for a Commercial Park', client: 'Commercial park in Friedrichshain, 50,000 m²', challenge: '24/7 snow clearing and gritting during severe weather', result: 'Safe paths, punctual opening, and full documentation', image: sharedImages.winter }
+        { title: 'Large-scale Office Cleaning in Berlin-Mitte', client: 'Technology startup, 5,000 m²', challenge: 'Daily cleaning for 200+ employees with high hygiene standards', solution: 'Structured evening teams with property-specific checklists and weekly quality reviews', result: 'Measurably cleaner work areas and consistently satisfied staff', image: sharedImages.caseOffice },
+        { title: 'Winter Service for a Commercial Park', client: 'Commercial park in Friedrichshain, 50,000 m²', challenge: '24/7 snow clearing and gritting during severe weather across the full season', solution: 'On-call schedule with documented inspection rounds and direct weather-response', result: 'Safe paths, punctual opening times, and complete documentation', image: sharedImages.winter },
+        { title: 'Post-Construction Cleaning after Full Renovation', client: 'Private investor, Berlin-Prenzlauer Berg, 800 m²', challenge: 'Full building clean of a residential property after months of renovation work', solution: '2-day deployment with specialist cleaning technology and careful detail finish', result: 'Spotless handover to new tenants — on schedule and without any complaints', image: serviceImages.deep }
       ],
       testimonials: [
         { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice exceeded our expectations. Their reliability and professionalism are impressive. We have worked together for 3 years.' },
         { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Very good communication, fair prices, and flexible solutions. VIEL Gebäudeservice is our reliable partner for all cleaning tasks.' },
-        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'VIEL winter services are excellent. Fast, reliable, and always punctual. We are very satisfied with the cooperation.' }
+        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'VIEL winter services are excellent. Fast, reliable, and always punctual. We are very satisfied with the cooperation.' },
+        { name: 'Marcus König', company: 'König Facilities GmbH, Berlin', text: 'We have relied on VIEL Gebäudeservice for all cleaning work across our commercial properties for years. Clean, punctual and always reachable.' }
       ],
       serviceOptions: [
         { value: 'Büroreinigung', label: 'Office Cleaning' },

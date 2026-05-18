@@ -28,12 +28,25 @@ export default function SecuGuard() {
         </div>
       </section>
 
+      <div className="secuguard-partner-banner">
+        <div className="container secuguard-partner-banner__inner">
+          <ShieldCheck size={22} />
+          <span>Security services are provided by our partner company <strong>SecuGuard Security Service GmbH</strong></span>
+          <a href="https://secuguard-security.com/" target="_blank" rel="noreferrer" className="secuguard-partner-banner__link">
+            Visit secuguard-security.com <ArrowRight size={15} />
+          </a>
+        </div>
+      </div>
+
       <section className="secuguard-intro">
         <div className="container secuguard-intro__grid">
           <div>
             <span className="section-eyebrow">SecuGuard</span>
             <h2>{page.introTitle}</h2>
             <p>{page.introText}</p>
+            <a className="viel-button" href="https://secuguard-security.com/" target="_blank" rel="noreferrer" style={{marginTop: '28px', display: 'inline-flex', alignItems: 'center', gap: '8px'}}>
+              secuguard-security.com <ArrowRight size={16} />
+            </a>
           </div>
           <div className="secuguard-contact-card">
             <a href={`tel:${page.phone.replaceAll(' ', '')}`}><Phone size={20} /> {page.phone}</a>
@@ -66,7 +79,7 @@ export default function SecuGuard() {
       <section className="secuguard-standards">
         <div className="container secuguard-standards__grid">
           <div className="secuguard-standards__image">
-            <img src={asset('modern-glass-building.jpg')} alt="SecuGuard security site" />
+            <img src={asset('office-cleaning-team.jpg')} alt="SecuGuard – Professional security team" />
           </div>
           <div>
             <span className="section-eyebrow">SecuGuard</span>

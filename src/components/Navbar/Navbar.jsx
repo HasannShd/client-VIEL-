@@ -32,8 +32,7 @@ export default function Navbar() {
     <header className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="site-nav__inner">
         <Link to="/" className="site-nav__logo" aria-label="VIEL Gebäudeservice Startseite" onClick={scrollHomeTop}>
-          <span className="site-nav__logo-mark">VIEL</span>
-          <span className="site-nav__logo-text">Gebäudeservice</span>
+          <img src="/logo.png" alt="VIEL Gebäudeservice" className="site-nav__logo-img" />
         </Link>
         <nav className="site-nav__links" aria-label="Hauptnavigation">
           {copy.nav.map((item) => (
