@@ -2,44 +2,64 @@ import './Widgets.css';
 import { MessageCircle, Send, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/languageStore.js';
+import { sendSubmission } from '../../services/submissionService.js';
 
-const contactEmail = import.meta.env.VITE_CHAT_EMAIL || 'info@viel-gs.de';
 const whatsappNumber = (import.meta.env.VITE_CHAT_WHATSAPP_NUMBER || '').replace(/\D/g, '');
 
-const buildContactLink = (text, copy) => {
-  const body = `${copy.widgets.chatOwnerIntro}\n\n${text}`;
-
-  if (whatsappNumber) {
-    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`;
-  }
-
-  return `mailto:${contactEmail}?subject=${encodeURIComponent(copy.widgets.chatEmailSubject)}&body=${encodeURIComponent(body)}`;
-};
-
 export default function ChatWidget() {
-  const { copy } = useLanguage();
+  const { copy, language } = useLanguage();
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('');
+  const [sending, setSending] = useState(false);
   const [messages, setMessages] = useState([
     { role: 'bot', text: copy.widgets.chatHello }
   ]);
 
-  const send = () => {
+  const send = async () => {
     const trimmedMessage = message.trim();
 
-    if (!trimmedMessage) return;
+    if (!trimmedMessage || sending) return;
 
     setMessages((currentMessages) => [
       ...currentMessages,
-      { role: 'user', text: trimmedMessage },
-      {
-        role: 'bot',
-        text: whatsappNumber ? copy.widgets.chatWhatsAppConfirm : copy.widgets.chatEmailConfirm
-      }
+      { role: 'user', text: trimmedMessage }
     ]);
     setMessage('');
+    setSending(true);
 
-    window.open(buildContactLink(trimmedMessage, copy), whatsappNumber ? '_blank' : '_self', 'noopener,noreferrer');
+    try {
+      if (whatsappNumber) {
+        const body = `${copy.widgets.chatOwnerIntro}\n\n${trimmedMessage}`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer');
+      } else {
+        await sendSubmission({
+          type: 'chat',
+          language,
+          subject: copy.widgets.chatEmailSubject,
+          data: {
+            message: trimmedMessage
+          }
+        });
+      }
+
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        {
+          role: 'bot',
+          text: whatsappNumber ? copy.widgets.chatWhatsAppConfirm : copy.widgets.chatEmailConfirm
+        }
+      ]);
+    } catch (error) {
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        {
+          role: 'bot',
+          text: error.message || copy.widgets.chatEmailConfirm
+        }
+      ]);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -60,7 +80,7 @@ export default function ChatWidget() {
           </div>
           <div className="chat-widget__input">
             <input value={message} onChange={(event) => setMessage(event.target.value)} onKeyDown={(event) => event.key === 'Enter' && send()} placeholder={copy.widgets.chatPlaceholder} />
-            <button type="button" onClick={send} aria-label={copy.widgets.chatSend}><Send size={18} /></button>
+            <button type="button" onClick={send} disabled={sending} aria-label={copy.widgets.chatSend}><Send size={18} /></button>
           </div>
         </div>
       ) : null}

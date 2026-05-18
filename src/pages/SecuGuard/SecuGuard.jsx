@@ -85,7 +85,7 @@ export default function SecuGuard() {
           <h2>{page.contactTitle}</h2>
           <p>{page.contactText}</p>
           <div>
-            <a className="viel-button" href="mailto:info@viel-gs.de">{page.primary}</a>
+            <a className="viel-button" href="/#kontakt">{page.primary}</a>
             <a className="viel-button outline" href="tel:03021467832"><Phone size={16} /> 030 21467832</a>
           </div>
         </div>

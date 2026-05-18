@@ -5,13 +5,13 @@ import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Eu
 import React, { useMemo, useState } from 'react';
 import { useLanguage } from '../../context/languageStore.js';
 import { asset, frequencyRate, serviceRate } from '../../data/siteData.js';
-
-const inquiryEmail = 'info@viel-gs.de';
+import { sendSubmission } from '../../services/submissionService.js';
 
 export default function Home() {
   const { copy, language } = useLanguage();
   const home = copy.home;
   const blogPosts = copy.blog.posts;
+  const [submissionStatus, setSubmissionStatus] = useState({});
   const [quote, setQuote] = useState({
     name: '',
     email: '',
@@ -42,60 +42,85 @@ export default function Home() {
   const locale = language === 'de' ? 'de-DE' : 'en-US';
   const formatNumber = (value) => Number(value).toLocaleString(locale);
   const formatEuro = (value) => value.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const openMailInquiry = (subject, lines) => {
-    const body = lines.filter(Boolean).join('\n');
-    window.location.href = `mailto:${inquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const getSuccessMessage = () => (
+    language === 'de'
+      ? 'Danke. Ihre Anfrage wurde gesendet.'
+      : 'Thanks. Your inquiry has been sent.'
+  );
+  const getErrorMessage = () => (
+    language === 'de'
+      ? 'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.'
+      : 'The inquiry could not be sent. Please try again.'
+  );
+  const setPending = (key) => setSubmissionStatus({ key, state: 'pending', message: '' });
+  const setResult = (key, state, message) => setSubmissionStatus({ key, state, message });
+  const submitToBackend = async (key, payload) => {
+    setPending(key);
+    try {
+      await sendSubmission({ ...payload, language });
+      setResult(key, 'success', getSuccessMessage());
+      return true;
+    } catch (error) {
+      setResult(key, 'error', error.message || getErrorMessage());
+      return false;
+    }
   };
-  const handleQuoteSubmit = (event) => {
-    event.preventDefault();
-    openMailInquiry(
-      language === 'de' ? 'Angebotsanfrage - VIEL Gebäudeservice' : 'Quote request - VIEL Gebäudeservice',
-      [
-        language === 'de' ? 'Neue Angebotsanfrage:' : 'New quote request:',
-        '',
-        `${home.name.replace(' *', '')}: ${quote.name}`,
-        `${home.email.replace(' *', '')}: ${quote.email}`,
-        `${home.company}: ${quote.company || '-'}`,
-        `${language === 'de' ? 'Telefon' : 'Phone'}: ${quote.phone || '-'}`,
-        `${home.serviceLabel}: ${selectedServiceLabel}`,
-        `${home.areaLabel}: ${formatNumber(quote.area)} m²`,
-        `${home.frequencyLabel}: ${selectedFrequencyLabel}`,
-        `${home.quotePriceLabel}: ${formatEuro(price)} €`,
-        `${home.quotePerMonth.replace('{value}', formatEuro(monthlyPrice))}`,
-        '',
-        `${home.quoteNotesLabel}:`,
-        quote.notes || '-'
-      ]
+  const renderStatus = (key) => {
+    if (submissionStatus.key !== key || !submissionStatus.message) return null;
+
+    return (
+      <p className={`submission-status ${submissionStatus.state}`} role="status">
+        {submissionStatus.message}
+      </p>
     );
   };
-  const handleNewsletterSubmit = (event) => {
+  const handleQuoteSubmit = async (event) => {
+    event.preventDefault();
+    await submitToBackend('quote', {
+      type: 'quote',
+      subject: language === 'de' ? 'Angebotsanfrage - VIEL Gebäudeservice' : 'Quote request - VIEL Gebäudeservice',
+      data: {
+        name: quote.name,
+        email: quote.email,
+        company: quote.company,
+        phone: quote.phone,
+        service: selectedServiceLabel,
+        area: `${formatNumber(quote.area)} m²`,
+        frequency: selectedFrequencyLabel,
+        pricePerVisit: `${formatEuro(price)} €`,
+        monthlyEstimate: home.quotePerMonth.replace('{value}', formatEuro(monthlyPrice)),
+        notes: quote.notes
+      }
+    });
+  };
+  const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    openMailInquiry(
-      language === 'de' ? 'Newsletter Anmeldung - VIEL Gebäudeservice' : 'Newsletter signup - VIEL Gebäudeservice',
-      [
-        language === 'de' ? 'Bitte diese E-Mail-Adresse zum Newsletter hinzufügen:' : 'Please add this email address to the newsletter:',
-        '',
-        `${home.email.replace(' *', '')}: ${formData.get('newsletterEmail')}`
-      ]
-    );
+    const sent = await submitToBackend('newsletter', {
+      type: 'newsletter',
+      subject: language === 'de' ? 'Newsletter Anmeldung - VIEL Gebäudeservice' : 'Newsletter signup - VIEL Gebäudeservice',
+      data: {
+        newsletterEmail: formData.get('newsletterEmail')
+      }
+    });
+
+    if (sent) event.currentTarget.reset();
   };
-  const handleContactSubmit = (event) => {
+  const handleContactSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    openMailInquiry(
-      language === 'de' ? 'Kontaktanfrage - VIEL Gebäudeservice' : 'Contact inquiry - VIEL Gebäudeservice',
-      [
-        language === 'de' ? 'Neue Kontaktanfrage:' : 'New contact inquiry:',
-        '',
-        `${home.name.replace(' *', '')}: ${formData.get('name')}`,
-        `${home.company}: ${formData.get('company') || '-'}`,
-        `${home.email.replace(' *', '')}: ${formData.get('email')}`,
-        '',
-        `${home.message.replace(' *', '')}:`,
-        formData.get('message')
-      ]
-    );
+    const sent = await submitToBackend('contact', {
+      type: 'contact',
+      subject: language === 'de' ? 'Kontaktanfrage - VIEL Gebäudeservice' : 'Contact inquiry - VIEL Gebäudeservice',
+      data: {
+        name: formData.get('name'),
+        company: formData.get('company'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      }
+    });
+
+    if (sent) event.currentTarget.reset();
   };
 
   return (
@@ -349,7 +374,10 @@ export default function Home() {
             <label>{home.quoteNotesLabel}
               <textarea rows="4" value={quote.notes} placeholder={home.quoteNotesPlaceholder} onChange={(event) => setQuote({ ...quote, notes: event.target.value })} />
             </label>
-            <button className="quote-submit" type="submit">{home.quoteRequest}</button>
+            <button className="quote-submit" type="submit" disabled={submissionStatus.key === 'quote' && submissionStatus.state === 'pending'}>
+              {submissionStatus.key === 'quote' && submissionStatus.state === 'pending' ? (language === 'de' ? 'Wird gesendet...' : 'Sending...') : home.quoteRequest}
+            </button>
+            {renderStatus('quote')}
           </form>
           <aside className="quote-summary-wrap">
             <div className="quote-summary">
@@ -404,7 +432,10 @@ export default function Home() {
           </div>
           <form onSubmit={handleNewsletterSubmit}>
             <input required type="email" name="newsletterEmail" placeholder={home.emailPlaceholder} aria-label={home.emailPlaceholder} />
-            <button className="viel-button" type="submit">{home.subscribe}</button>
+            <button className="viel-button" type="submit" disabled={submissionStatus.key === 'newsletter' && submissionStatus.state === 'pending'}>
+              {submissionStatus.key === 'newsletter' && submissionStatus.state === 'pending' ? (language === 'de' ? 'Wird gesendet...' : 'Sending...') : home.subscribe}
+            </button>
+            {renderStatus('newsletter')}
           </form>
         </div>
       </section>
@@ -482,7 +513,10 @@ export default function Home() {
             <label>{home.message}<textarea required rows="5" name="message" /></label>
             <label className="contact-form__check"><input required type="checkbox" /> <span>{home.privacyConsent}</span></label>
             <label className="contact-form__check"><input required type="checkbox" /> <span>{home.dataConsent}</span></label>
-            <button className="viel-button dark" type="submit">{home.send}</button>
+            <button className="viel-button dark" type="submit" disabled={submissionStatus.key === 'contact' && submissionStatus.state === 'pending'}>
+              {submissionStatus.key === 'contact' && submissionStatus.state === 'pending' ? (language === 'de' ? 'Wird gesendet...' : 'Sending...') : home.send}
+            </button>
+            {renderStatus('contact')}
           </form>
         </div>
       </section>

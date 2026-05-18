@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer.jsx';
 import BackToTop from './components/Widgets/BackToTop.jsx';
 import CookieConsent from './components/Widgets/CookieConsent.jsx';
 import ChatWidget from './components/Widgets/ChatWidget.jsx';
+import Seo from './components/Seo/Seo.jsx';
 import Home from './pages/Home/Home.jsx';
 import Blog from './pages/Blog/Blog.jsx';
 import BlogArticle from './pages/Blog/BlogArticle.jsx';
@@ -35,6 +36,7 @@ if (typeof window !== 'undefined') {
 export default function App() {
   return (
     <div className="app">
+      <Seo />
       <ScrollReset />
       <TopBar />
       <Navbar />

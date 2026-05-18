@@ -1104,6 +1104,31 @@
   background: #0f3148;
 }
 
+.quote-submit:disabled,
+.viel-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.submission-status {
+  margin: 0;
+  border-left: 3px solid var(--viel-cyan);
+  padding: 10px 12px;
+  background: #eef8fb;
+  color: #123f5f;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.submission-status.error {
+  border-left-color: #c64040;
+  background: #fff0f0;
+  color: #8b1d1d;
+}
+
 .quote-summary-wrap {
   display: grid;
   align-content: start;

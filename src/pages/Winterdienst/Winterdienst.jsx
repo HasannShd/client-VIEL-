@@ -85,7 +85,7 @@ export default function Winterdienst() {
           <h2>{page.contactTitle}</h2>
           <p>{page.contactText}</p>
           <div>
-            <a className="viel-button" href={`mailto:${page.email}?subject=${encodeURIComponent(page.primary)}`}>{page.primary}</a>
+            <a className="viel-button" href="/#kontakt">{page.primary}</a>
             <a className="viel-button outline" href={`tel:${page.phone.replaceAll(' ', '')}`}>{page.phone}</a>
           </div>
         </div>
