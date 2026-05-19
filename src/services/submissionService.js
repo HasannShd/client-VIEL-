@@ -1,5 +1,10 @@
 const apiBaseUrl = import.meta.env.VITE_API_URL || '';
 const submissionTimeoutMs = 12000;
+const publicApiMessages = new Set([
+  'A valid email address is required.',
+  'Submission details are required.',
+  'Too many submissions. Please try again later.'
+]);
 
 export async function sendSubmission(payload) {
   if (!payload || typeof payload !== 'object') {
@@ -35,7 +40,7 @@ export async function sendSubmission(payload) {
   const result = await response.json().catch(() => ({}));
 
   if (!response.ok || !result.ok) {
-    throw new Error(result.message || 'Submission failed.');
+    throw new Error(publicApiMessages.has(result.message) ? result.message : 'Submission failed. Please try again.');
   }
 
   return result;

@@ -11,6 +11,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { copy, language, toggleLanguage } = useLanguage();
+  const useSolidNav = scrolled || location.pathname !== '/';
   const scrollHomeTop = () => {
     window.requestAnimationFrame(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,7 +52,7 @@ export default function Navbar() {
   }, [location.pathname, location.hash]);
 
   return (
-    <header className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}>
+    <header className={`site-nav ${useSolidNav ? 'is-scrolled' : ''}`}>
       <div className="site-nav__inner">
         <Link to="/" className="site-nav__logo" aria-label="VIEL Gebäudeservice Startseite" onClick={scrollHomeTop}>
           <img src="/logo.png" alt="VIEL Gebäudeservice" className="site-nav__logo-img" />

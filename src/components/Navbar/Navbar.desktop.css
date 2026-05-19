@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 1181px) {
   .site-nav {
     min-height: 82px;
     padding-block: 16px;
@@ -41,7 +41,7 @@
   }
 }
 
-@media (max-width: 1320px) and (min-width: 1024px) {
+@media (max-width: 1320px) and (min-width: 1181px) {
   .site-nav {
     padding-inline: 24px;
   }
@@ -65,19 +65,5 @@
     padding-inline: 10px;
     font-size: 0.66rem;
     letter-spacing: 0.08em;
-  }
-}
-
-@media (max-width: 1080px) and (min-width: 1024px) {
-  .site-nav__cta {
-    width: 42px;
-    padding-inline: 0;
-    overflow: hidden;
-    color: transparent;
-    gap: 0;
-  }
-
-  .site-nav__cta svg {
-    color: var(--viel-blue);
   }
 }

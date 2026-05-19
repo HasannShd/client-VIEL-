@@ -61,8 +61,8 @@ export default function Home() {
       await sendSubmission({ ...payload, language });
       setResult(key, 'success', getSuccessMessage());
       return true;
-    } catch (error) {
-      setResult(key, 'error', error.message || getErrorMessage());
+    } catch {
+      setResult(key, 'error', getErrorMessage());
       return false;
     }
   };

@@ -156,7 +156,7 @@ export const dictionary = {
       contactEyebrow: 'Kontakt',
       contactTitle: 'Wir sind für Sie da.',
       contactText: 'Haben Sie Fragen oder wünschen ein unverbindliches Angebot? Wir beraten Sie gerne persönlich und bieten Ihnen auf Wunsch eine kostenlose Erstbesichtigung Ihrer Immobilie an.',
-      hours: 'Mo-Fr 08:00-18:00',
+      hours: '24 Stunden erreichbar',
       name: 'Name *',
       company: 'Firma',
       email: 'E-Mail *',
@@ -342,7 +342,7 @@ export const dictionary = {
       chatEmailSubject: 'Neue Chat-Anfrage von der Website',
       chatWhatsAppConfirm: 'Danke. Die Nachricht wird jetzt direkt an WhatsApp weitergeleitet, damit wir persönlich antworten können.',
       chatEmailConfirm: 'Danke. Die Nachricht wird jetzt per E-Mail weitergeleitet, damit wir persönlich antworten können.',
-      replies: ['Danke für deine Nachricht! Ein Mitarbeiter wird sich bald bei dir melden.', 'Gerne helfen wir dir weiter. Welche Dienstleistung interessiert dich?', 'Wir sind Mo-Fr von 8-18 Uhr erreichbar. Wie können wir dir helfen?']
+      replies: ['Danke für deine Nachricht! Ein Mitarbeiter wird sich bald bei dir melden.', 'Gerne helfen wir dir weiter. Welche Dienstleistung interessiert dich?', 'Wir sind 24 Stunden erreichbar. Wie können wir dir helfen?']
     }
   },
   en: {
@@ -440,7 +440,7 @@ export const dictionary = {
       contactEyebrow: 'Contact',
       contactTitle: 'We are here for you.',
       contactText: 'Do you have questions or need a non-binding quote? We will gladly advise you personally and can arrange a free first inspection of your property.',
-      hours: 'Mon-Fri 08:00-18:00',
+      hours: 'Available 24 hours',
       name: 'Name *',
       company: 'Company',
       email: 'Email *',
