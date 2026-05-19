@@ -28,7 +28,7 @@ export default [
     }
   },
   {
-    files: ['server.js', 'controllers/**/*.js', 'services/**/*.js'],
+    files: ['server.js', 'api/**/*.js', 'controllers/**/*.js', 'services/**/*.js'],
     languageOptions: {
       globals: globals.node
     }
