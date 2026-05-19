@@ -16,37 +16,68 @@
     <meta property="og:url" content="https://www.viel-gs.de" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:image" content="https://www.viel-gs.de/logo.png" />
+    <meta property="og:image:alt" content="VIEL Gebäudeservice Logo" />
+    <meta property="og:image:width" content="1717" />
+    <meta property="og:image:height" content="754" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VIEL Gebäudeservice Berlin | Gebäudereinigung, Winterdienst & Sicherheit" />
+    <meta name="twitter:description" content="Professionelle Gebäudereinigung, Winterdienst und Sicherheitsdienste in Berlin für Gewerbe, Immobilien und Hausverwaltungen." />
+    <meta name="twitter:image" content="https://www.viel-gs.de/logo.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href="https://www.viel-gs.de" />
+    <link rel="alternate" hreflang="de" href="https://www.viel-gs.de/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.viel-gs.de/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-seo-schema="true">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "VIEL Gebäudeservice",
-        "description": "Professionelle Gebäudereinigung, Winterdienst und Sicherheitsdienste in Berlin",
-        "url": "https://www.viel-gs.de",
-        "telephone": "+49 30 21467832",
-        "email": "Info@viel-gs.de",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Erich-Kuttner-Straße 31",
-          "addressLocality": "Berlin",
-          "postalCode": "10369",
-          "addressCountry": "DE"
-        },
-        "areaServed": ["Berlin", "Brandenburg"],
-        "priceRange": "€€",
-        "openingHours": "Mo-Su 00:00-23:59",
-        "sameAs": [
-          "https://www.google.com/maps/place/VIEL+Geb%C3%A4udeservice+GmbH/"
-        ],
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gebäudereinigung Berlin" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterdienst Berlin" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sicherheitsdienst Berlin" } }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.viel-gs.de/#website",
+            "name": "VIEL Gebäudeservice",
+            "url": "https://www.viel-gs.de",
+            "inLanguage": "de-DE",
+            "publisher": { "@id": "https://www.viel-gs.de/#business" }
+          },
+          {
+            "@type": ["LocalBusiness", "ProfessionalService"],
+            "@id": "https://www.viel-gs.de/#business",
+            "name": "VIEL Gebäudeservice",
+            "description": "Professionelle Gebäudereinigung, Winterdienst und Sicherheitsdienste in Berlin",
+            "url": "https://www.viel-gs.de",
+            "image": "https://www.viel-gs.de/logo.png",
+            "logo": "https://www.viel-gs.de/logo.png",
+            "telephone": "+49 30 21467832",
+            "email": "Info@viel-gs.de",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Erich-Kuttner-Straße 31",
+              "addressLocality": "Berlin",
+              "postalCode": "10369",
+              "addressCountry": "DE"
+            },
+            "areaServed": [
+              { "@type": "AdministrativeArea", "name": "Berlin" },
+              { "@type": "AdministrativeArea", "name": "Brandenburg" }
+            ],
+            "priceRange": "€€",
+            "openingHoursSpecification": [{
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }],
+            "sameAs": ["https://www.google.com/maps/place/VIEL+Geb%C3%A4udeservice+GmbH/"],
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gebäudereinigung Berlin" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterdienst Berlin" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sicherheitsdienst Berlin" } }
+            ]
+          }
         ]
       }
     </script>

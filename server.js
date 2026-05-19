@@ -8,42 +8,19 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import submissionRoutes from './controllers/submissions.js';
+import { buildCanonicalUrl, defaultImage, getSeoForPath, normalizeSeoPath } from './src/data/seoData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || '127.0.0.1';
-const siteUrl = 'https://www.viel-gs.de';
-const seoByPath = {
-  '/': {
-    title: 'VIEL Gebäudeservice Berlin | Gebäudereinigung, Winterdienst & Sicherheit',
-    description: 'VIEL Gebäudeservice Berlin: professionelle Gebäudereinigung, Büroreinigung, Glasreinigung, Grundreinigung, Winterdienst und Sicherheitsdienste für Gewerbe und Hausverwaltungen.'
-  },
-  '/winterdienst': {
-    title: 'Winterdienst Berlin | Schneeräumung & Streudienst | VIEL',
-    description: 'Zuverlässiger Winterdienst in Berlin mit Schneeräumung, Streudienst, Kontrollgängen und Dokumentation für Gewerbe und Hausverwaltungen.'
-  },
-  '/secuguard': {
-    title: 'Sicherheitsdienst Berlin | Objektschutz & Brandschutzwache | VIEL',
-    description: 'Professionelle Sicherheitsdienste in Berlin: Objektschutz, Veranstaltungsschutz, Brandschutzwache, Empfangsdienst und mobile Streifen.'
-  },
-  '/blog': {
-    title: 'VIEL Blog | Reinigung, Winterdienst & Sicherheit in Berlin',
-    description: 'Tipps und Einblicke rund um Gebäudereinigung, Winterdienst, Sicherheit und Facility Services in Berlin.'
-  }
-};
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('"', '&quot;')
   .replaceAll('<', '&lt;')
   .replaceAll('>', '&gt;');
-
-const getSeo = (pathname) => {
-  const key = pathname.startsWith('/blog/') ? '/blog' : pathname;
-  return seoByPath[key] || seoByPath['/'];
-};
 
 const allowedOrigins = Array.from(new Set([
   process.env.CLIENT_URL,
@@ -101,15 +78,20 @@ app.use(express.static(distPath, {
 
 app.get(/.*/, async (req, res, next) => {
   try {
-    const seo = getSeo(req.path);
-    const canonicalUrl = `${siteUrl}${req.path === '/' ? '' : req.path}`;
+    const seo = getSeoForPath(req.path);
+    const canonicalUrl = buildCanonicalUrl(normalizeSeoPath(req.path));
     const indexHtml = await fs.readFile(path.join(distPath, 'index.html'), 'utf8');
     const html = indexHtml
       .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(seo.title)}</title>`)
       .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${escapeHtml(seo.description)}" />`)
+      .replace(/<meta name="keywords" content=".*?" \/>/, `<meta name="keywords" content="${escapeHtml(seo.keywords || '')}" />`)
       .replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${escapeHtml(seo.title)}" />`)
       .replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${escapeHtml(seo.description)}" />`)
       .replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`)
+      .replace(/<meta property="og:image" content=".*?" \/>/, `<meta property="og:image" content="${escapeHtml(defaultImage)}" />`)
+      .replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`)
+      .replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`)
+      .replace(/<meta name="twitter:image" content=".*?" \/>/, `<meta name="twitter:image" content="${escapeHtml(defaultImage)}" />`)
       .replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`);
 
     res.type('html').send(html);

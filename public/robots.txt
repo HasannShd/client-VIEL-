@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://www.viel-gs.de/sitemap.xml
+Host: https://www.viel-gs.de

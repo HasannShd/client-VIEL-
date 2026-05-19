@@ -1,34 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-const siteUrl = 'https://www.viel-gs.de';
-
-const seoByPath = {
-  '/': {
-    title: 'VIEL Gebäudeservice Berlin | Gebäudereinigung, Winterdienst & Sicherheit',
-    description: 'Professionelle Gebäudereinigung, Büroreinigung, Glasreinigung, Winterdienst und Sicherheitsdienste für Gewerbe, Hausverwaltungen und Immobilien in Berlin.'
-  },
-  '/winterdienst': {
-    title: 'Winterdienst Berlin | Schneeräumung & Streudienst | VIEL',
-    description: 'Zuverlässiger Winterdienst in Berlin mit Schneeräumung, Streudienst, Kontrollgängen und Dokumentation für Gewerbe und Hausverwaltungen.'
-  },
-  '/secuguard': {
-    title: 'Sicherheitsdienst Berlin | Objektschutz & Brandschutzwache | VIEL',
-    description: 'Professionelle Sicherheitsdienste in Berlin: Objektschutz, Veranstaltungsschutz, Brandschutzwache, Empfangsdienst und mobile Streifen.'
-  },
-  '/blog': {
-    title: 'VIEL Blog | Reinigung, Winterdienst & Sicherheit in Berlin',
-    description: 'Tipps und Einblicke rund um Gebäudereinigung, Winterdienst, Sicherheit und Facility Services in Berlin.'
-  },
-  '/datenschutz': {
-    title: 'Datenschutz | VIEL Gebäudeservice',
-    description: 'Datenschutzerklärung von VIEL Gebäudeservice.'
-  },
-  '/impressum': {
-    title: 'Impressum | VIEL Gebäudeservice',
-    description: 'Impressum und Anbieterkennzeichnung von VIEL Gebäudeservice.'
-  }
-};
+import { buildCanonicalUrl, defaultImage, getSeoForPath, getStructuredDataForPath, normalizeSeoPath, siteName } from '../../data/seoData.js';
 
 const setMeta = (selector, attributes) => {
   let element = document.head.querySelector(selector);
@@ -47,13 +19,21 @@ export default function Seo() {
 
   useEffect(() => {
     const key = pathname.startsWith('/blog/') ? '/blog' : pathname;
-    const seo = seoByPath[key] || seoByPath['/'];
-    const canonicalUrl = `${siteUrl}${pathname === '/' ? '' : pathname}`;
+    const seo = getSeoForPath(pathname);
+    const canonicalUrl = buildCanonicalUrl(normalizeSeoPath(pathname));
 
     document.title = seo.title;
     setMeta('meta[name="description"]', {
       match: { name: 'description' },
       values: { name: 'description', content: seo.description }
+    });
+    setMeta('meta[name="keywords"]', {
+      match: { name: 'keywords' },
+      values: { name: 'keywords', content: seo.keywords || '' }
+    });
+    setMeta('meta[name="robots"]', {
+      match: { name: 'robots' },
+      values: { name: 'robots', content: key === '/impressum' || key === '/datenschutz' ? 'index, follow, noarchive' : 'index, follow' }
     });
     setMeta('meta[property="og:title"]', {
       match: { property: 'og:title' },
@@ -67,6 +47,30 @@ export default function Seo() {
       match: { property: 'og:url' },
       values: { property: 'og:url', content: canonicalUrl }
     });
+    setMeta('meta[property="og:type"]', {
+      match: { property: 'og:type' },
+      values: { property: 'og:type', content: pathname.startsWith('/blog/') ? 'article' : 'website' }
+    });
+    setMeta('meta[property="og:site_name"]', {
+      match: { property: 'og:site_name' },
+      values: { property: 'og:site_name', content: siteName }
+    });
+    setMeta('meta[property="og:image"]', {
+      match: { property: 'og:image' },
+      values: { property: 'og:image', content: defaultImage }
+    });
+    setMeta('meta[name="twitter:title"]', {
+      match: { name: 'twitter:title' },
+      values: { name: 'twitter:title', content: seo.title }
+    });
+    setMeta('meta[name="twitter:description"]', {
+      match: { name: 'twitter:description' },
+      values: { name: 'twitter:description', content: seo.description }
+    });
+    setMeta('meta[name="twitter:image"]', {
+      match: { name: 'twitter:image' },
+      values: { name: 'twitter:image', content: defaultImage }
+    });
 
     let canonical = document.head.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -75,6 +79,15 @@ export default function Seo() {
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', canonicalUrl);
+
+    let structuredData = document.head.querySelector('script[data-seo-schema="true"]');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.setAttribute('data-seo-schema', 'true');
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify(getStructuredDataForPath(pathname));
   }, [pathname]);
 
   return null;
