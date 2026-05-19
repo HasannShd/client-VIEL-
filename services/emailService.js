@@ -20,6 +20,15 @@ const getSender = () => (
   'website@viel-gs.de'
 );
 
+const logDryRun = ({ to, subject, text }) => {
+  if (process.env.NODE_ENV === 'production') {
+    console.info('[submission:dry-run]', { to, subject, textLength: text.length });
+    return;
+  }
+
+  console.info('[submission:dry-run]', { to, subject, text });
+};
+
 const makeTransport = () => {
   if (!hasSmtpConfig()) return null;
 
@@ -181,9 +190,14 @@ export async function sendSubmissionEmail(submission) {
   const text = buildSubmissionText(submission);
   const html = buildSubmissionHtml(submission);
   const provider = getEmailProvider();
+  const validProviders = new Set(['auto', 'dry-run', 'resend', 'smtp']);
+
+  if (!validProviders.has(provider)) {
+    throw new Error('Email provider is not supported.');
+  }
 
   if (provider === 'dry-run') {
-    console.info('[submission:dry-run]', { to, subject, text });
+    logDryRun({ to, subject, text });
     return { dryRun: true, provider: 'dry-run', to };
   }
 
@@ -224,7 +238,7 @@ export async function sendSubmissionEmail(submission) {
   }
 
   {
-    console.info('[submission:dry-run]', { to, subject, text });
+    logDryRun({ to, subject, text });
     return { dryRun: true, to };
   }
 }
