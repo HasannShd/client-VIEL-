@@ -77,7 +77,7 @@ export default function Home() {
   };
   const handleQuoteSubmit = async (event) => {
     event.preventDefault();
-    await submitToBackend('quote', {
+    const sent = await submitToBackend('quote', {
       type: 'quote',
       subject: language === 'de' ? 'Angebotsanfrage - VIEL Gebäudeservice' : 'Quote request - VIEL Gebäudeservice',
       data: {
@@ -93,6 +93,8 @@ export default function Home() {
         notes: quote.notes
       }
     });
+
+    if (sent) setQuote({ name: '', email: '', company: '', phone: '', service: 'Büroreinigung', area: 31400, frequency: 'wöchentlich', notes: '' });
   };
   const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
