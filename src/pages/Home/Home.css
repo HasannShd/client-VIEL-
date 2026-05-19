@@ -11,9 +11,13 @@
 .hero-section__bg {
   position: absolute;
   inset: 0;
-  background: url('/assets/viel/hero-front-screen.png') center/cover;
+  background: image-set(
+    url('/assets/viel/hero-front-screen.webp') type('image/webp'),
+    url('/assets/viel/hero-front-screen.png') type('image/png')
+  ) center/cover;
   transform: scale(1.06);
   animation: heroZoom 18s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero-section__shade {
@@ -31,6 +35,7 @@
   justify-items: center;
   text-align: center;
   padding: 140px 0 100px;
+  animation: heroContentIn 620ms ease-out both;
 }
 
 .hero-section__eyebrow {
@@ -93,6 +98,8 @@
 .blog-preview,
 .contact-section {
   padding: 110px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .about-section__grid,
@@ -1532,4 +1539,53 @@
 @keyframes heroZoom {
   from { transform: scale(1.04); }
   to { transform: scale(1.12); }
+}
+
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section__bg,
+  .hero-section__content {
+    animation: none;
+  }
+
+  .about-section__image img,
+  .service-card img,
+  .quality-card img,
+  .project-card img,
+  .blog-preview-card img {
+    transition: none;
+  }
+}
+
+@media (max-width: 859px) {
+  .newsletter-section {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .newsletter-section__inner,
+  .newsletter-section__inner > div,
+  .newsletter-section form {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .newsletter-section h2 {
+    max-width: 100%;
+    font-size: clamp(1.85rem, 9vw, 2.75rem);
+    line-height: 1.1;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
 }

@@ -1,6 +1,7 @@
 @media (max-width: 760px) {
   .secuguard-hero {
     min-height: 680px;
+    min-height: 100svh;
   }
 
   .secuguard-hero__actions,

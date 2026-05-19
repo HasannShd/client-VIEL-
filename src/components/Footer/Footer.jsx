@@ -55,8 +55,8 @@ export default function Footer() {
       <div className="container site-footer__bottom">
         <span>© {new Date().getFullYear()} VIEL Gebäudeservice. {copy.footer.rights}</span>
         <div>
-          <a href="/impressum">{copy.footer.imprint}</a>
-          <a href="/datenschutz">{copy.footer.privacy}</a>
+          <Link to="/impressum">{copy.footer.imprint}</Link>
+          <Link to="/datenschutz">{copy.footer.privacy}</Link>
         </div>
       </div>
     </footer>

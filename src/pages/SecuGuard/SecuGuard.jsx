@@ -65,7 +65,7 @@ export default function SecuGuard() {
       <section className="secuguard-standards">
         <div className="container secuguard-standards__grid">
           <div className="secuguard-standards__image">
-            <img src={asset('viel-security-officer.png')} alt="VIEL Sicherheit – Professionelles Sicherheitsteam" />
+            <img src={asset('viel-security-officer.webp')} alt="VIEL Sicherheit – Professionelles Sicherheitsteam" loading="lazy" decoding="async" />
           </div>
           <div>
             <span className="section-eyebrow">{page.eyebrow}</span>

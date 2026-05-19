@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar.jsx';
 import TopBar from './components/TopBar/TopBar.jsx';
@@ -8,13 +8,14 @@ import BackToTop from './components/Widgets/BackToTop.jsx';
 import CookieConsent from './components/Widgets/CookieConsent.jsx';
 import ChatWidget from './components/Widgets/ChatWidget.jsx';
 import Seo from './components/Seo/Seo.jsx';
-import Home from './pages/Home/Home.jsx';
-import Blog from './pages/Blog/Blog.jsx';
-import BlogArticle from './pages/Blog/BlogArticle.jsx';
-import Privacy from './pages/Legal/Privacy.jsx';
-import Impressum from './pages/Legal/Impressum.jsx';
-import SecuGuard from './pages/SecuGuard/SecuGuard.jsx';
-import Winterdienst from './pages/Winterdienst/Winterdienst.jsx';
+
+const Home = lazy(() => import('./pages/Home/Home.jsx'));
+const Blog = lazy(() => import('./pages/Blog/Blog.jsx'));
+const BlogArticle = lazy(() => import('./pages/Blog/BlogArticle.jsx'));
+const Privacy = lazy(() => import('./pages/Legal/Privacy.jsx'));
+const Impressum = lazy(() => import('./pages/Legal/Impressum.jsx'));
+const SecuGuard = lazy(() => import('./pages/SecuGuard/SecuGuard.jsx'));
+const Winterdienst = lazy(() => import('./pages/Winterdienst/Winterdienst.jsx'));
 
 const ScrollReset = () => {
   const { pathname } = useLocation();
@@ -40,16 +41,18 @@ export default function App() {
       <ScrollReset />
       <TopBar />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogArticle />} />
-        <Route path="/winterdienst" element={<Winterdienst />} />
-        <Route path="/secuguard" element={<SecuGuard />} />
-        <Route path="/datenschutz" element={<Privacy />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogArticle />} />
+          <Route path="/winterdienst" element={<Winterdienst />} />
+          <Route path="/secuguard" element={<SecuGuard />} />
+          <Route path="/datenschutz" element={<Privacy />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Suspense>
       <Footer />
       <CookieConsent />
       <ChatWidget />

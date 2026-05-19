@@ -18,7 +18,7 @@ export const services = [
   {
     title: 'Glas- & Fensterreinigung',
     desc: 'Streifenfreie Reinigung von Fenstern, Glasfassaden und Schaufenstern mit professioneller Ausrüstung.',
-    image: asset('glass-cleaning-highrise.jpg')
+    image: asset('glass-cleaning-highrise.webp')
   },
   {
     title: 'Grundreinigung',
@@ -28,7 +28,7 @@ export const services = [
   {
     title: 'Unterhaltsreinigung',
     desc: 'Regelmäßige Reinigung für dauerhaft gepflegte Immobilien, Büros und Wohnanlagen.',
-    image: asset('viel-unterhaltsreinigung.jpg')
+    image: asset('viel-unterhaltsreinigung.webp')
   },
   {
     title: 'Treppenhausreinigung',
@@ -117,7 +117,7 @@ export const blogPosts = [
     date: '10. März 2026',
     author: 'VIEL Team',
     category: 'Glas & Fenster',
-    image: asset('glass-cleaning-highrise.jpg')
+    image: asset('glass-cleaning-highrise.webp')
   },
   {
     id: 3,

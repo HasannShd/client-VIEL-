@@ -3,6 +3,7 @@ import './Home.desktop.css';
 import './Home.mobile.css';
 import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Euro, FileText, Leaf, Mail, MapPin, Phone, Shield, Snowflake, Sparkles, Star, ThumbsUp, Users } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
 import { asset, frequencyRate, serviceRate } from '../../data/siteData.js';
 import { sendSubmission } from '../../services/submissionService.js';
@@ -147,9 +148,9 @@ export default function Home() {
       <section className="about-section" id="ueber-uns">
         <div className="container about-section__grid">
           <div className="about-section__media">
-            <div className="about-section__image large"><img src={asset('viel-cleaning-robot.jpg')} alt="VIEL Gebäudeservice – Professionelle Reinigungstechnik" /></div>
-            <div className="about-section__image small"><img src={asset('cleaning-team-pro.webp')} alt="VIEL Gebäudeservice Team" /></div>
-            <div className="about-section__image tall"><img src={asset('viel-mitarbeiterin-2.png')} alt="VIEL Gebäudeservice Fahrzeug" /></div>
+            <div className="about-section__image large"><img src={asset('viel-cleaning-robot.jpg')} alt="VIEL Gebäudeservice – Professionelle Reinigungstechnik" loading="lazy" decoding="async" /></div>
+            <div className="about-section__image small"><img src={asset('cleaning-team-pro.webp')} alt="VIEL Gebäudeservice Team" loading="lazy" decoding="async" /></div>
+            <div className="about-section__image tall"><img src={asset('viel-mitarbeiterin-2.webp')} alt="VIEL Gebäudeservice Fahrzeug" loading="lazy" decoding="async" /></div>
             <div className="about-section__badge"><strong>20+</strong><span>{home.years}</span></div>
           </div>
           <div className="about-section__copy">
@@ -171,7 +172,7 @@ export default function Home() {
         <div className="container services-section__grid">
           {home.services.map((service) => (
             <article className="service-card" key={service.title}>
-              <img src={service.image} alt={service.title} />
+              <img src={service.image} alt={service.title} loading="lazy" decoding="async" />
               <div className="service-card__overlay" />
               <div className="service-card__content">
                 <Sparkles size={26} />
@@ -206,7 +207,7 @@ export default function Home() {
             </div>
           </div>
           <div className="home-security__image">
-            <img src={asset('viel-security-officer.png')} alt="VIEL Sicherheit – Professioneller Sicherheitsdienst" />
+            <img src={asset('viel-security-officer.webp')} alt="VIEL Sicherheit – Professioneller Sicherheitsdienst" loading="lazy" decoding="async" />
             <div className="home-security__image-overlay" />
           </div>
         </div>
@@ -222,7 +223,7 @@ export default function Home() {
         <div className="container home-winter__grid">
           <article className="winter-panel">
             <div className="winter-panel__image">
-              <img src={asset('snowplow.png')} alt="VIEL Winterdienst – Schneepflug im Einsatz" />
+            <img src={asset('snowplow.webp')} alt="VIEL Winterdienst – Schneepflug im Einsatz" loading="lazy" decoding="async" />
             </div>
             <div className="winter-panel__content">
               <span className="section-eyebrow">{home.winterEyebrow}</span>
@@ -304,7 +305,7 @@ export default function Home() {
           {home.cases.map((item) => (
             <article className="project-card" key={item.title}>
               <div className="project-card__image">
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
               </div>
               <div className="project-card__body">
                 <span className="project-card__client"><Building2 size={13} /> {item.client}</span>
@@ -408,18 +409,18 @@ export default function Home() {
         <div className="container blog-preview__head">
           <span className="section-eyebrow">{home.blogEyebrow}</span>
           <h2>{home.blogTitle}</h2>
-          <a href="/blog">{home.allPosts} <ArrowRight size={18} /></a>
+          <Link to="/blog">{home.allPosts} <ArrowRight size={18} /></Link>
         </div>
         <div className="container blog-preview__grid">
           {blogPosts.slice(0, 3).map((post) => (
-            <a className="blog-preview-card" href={`/blog/${post.id}`} key={post.id}>
-              <img src={post.image} alt={post.title} />
+            <Link className="blog-preview-card" to={`/blog/${post.id}`} key={post.id}>
+              <img src={post.image} alt={post.title} loading="lazy" decoding="async" />
               <div>
                 <span>{post.category}</span>
                 <h3>{post.title}</h3>
                 <p>{post.excerpt}</p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

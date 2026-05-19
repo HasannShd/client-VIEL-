@@ -200,14 +200,24 @@
   }
 
   .chat-widget {
-    right: 16px;
-    bottom: 16px;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
   }
 
   .back-to-top {
-    right: 16px;
-    bottom: 88px;
-    width: 46px;
-    height: 46px;
+    right: calc(max(12px, env(safe-area-inset-right)) + 60px);
+    bottom: max(18px, env(safe-area-inset-bottom));
+    width: 42px;
+    height: 42px;
+  }
+
+  .chat-widget__button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .chat-widget__panel {
+    width: min(340px, calc(100vw - 28px));
+    bottom: 66px;
   }
 }

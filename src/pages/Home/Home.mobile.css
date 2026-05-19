@@ -1,6 +1,7 @@
 @media (max-width: 859px) {
   .hero-section {
     min-height: 760px;
+    min-height: 100svh;
   }
 
   .hero-section h1 {
@@ -110,6 +111,19 @@
   .winter-panel__content,
   .feature-column {
     padding: 24px;
+  }
+
+  .home-security {
+    padding: 72px 0;
+  }
+
+  .home-security__image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-security__image img {
+    object-position: 50% 28%;
   }
 
   .blog-preview__head {

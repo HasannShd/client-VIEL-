@@ -1,0 +1,2 @@
+import{u as i,j as s,R as c}from"./index-DoBCJbhX.js";/* empty css                     */function p(){const{copy:e}=i();return s.jsx("main",{className:"legal-page",children:s.jsxs("div",{className:"container legal-page__inner",children:[s.jsx("h1",{children:e.legal.privacyTitle}),e.legal.sections.map(([a,r])=>s.jsxs("section",{children:[s.jsx("h2",{children:a}),s.jsx("p",{children:r.split(`
+`).map(n=>s.jsxs(c.Fragment,{children:[n,s.jsx("br",{})]},n))})]},a))]})})}export{p as default};

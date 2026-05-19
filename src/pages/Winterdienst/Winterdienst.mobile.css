@@ -1,6 +1,7 @@
 @media (max-width: 760px) {
   .winterdienst-hero {
     min-height: 680px;
+    min-height: 100svh;
   }
 
   .winterdienst-hero__actions,

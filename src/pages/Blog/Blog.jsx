@@ -3,6 +3,7 @@ import './Blog.desktop.css';
 import './Blog.mobile.css';
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
 
 export default function Blog() {
@@ -21,8 +22,8 @@ export default function Blog() {
       <section className="blog-list">
         <div className="container blog-list__grid">
           {blog.posts.map((post) => (
-            <a href={`/blog/${post.id}`} className="blog-card" key={post.id}>
-              <img src={post.image} alt={post.title} />
+            <Link to={`/blog/${post.id}`} className="blog-card" key={post.id}>
+              <img src={post.image} alt={post.title} loading="lazy" decoding="async" />
               <div>
                 <span>{post.category}</span>
                 <h2>{post.title}</h2>
@@ -30,7 +31,7 @@ export default function Blog() {
                 <small>{post.date} · {post.author}</small>
                 <strong>{blog.readMore} <ArrowRight size={16} /></strong>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

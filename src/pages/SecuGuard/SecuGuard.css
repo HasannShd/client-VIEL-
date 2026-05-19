@@ -17,7 +17,10 @@
   inset: 0;
   background:
     linear-gradient(100deg, rgba(6, 18, 30, 0.96) 0%, rgba(9, 24, 35, 0.82) 45%, rgba(27, 73, 101, 0.5) 100%),
-    url('/assets/viel/viel-security-officer.png') center 20%/cover;
+    image-set(
+      url('/assets/viel/viel-security-officer.webp') type('image/webp'),
+      url('/assets/viel/viel-security-officer.png') type('image/png')
+    ) center 20%/cover;
   transform: scale(1.04);
 }
 

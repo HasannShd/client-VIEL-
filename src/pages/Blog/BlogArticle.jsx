@@ -29,7 +29,7 @@ export default function BlogArticle() {
     <main className="blog-page">
       <article className="article-page">
         <header className="article-page__hero">
-          <img src={article.image} alt={article.title} />
+          <img src={article.image} alt={article.title} loading="eager" decoding="async" fetchPriority="high" />
           <div className="article-page__shade" />
           <div className="container">
             <a href="/blog" className="article-page__back"><ArrowLeft size={17} /> {blog.back}</a>

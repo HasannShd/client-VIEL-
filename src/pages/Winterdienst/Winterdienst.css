@@ -17,7 +17,10 @@
   inset: 0;
   background:
     linear-gradient(90deg, rgba(6, 20, 31, 0.92), rgba(9, 24, 35, 0.68), rgba(98, 182, 203, 0.28)),
-    url('/assets/viel/snowplow.png') center/cover;
+    image-set(
+      url('/assets/viel/snowplow.webp') type('image/webp'),
+      url('/assets/viel/snowplow.png') type('image/png')
+    ) center/cover;
   transform: scale(1.05);
 }
 
