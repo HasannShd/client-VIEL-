@@ -98,7 +98,8 @@ export default function Home() {
   };
   const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const sent = await submitToBackend('newsletter', {
       type: 'newsletter',
       subject: language === 'de' ? 'Newsletter Anmeldung - VIEL Gebäudeservice' : 'Newsletter signup - VIEL Gebäudeservice',
@@ -107,11 +108,12 @@ export default function Home() {
       }
     });
 
-    if (sent) event.currentTarget.reset();
+    if (sent) form.reset();
   };
   const handleContactSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const sent = await submitToBackend('contact', {
       type: 'contact',
       subject: language === 'de' ? 'Kontaktanfrage - VIEL Gebäudeservice' : 'Contact inquiry - VIEL Gebäudeservice',
@@ -123,7 +125,7 @@ export default function Home() {
       }
     });
 
-    if (sent) event.currentTarget.reset();
+    if (sent) form.reset();
   };
 
   return (
