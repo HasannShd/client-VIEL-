@@ -18,10 +18,32 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll();
+    let animationFrame = 0;
+    let isPastThreshold = window.scrollY > 80;
+
+    setScrolled(isPastThreshold);
+
+    const updateScrolledState = () => {
+      animationFrame = 0;
+      const nextIsPastThreshold = window.scrollY > 80;
+
+      if (nextIsPastThreshold !== isPastThreshold) {
+        isPastThreshold = nextIsPastThreshold;
+        setScrolled(nextIsPastThreshold);
+      }
+    };
+
+    const onScroll = () => {
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(updateScrolledState);
+      }
+    };
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   useEffect(() => {

@@ -7,6 +7,8 @@
   height: 38px;
   background: var(--viel-blue);
   color: rgba(255, 255, 255, 0.75);
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .top-bar__inner {

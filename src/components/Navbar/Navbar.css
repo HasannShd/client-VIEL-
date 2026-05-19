@@ -7,7 +7,9 @@
   min-height: 86px;
   padding: 14px clamp(18px, 3.8vw, 58px);
   color: #fff;
-  transition: background 260ms ease, box-shadow 260ms ease, min-height 260ms ease;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: background-color 180ms ease, box-shadow 180ms ease, min-height 180ms ease, color 180ms ease;
 }
 
 .site-nav.is-scrolled,
@@ -15,8 +17,7 @@
   min-height: 74px;
   background: rgba(255, 255, 255, 0.96);
   color: var(--viel-blue);
-  box-shadow: 0 18px 44px rgba(27, 73, 101, 0.12);
-  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 30px rgba(27, 73, 101, 0.1);
 }
 
 .site-nav__inner {

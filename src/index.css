@@ -21,11 +21,15 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 124px;
+  overscroll-behavior-y: contain;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 body,
