@@ -5,38 +5,44 @@ import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Eu
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
-import { asset, frequencyRate, serviceRate } from '../../data/siteData.js';
+import { asset, frequencyRate, monthlyVisitMultiplier, serviceRate } from '../../data/siteData.js';
 import { sendSubmission } from '../../services/submissionService.js';
+
+const quoteDefault = {
+  name: '',
+  email: '',
+  company: '',
+  phone: '',
+  service: 'Büroreinigung',
+  area: 1000,
+  frequency: 'wöchentlich',
+  notes: ''
+};
+
+const getVolumeDiscount = (area) => {
+  if (area >= 20000) return 0.78;
+  if (area >= 5000) return 0.86;
+  if (area >= 1500) return 0.94;
+  return 1;
+};
 
 export default function Home() {
   const { copy, language } = useLanguage();
   const home = copy.home;
   const blogPosts = copy.blog.posts;
   const [submissionStatus, setSubmissionStatus] = useState({});
-  const [quote, setQuote] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: 'Büroreinigung',
-    area: 31400,
-    frequency: 'wöchentlich',
-    notes: ''
-  });
+  const [quote, setQuote] = useState(quoteDefault);
 
   const price = useMemo(() => {
-    const base = serviceRate[quote.service] || 0.5;
-    const frequency = frequencyRate[quote.frequency] || 0.25;
-    return Math.max(100, Math.round(Number(quote.area) * base * frequency));
-  }, [quote]);
+    const area = Number(quote.area) || quoteDefault.area;
+    const baseRate = serviceRate[quote.service] || serviceRate.Büroreinigung;
+    const frequencyMultiplier = frequencyRate[quote.frequency] || 1;
+    const estimate = area * baseRate * frequencyMultiplier * getVolumeDiscount(area);
+
+    return Math.max(120, Math.round(estimate));
+  }, [quote.area, quote.frequency, quote.service]);
   const monthlyPrice = useMemo(() => {
-    const multipliers = {
-      täglich: 20,
-      wöchentlich: 4.3,
-      monatlich: 1,
-      einmalig: 1
-    };
-    return Math.round(price * (multipliers[quote.frequency] || 1));
+    return Math.round(price * (monthlyVisitMultiplier[quote.frequency] || 1));
   }, [price, quote.frequency]);
   const selectedServiceLabel = home.serviceOptions.find((item) => item.value === quote.service)?.label || quote.service;
   const selectedFrequencyLabel = home.frequencyOptions.find((item) => item.value === quote.frequency)?.label || quote.frequency;
@@ -94,7 +100,7 @@ export default function Home() {
       }
     });
 
-    if (sent) setQuote({ name: '', email: '', company: '', phone: '', service: 'Büroreinigung', area: 31400, frequency: 'wöchentlich', notes: '' });
+    if (sent) setQuote(quoteDefault);
   };
   const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
@@ -364,7 +370,7 @@ export default function Home() {
             <fieldset className="quote-frequency">
               <legend>{home.frequencyLabel} *</legend>
               <div>
-                {home.frequencyOptions.slice(0, 3).map((item) => (
+                {home.frequencyOptions.map((item) => (
                   <button
                     key={item.value}
                     type="button"

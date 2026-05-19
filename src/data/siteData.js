@@ -205,19 +205,26 @@ export const blogArticles = {
 };
 
 export const serviceRate = {
-  Büroreinigung: 0.5,
-  Glasreinigung: 0.75,
-  Grundreinigung: 1,
-  Unterhaltsreinigung: 0.4,
-  Treppenhausreinigung: 0.3,
-  Bauendreinigung: 1.5,
-  Winterdienst: 2,
-  Sicherheitsdienste: 3
+  Büroreinigung: 0.08,
+  Glasreinigung: 0.12,
+  Grundreinigung: 0.18,
+  Unterhaltsreinigung: 0.07,
+  Treppenhausreinigung: 0.06,
+  Bauendreinigung: 0.22,
+  Winterdienst: 0.09,
+  Sicherheitsdienste: 0.12
 };
 
 export const frequencyRate = {
-  täglich: 1,
-  wöchentlich: 0.25,
-  monatlich: 0.08,
+  täglich: 0.72,
+  wöchentlich: 0.9,
+  monatlich: 1,
+  einmalig: 1.15
+};
+
+export const monthlyVisitMultiplier = {
+  täglich: 21.5,
+  wöchentlich: 4.33,
+  monatlich: 1,
   einmalig: 1
 };
