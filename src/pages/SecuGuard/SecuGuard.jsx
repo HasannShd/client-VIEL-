@@ -36,7 +36,7 @@ export default function SecuGuard() {
           </div>
           <div className="secuguard-contact-card">
             <a href="tel:03021467832"><Phone size={20} /> 030 21467832</a>
-            <a href="mailto:info@viel-gs.de"><Mail size={20} /> info@viel-gs.de</a>
+            <a href="mailto:Info@viel-gs.de"><Mail size={20} /> Info@viel-gs.de</a>
             <p><MapPin size={20} /> Erich-Kuttner-Straße 31, 10369 Berlin</p>
           </div>
         </div>

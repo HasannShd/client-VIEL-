@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="site-footer__contact">
             <p><MapPin size={16} /> VIEL Gebäudeservice<br />Berlin</p>
             <a href="tel:03021467832"><Phone size={16} /> 030 21467832</a>
-            <a href="mailto:info@viel-gs.de"><Mail size={16} /> info@viel-gs.de</a>
+            <a href="mailto:Info@viel-gs.de"><Mail size={16} /> Info@viel-gs.de</a>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ The site backend can send form submissions through Resend without asking the cli
 5. Configure production environment variables:
 
 ```env
-CONTACT_TO_EMAIL=info@viel-gs.de
+CONTACT_TO_EMAIL=Info@viel-gs.de
 EMAIL_PROVIDER=resend
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
 RESEND_FROM_EMAIL=VIEL Website <website@viel-gs.de>

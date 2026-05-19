@@ -11,9 +11,9 @@ export default function TopBar() {
             <Phone size={13} />
             030 21467832
           </a>
-          <a href="mailto:info@viel-gebaeudeservice.de" className="top-bar__item">
+          <a href="mailto:Info@viel-gs.de" className="top-bar__item">
             <Mail size={13} />
-            info@viel-gebaeudeservice.de
+            Info@viel-gs.de
           </a>
         </div>
         <div className="top-bar__social">

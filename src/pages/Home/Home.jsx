@@ -486,7 +486,7 @@ export default function Home() {
             </div>
             <div className="location-info__item">
               <strong>{home.locationEmail}</strong>
-              <a href="mailto:info@viel-gs.de">info@viel-gs.de</a>
+              <a href="mailto:Info@viel-gs.de">Info@viel-gs.de</a>
             </div>
             <div className="location-info__item">
               <strong>{home.locationHours}</strong>
@@ -503,7 +503,7 @@ export default function Home() {
             <h2 className="section-title">{home.contactTitle}</h2>
             <p className="section-copy">{home.contactText}</p>
             <div className="contact-list">
-              <a href="mailto:info@viel-gs.de"><Mail size={20} /> info@viel-gs.de</a>
+              <a href="mailto:Info@viel-gs.de"><Mail size={20} /> Info@viel-gs.de</a>
               <a href="tel:03021467832"><Phone size={20} /> 030 21467832</a>
               <p><MapPin size={20} /> Erich-Kuttner-Straße 31, 10369 Berlin</p>
               <p><Clock size={20} /> {home.hours}</p>

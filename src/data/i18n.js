@@ -252,21 +252,21 @@ export const dictionary = {
       privacyTitle: 'Datenschutzerklärung',
       imprintTitle: 'Impressum',
       sections: [
-        ['1. Verantwortlicher', 'VIEL Gebäudeservice\nKontaktinformationen: info@viel-gs.de | 030 21467832'],
+        ['1. Verantwortlicher', 'VIEL Gebäudeservice\nKontaktinformationen: Info@viel-gs.de | 030 21467832'],
         ['2. Allgemeine Hinweise', 'Wir verarbeiten personenbezogene Daten nur im Einklang mit den geltenden Datenschutzgesetzen, insbesondere der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).'],
         ['3. Erhebung und Verarbeitung personenbezogener Daten', 'Personenbezogene Daten werden verarbeitet, wenn Sie unser Kontaktformular nutzen, uns per E-Mail kontaktieren oder unsere Website besuchen.'],
         ['4. Cookies', 'Unsere Website nutzt notwendige Cookies. Optionale Cookies werden nur nach Ihrer Einwilligung eingesetzt.'],
         ['5. Kontaktformular', 'Die Daten aus unserem Kontaktformular werden nur zur Beantwortung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Zustimmung.'],
         ['6. Externe Links', 'Unsere Website enthält Links zu externen Websites. Wir sind nicht verantwortlich für deren Datenschutzpraktiken.'],
         ['7. Änderungen dieser Datenschutzerklärung', 'Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Die aktuelle Version ist auf dieser Seite verfügbar.'],
-        ['8. Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter: info@viel-gs.de.']
+        ['8. Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter: Info@viel-gs.de.']
       ],
       imprintSections: [
         ['Angaben gemäß § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Deutschland'],
-        ['Kontakt', 'Telefon: 030 21467832\nE-Mail: info@viel-gs.de'],
+        ['Kontakt', 'Telefon: 030 21467832\nE-Mail: Info@viel-gs.de'],
         ['Verantwortlich für den Inhalt', 'VIEL Gebäudeservice'],
         ['Haftung für Inhalte', 'Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich.'],
-        ['Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zu dieser Website kontaktieren Sie uns bitte unter: info@viel-gs.de.']
+        ['Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zu dieser Website kontaktieren Sie uns bitte unter: Info@viel-gs.de.']
       ],
       fullPrivacy: 'Unsere vollständige Datenschutzerklärung finden Sie hier.'
     },
@@ -306,7 +306,7 @@ export const dictionary = {
       introTitle: 'Bereit, bevor Schnee und Eis zum Risiko werden.',
       introText: 'VIEL Gebäudeservice übernimmt Schneeräumung, Streudienst, Kontrollfahrten und Dokumentation mit planbaren Abläufen. So bleiben Eingänge, Gehwege, Zufahrten und Außenflächen verkehrssicher und gepflegt.',
       phone: '030 21467832',
-      email: 'info@viel-gs.de',
+      email: 'Info@viel-gs.de',
       address: 'Erich-Kuttner-Straße 31, 10369 Berlin',
       servicesTitle: 'Winterdienst Leistungen',
       servicesText: 'Jede Fläche wird nach Objekt, Nutzungszeiten und Räumpflicht geplant.',
@@ -536,21 +536,21 @@ export const dictionary = {
       privacyTitle: 'Privacy Policy',
       imprintTitle: 'Legal Notice',
       sections: [
-        ['1. Controller', 'VIEL Gebäudeservice\nContact information: info@viel-gs.de | 030 21467832'],
+        ['1. Controller', 'VIEL Gebäudeservice\nContact information: Info@viel-gs.de | 030 21467832'],
         ['2. General Information', 'We process personal data only in accordance with applicable data protection laws, especially the GDPR and German federal data protection law.'],
         ['3. Collection and Processing of Personal Data', 'Personal data is processed when you use our contact form, contact us by email, or visit our website.'],
         ['4. Cookies', 'Our website uses necessary cookies. Optional cookies are only used after your consent.'],
         ['5. Contact Form', 'Data from our contact form is used only to respond to your request. It is not shared with third parties without your consent.'],
         ['6. External Links', 'Our website contains links to external websites. We are not responsible for their privacy practices.'],
         ['7. Changes to this Privacy Policy', 'We reserve the right to change this Privacy Policy at any time. The current version is available on this page.'],
-        ['8. Data Protection Contact', 'For privacy questions or to exercise your rights, please contact us at: info@viel-gs.de.']
+        ['8. Data Protection Contact', 'For privacy questions or to exercise your rights, please contact us at: Info@viel-gs.de.']
       ],
       imprintSections: [
         ['Information according to § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Germany'],
-        ['Contact', 'Phone: 030 21467832\nEmail: info@viel-gs.de'],
+        ['Contact', 'Phone: 030 21467832\nEmail: Info@viel-gs.de'],
         ['Responsible for Content', 'VIEL Gebäudeservice'],
         ['Liability for Content', 'As a service provider, we are responsible for our own content on these pages according to general laws.'],
-        ['Data Protection Contact', 'For privacy questions or questions about this website, please contact us at: info@viel-gs.de.']
+        ['Data Protection Contact', 'For privacy questions or questions about this website, please contact us at: Info@viel-gs.de.']
       ],
       fullPrivacy: 'You can find our full Privacy Policy here.'
     },
@@ -590,7 +590,7 @@ export const dictionary = {
       introTitle: 'Ready before snow and ice become a risk.',
       introText: 'VIEL Gebäudeservice handles snow clearing, gritting, inspection rounds, and documentation with predictable processes. Entrances, sidewalks, driveways, and outdoor areas stay safe and well maintained.',
       phone: '030 21467832',
-      email: 'info@viel-gs.de',
+      email: 'Info@viel-gs.de',
       address: 'Erich-Kuttner-Straße 31, 10369 Berlin',
       servicesTitle: 'Winter Service Scope',
       servicesText: 'Each area is planned around the property, usage times, and clearing obligations.',

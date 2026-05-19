@@ -10,7 +10,7 @@ const getEmailProvider = () => (process.env.EMAIL_PROVIDER || 'auto').toLowerCas
 const getRecipient = () => (
   process.env.CONTACT_TEST_EMAIL ||
   process.env.CONTACT_TO_EMAIL ||
-  'hasnshahidd@gmail.com'
+  'Info@viel-gs.de'
 );
 
 const getSender = () => (
