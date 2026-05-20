@@ -20,6 +20,25 @@ const getSender = () => (
   'website@viel-gs.de'
 );
 
+const notifyDeliveryFailure = async ({ provider, subject, message }) => {
+  if (!process.env.SUBMISSION_ALERT_WEBHOOK_URL) return;
+
+  try {
+    await fetch(process.env.SUBMISSION_ALERT_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service: 'viel-submissions',
+        provider,
+        subject,
+        message
+      })
+    });
+  } catch (error) {
+    console.error('[submission:alert-failed]', error);
+  }
+};
+
 const logDryRun = ({ to, subject, text }) => {
   if (process.env.NODE_ENV === 'production') {
     console.info('[submission:dry-run]', { to, subject, textLength: text.length });
@@ -202,14 +221,19 @@ export async function sendSubmissionEmail(submission) {
   }
 
   if ((provider === 'resend' || provider === 'auto') && hasResendConfig()) {
-    await sendWithResend({
-      from,
-      to,
-      subject,
-      text,
-      html,
-      replyTo: submission.replyTo
-    });
+    try {
+      await sendWithResend({
+        from,
+        to,
+        subject,
+        text,
+        html,
+        replyTo: submission.replyTo
+      });
+    } catch (error) {
+      await notifyDeliveryFailure({ provider: 'resend', subject, message: error.message });
+      throw error;
+    }
 
     return { dryRun: false, provider: 'resend', to };
   }
@@ -217,14 +241,19 @@ export async function sendSubmissionEmail(submission) {
   const transport = makeTransport();
 
   if ((provider === 'smtp' || provider === 'auto') && transport) {
-    await transport.sendMail({
-      from,
-      to,
-      replyTo: submission.replyTo || undefined,
-      subject,
-      text,
-      html
-    });
+    try {
+      await transport.sendMail({
+        from,
+        to,
+        replyTo: submission.replyTo || undefined,
+        subject,
+        text,
+        html
+      });
+    } catch (error) {
+      await notifyDeliveryFailure({ provider: 'smtp', subject, message: error.message });
+      throw error;
+    }
 
     return { dryRun: false, provider: 'smtp', to };
   }

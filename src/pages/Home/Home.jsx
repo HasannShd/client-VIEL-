@@ -6,6 +6,7 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
 import { asset, frequencyRate, monthlyVisitMultiplier, serviceRate } from '../../data/siteData.js';
+import { trackEvent } from '../../services/analytics.js';
 import { sendSubmission } from '../../services/submissionService.js';
 
 const quoteDefault = {
@@ -65,9 +66,11 @@ export default function Home() {
     setPending(key);
     try {
       await sendSubmission({ ...payload, language });
+      trackEvent('form_submit_success', { form: key, language });
       setResult(key, 'success', getSuccessMessage());
       return true;
     } catch {
+      trackEvent('form_submit_error', { form: key, language });
       setResult(key, 'error', getErrorMessage());
       return false;
     }
@@ -158,7 +161,7 @@ export default function Home() {
       <section className="about-section" id="ueber-uns">
         <div className="container about-section__grid">
           <div className="about-section__media">
-            <div className="about-section__image large"><img src={asset('viel-cleaning-robot.jpg')} alt="VIEL Gebäudeservice – Professionelle Reinigungstechnik" loading="lazy" decoding="async" /></div>
+            <div className="about-section__image large"><img src={asset('viel-cleaning-robot.webp')} alt="VIEL Gebäudeservice – Professionelle Reinigungstechnik" loading="lazy" decoding="async" /></div>
             <div className="about-section__image small"><img src={asset('cleaning-team-pro.webp')} alt="VIEL Gebäudeservice Team" loading="lazy" decoding="async" /></div>
             <div className="about-section__image tall"><img src={asset('viel-mitarbeiterin-2.webp')} alt="VIEL Gebäudeservice Fahrzeug" loading="lazy" decoding="async" /></div>
             <div className="about-section__badge"><strong>20+</strong><span>{home.years}</span></div>

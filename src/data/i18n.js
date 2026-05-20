@@ -1,23 +1,23 @@
 import { asset } from './siteData.js';
 
 const serviceImages = {
-  office: asset('office-cleaning-pro.jpg'),
-  glass: asset('glass-cleaning-highrise.jpg'),
+  office: asset('office-cleaning-pro.webp'),
+  glass: asset('glass-cleaning-highrise.webp'),
   deep: asset('bauendreinigung-pro.webp'),
-  maintenance: asset('viel-unterhaltsreinigung.jpg'),
-  stairs: asset('viel-treppenhaus.jpg'),
-  construction: asset('viel-bauend-original.jpg')
+  maintenance: asset('viel-unterhaltsreinigung.webp'),
+  stairs: asset('viel-treppenhaus.webp'),
+  construction: asset('viel-bauend-original.webp')
 };
 
 const sharedImages = {
   logoWhite: asset('logo-white.png'),
   logoBlue: asset('logo-blue.png'),
-  hero: asset('modern-glass-building.jpg'),
+  hero: asset('modern-glass-building.webp'),
   winter: asset('winter-snow-removal.jpeg'),
   team: asset('cleaning-team-pro.webp'),
-  worker: asset('viel-mitarbeiter-1.png'),
-  workerTwo: asset('viel-mitarbeiterin-2.png'),
-  caseOffice: asset('office-cleaning-team.jpg')
+  worker: asset('viel-mitarbeiter-1.webp'),
+  workerTwo: asset('viel-mitarbeiterin-2.webp'),
+  caseOffice: asset('office-cleaning-team.webp')
 };
 
 const servicesDe = [

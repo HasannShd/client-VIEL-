@@ -13,7 +13,7 @@ export const services = [
   {
     title: 'Büroreinigung',
     desc: 'Tägliche, wöchentliche oder individuelle Reinigung Ihrer Büroflächen nach höchsten Hygienestandards.',
-    image: asset('office-cleaning-pro.jpg')
+    image: asset('office-cleaning-pro.webp')
   },
   {
     title: 'Glas- & Fensterreinigung',
@@ -33,12 +33,12 @@ export const services = [
   {
     title: 'Treppenhausreinigung',
     desc: 'Zuverlässige Pflege von Eingängen, Fluren, Handläufen, Aufzügen und Gemeinschaftsflächen.',
-    image: asset('viel-treppenhaus.jpg')
+    image: asset('viel-treppenhaus.webp')
   },
   {
     title: 'Bauendreinigung',
     desc: 'Professionelle Endreinigung nach Bau, Umbau oder Renovierung bis zur sauberen Übergabe.',
-    image: asset('viel-bauend-original.jpg')
+    image: asset('viel-bauend-original.webp')
   }
 ];
 
@@ -89,7 +89,7 @@ export const cases = [
     client: 'Technologie-Startup, 5.000 m²',
     challenge: 'Tägliche Reinigung für 200+ Mitarbeiter mit höchsten Hygienestandards',
     result: 'Flexible Abendteams und messbar sauberere Arbeitsbereiche',
-    image: asset('office-cleaning-team.jpg')
+    image: asset('office-cleaning-team.webp')
   },
   {
     title: 'Winterdienst Gewerbeparkanlage',
@@ -108,7 +108,7 @@ export const blogPosts = [
     date: '15. März 2026',
     author: 'VIEL Team',
     category: 'Büroreinigung',
-    image: asset('office-cleaning-pro.jpg')
+    image: asset('office-cleaning-pro.webp')
   },
   {
     id: 2,
@@ -144,7 +144,7 @@ export const blogPosts = [
     date: '25. Februar 2026',
     author: 'VIEL Team',
     category: 'Nachhaltigkeit',
-    image: asset('modern-glass-building.jpg')
+    image: asset('modern-glass-building.webp')
   },
   {
     id: 6,

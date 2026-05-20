@@ -15,9 +15,7 @@
     url('/assets/viel/hero-front-screen.webp') type('image/webp'),
     url('/assets/viel/hero-front-screen.png') type('image/png')
   ) center/cover;
-  transform: scale(1.06);
-  animation: heroZoom 18s ease-in-out infinite alternate;
-  will-change: transform;
+  transform: scale(1.02);
 }
 
 .hero-section__shade {
@@ -262,7 +260,7 @@
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(15, 49, 72, 0.98), rgba(27, 73, 101, 0.94)),
-    url('/assets/viel/modern-glass-building.jpg') center/cover;
+    url('/assets/viel/modern-glass-building.webp') center/cover;
   color: #fff;
 }
 
@@ -1542,11 +1540,6 @@
 .contact-form__check a {
   color: var(--viel-cyan);
   text-decoration: underline;
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1.04); }
-  to { transform: scale(1.12); }
 }
 
 @keyframes heroContentIn {
