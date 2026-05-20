@@ -2,6 +2,7 @@ import sharp from 'sharp';
 
 const jobs = [
   ['public/assets/viel/hero-front-screen.png', 'public/assets/viel/hero-front-screen.webp', 1280, 70],
+  ['public/assets/viel/hero-front-screen.png', 'public/assets/viel/hero-front-screen-mobile.webp', 720, 68],
   ['public/assets/viel/viel-security-officer.png', 'public/assets/viel/viel-security-officer.webp', 1200, 70],
   ['public/assets/viel/snowplow.png', 'public/assets/viel/snowplow.webp', 1200, 70],
   ['public/assets/viel/secuguard-officer.png', 'public/assets/viel/secuguard-officer.webp', 900, 70],

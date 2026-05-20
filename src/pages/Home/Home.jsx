@@ -140,7 +140,16 @@ export default function Home() {
   return (
     <main className="home-page">
       <section className="hero-section" id="home">
-        <div className="hero-section__bg" />
+        <div className="hero-section__bg">
+          <img
+            src={asset('hero-front-screen.webp')}
+            srcSet={`${asset('hero-front-screen-mobile.webp')} 720w, ${asset('hero-front-screen.webp')} 1280w`}
+            sizes="100vw"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+          />
+        </div>
         <div className="hero-section__shade" />
         <div className="container hero-section__content">
           <div className="hero-section__eyebrow">{home.heroEyebrow}</div>

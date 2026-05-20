@@ -11,11 +11,14 @@
 .hero-section__bg {
   position: absolute;
   inset: 0;
-  background: image-set(
-    url('/assets/viel/hero-front-screen.webp') type('image/webp'),
-    url('/assets/viel/hero-front-screen.png') type('image/png')
-  ) center/cover;
-  transform: scale(1.02);
+  overflow: hidden;
+}
+
+.hero-section__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-section__shade {
@@ -103,8 +106,6 @@
 .blog-preview,
 .contact-section {
   padding: 110px 0;
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
 }
 
 .about-section__grid,
@@ -168,7 +169,7 @@
 .about-section__badge strong {
   font-size: 2.8rem;
   line-height: 1;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: inherit;
 }
 
 .about-section__copy .viel-button {
@@ -1068,7 +1069,7 @@
 }
 
 .quote-price-card strong {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: inherit;
   font-size: clamp(2.7rem, 5vw, 3.5rem);
   line-height: 1;
   color: var(--viel-cyan);
