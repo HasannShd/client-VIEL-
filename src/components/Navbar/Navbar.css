@@ -33,6 +33,7 @@
 .site-nav__logo {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 8px;
   width: max-content;
   color: currentColor;
@@ -41,17 +42,18 @@
 }
 
 .site-nav__logo-img {
-  height: 54px;
-  max-width: 180px;
+  height: 48px;
+  max-width: 160px;
   width: auto;
   object-fit: contain;
   display: block;
+  image-rendering: auto;
   transition: height 180ms ease;
 }
 
 .site-nav.is-scrolled .site-nav__logo-img,
 .site-nav:has(.site-nav__drawer.is-open) .site-nav__logo-img {
-  height: 48px;
+  height: 42px;
 }
 
 .site-nav__links {

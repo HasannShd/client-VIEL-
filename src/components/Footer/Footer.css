@@ -10,7 +10,10 @@
 }
 
 .site-footer__logo {
-  height: 58px;
+  height: 62px;
+  width: auto;
+  display: block;
+  image-rendering: auto;
 }
 
 .site-footer__logo-link {
