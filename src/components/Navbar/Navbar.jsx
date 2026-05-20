@@ -55,7 +55,7 @@ export default function Navbar() {
     <header className={`site-nav ${useSolidNav ? 'is-scrolled' : ''}`}>
       <div className="site-nav__inner">
         <Link to="/" className="site-nav__logo" aria-label="VIEL Gebäudeservice Startseite" onClick={scrollHomeTop}>
-          <img src="/logo.png" alt="VIEL Gebäudeservice" className="site-nav__logo-img" />
+          <img src={useSolidNav ? '/logo.png' : '/assets/viel/logo-white.png'} alt="VIEL Gebäudeservice" className="site-nav__logo-img" />
         </Link>
         <nav className="site-nav__links" aria-label="Hauptnavigation">
           {copy.nav.map((item) => (
