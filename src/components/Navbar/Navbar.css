@@ -46,13 +46,14 @@
   width: auto;
   object-fit: contain;
   display: block;
-  filter: none;
-  transition: height 180ms ease;
+  filter: brightness(0) invert(1);
+  transition: height 180ms ease, filter 180ms ease;
 }
 
-.site-nav.is-scrolled .site-nav__logo-img {
+.site-nav.is-scrolled .site-nav__logo-img,
+.site-nav:has(.site-nav__drawer.is-open) .site-nav__logo-img {
   height: 48px;
-  filter: none;
+  filter: brightness(1) invert(0);
 }
 
 .site-nav__links {
