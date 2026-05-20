@@ -97,7 +97,6 @@
 .process-section,
 .technology-section,
 .certificates-section,
-.testimonials-section,
 .newsletter-section,
 .quality-section,
 .quote-section,
@@ -600,105 +599,6 @@
   line-height: 1.65;
 }
 
-/* ── Testimonials Section ── */
-.testimonials-section {
-  padding: 110px 0;
-  background: #f6fbfd;
-}
-
-.testimonials-section__head {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.testimonials-section__head h2 {
-  margin: 14px 0 16px;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 800;
-  line-height: 1.05;
-  color: var(--viel-blue);
-}
-
-.testimonials-section__head p {
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--viel-slate);
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.testimonials-section__grid {
-  display: grid;
-  gap: 24px;
-}
-
-.testimonial-card {
-  position: relative;
-  padding: 38px 34px 32px;
-  background: #fff;
-  border: 1px solid #e4eef4;
-  box-shadow: 0 12px 36px rgba(27, 73, 101, 0.07);
-  overflow: hidden;
-}
-
-.testimonial-card__quote {
-  position: absolute;
-  top: 10px;
-  right: 22px;
-  font-size: 6rem;
-  line-height: 1;
-  font-family: Georgia, serif;
-  color: rgba(98, 182, 203, 0.18);
-  user-select: none;
-  pointer-events: none;
-}
-
-.testimonial-card__stars {
-  display: flex;
-  gap: 3px;
-  color: #f5a623;
-  margin-bottom: 18px;
-}
-
-.testimonial-card p {
-  color: var(--viel-slate);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 0 0 24px;
-}
-
-.testimonial-card__author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.testimonial-card__avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  background: var(--viel-blue);
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-}
-
-.testimonial-card__author h3 {
-  margin: 0 0 3px;
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: var(--viel-blue);
-}
-
-.testimonial-card__author span {
-  font-size: 0.8rem;
-  color: #7a8b92;
-}
-
 /* ── Projects Section ── */
 .projects-section {
   padding: 110px 0;
@@ -902,42 +802,6 @@
 
 .case-card strong {
   color: var(--viel-blue);
-}
-
-.testimonials-section {
-  padding: 90px 0;
-  background: #f6fbfd;
-}
-
-.testimonials-section__grid {
-  display: grid;
-  gap: 24px;
-}
-
-.testimonial-card {
-  padding: 34px;
-  background: #fff;
-  box-shadow: 0 18px 42px rgba(27, 73, 101, 0.08);
-}
-
-.testimonial-card__stars {
-  display: flex;
-  gap: 4px;
-  color: var(--viel-cyan);
-}
-
-.testimonial-card p {
-  color: var(--viel-slate);
-  line-height: 1.75;
-}
-
-.testimonial-card h3 {
-  margin: 20px 0 4px;
-}
-
-.testimonial-card span {
-  color: #7a8b92;
-  font-size: 0.88rem;
 }
 
 .quote-section {

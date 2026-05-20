@@ -65,24 +65,6 @@ export const qualityPoints = [
   'Persönlicher Ansprechpartner'
 ];
 
-export const testimonials = [
-  {
-    name: 'Thomas Müller',
-    company: 'Berliner Immobilienverwaltung GmbH',
-    text: 'VIEL Gebäudeservice hat unsere Erwartungen weit übertroffen. Die Zuverlässigkeit und Professionalität sind beeindruckend. Wir arbeiten seit 3 Jahren zusammen.'
-  },
-  {
-    name: 'Sandra Weber',
-    company: 'Bürocenter Berlin-Mitte',
-    text: 'Sehr gute Kommunikation, faire Preise und flexible Lösungen. VIEL Gebäudeservice ist unser verlässlicher Partner für alle Reinigungsaufgaben.'
-  },
-  {
-    name: 'Petra Schmidt',
-    company: 'Verwaltung Friedrichshain Wohnkomplex',
-    text: 'Die Winterdienste von VIEL sind hervorragend. Schnell, zuverlässig und immer pünktlich. Wir sind sehr zufrieden mit der Zusammenarbeit.'
-  }
-];
-
 export const cases = [
   {
     title: 'Großflächige Büroreinigung Berlin-Mitte',

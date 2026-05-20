@@ -1,7 +1,7 @@
 import './Home.css';
 import './Home.desktop.css';
 import './Home.mobile.css';
-import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Euro, FileText, Leaf, Mail, MapPin, Phone, Shield, Snowflake, Sparkles, Star, ThumbsUp, Users } from 'lucide-react';
+import { AlertCircle, ArrowRight, Award, Building2, Calculator, Check, Clock, Euro, FileText, Leaf, Mail, MapPin, Phone, Shield, Snowflake, Sparkles, ThumbsUp, Users } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/languageStore.js';
@@ -276,33 +276,6 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Testimonials Section ── */}
-      <section className="testimonials-section">
-        <div className="container">
-          <div className="testimonials-section__head">
-            <span className="section-eyebrow">{home.testimonialsEyebrow}</span>
-            <h2>{home.testimonialsTitle}</h2>
-            <p>{home.testimonialsSubtitle}</p>
-          </div>
-          <div className="testimonials-section__grid">
-            {home.testimonials.map((item) => (
-              <article className="testimonial-card" key={item.name}>
-                <div className="testimonial-card__quote">&ldquo;</div>
-                <div className="testimonial-card__stars">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={15} fill="currentColor" />)}</div>
-                <p>{item.text}</p>
-                <div className="testimonial-card__author">
-                  <div className="testimonial-card__avatar">{item.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}</div>
-                  <div>
-                    <h3>{item.name}</h3>
-                    <span>{item.company}</span>
-                  </div>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>

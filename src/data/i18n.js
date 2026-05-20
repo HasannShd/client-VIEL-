@@ -191,9 +191,6 @@ export const dictionary = {
         { title: 'Dokumentierte Abläufe', desc: 'Nachvollziehbare Berichte und Protokolle für Verwaltungen und Eigentümer.' },
         { title: 'Umweltbewusstes Vorgehen', desc: 'Einsatz geprüfter, umweltverträglicher Reinigungsmittel und Verfahren.' }
       ],
-      testimonialsEyebrow: 'Kundenstimmen',
-      testimonialsTitle: 'Was unsere Kunden sagen.',
-      testimonialsSubtitle: 'Echte Rückmeldungen von Unternehmen und Verwaltungen, die auf VIEL vertrauen.',
       projectsEyebrow: 'Referenzen',
       projectsTitle: 'Erfolgreiche Projekte.',
       projectsSubtitle: 'Eine Auswahl realisierter Objekte und Einsätze in Berlin und Umgebung.',
@@ -202,12 +199,6 @@ export const dictionary = {
         { title: 'Großflächige Büroreinigung Berlin-Mitte', client: 'Technologie-Startup, 5.000 m²', challenge: 'Tägliche Reinigung für 200+ Mitarbeiter mit höchsten Hygienestandards', solution: 'Strukturierte Abendteams mit objektbezogenen Checklisten und wöchentlichen Qualitätskontrollen', result: 'Messbar sauberere Arbeitsbereiche und dauerhaft zufriedene Belegschaft', image: sharedImages.caseOffice },
         { title: 'Winterdienst Gewerbeparkanlage', client: 'Gewerbepark Friedrichshain, 50.000 m²', challenge: '24/7 Schneeräumung und Streudienste bei Extremwetter über die gesamte Saison', solution: 'Bereitschaftsplan mit dokumentierten Kontrollfahrten und direkter Wetterlagereaktion', result: 'Sichere Wege, pünktliche Öffnungszeiten und vollständige Nachweisdokumentation', image: sharedImages.winter },
         { title: 'Bauendreinigung nach Kernsanierung', client: 'Privatinvestor, Berlin-Prenzlauer Berg, 800 m²', challenge: 'Vollständige Baureinigung eines Wohnobjekts nach monatelanger Sanierung', solution: '2-Tages-Einsatz mit spezialisierter Reinigungstechnik und sorgfältigem Detailfinish', result: 'Makellos saubere Übergabe an neue Mieter – termingerecht und ohne Beanstandungen', image: serviceImages.deep }
-      ],
-      testimonials: [
-        { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice hat unsere Erwartungen weit übertroffen. Die Zuverlässigkeit und Professionalität sind beeindruckend. Wir arbeiten seit 3 Jahren zusammen.' },
-        { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Sehr gute Kommunikation, faire Preise und flexible Lösungen. VIEL Gebäudeservice ist unser verlässlicher Partner für alle Reinigungsaufgaben.' },
-        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'Die Winterdienste von VIEL sind hervorragend. Schnell, zuverlässig und immer pünktlich. Wir sind sehr zufrieden mit der Zusammenarbeit.' },
-        { name: 'Marcus König', company: 'König Facilities GmbH, Berlin', text: 'Seit Jahren verlassen wir uns auf VIEL Gebäudeservice für alle Reinigungsarbeiten in unseren Gewerbeimmobilien. Sauber, pünktlich und immer erreichbar.' }
       ],
       serviceOptions: [
         { value: 'Büroreinigung', label: 'Büroreinigung' },
@@ -475,23 +466,14 @@ export const dictionary = {
         { title: 'Documented procedures', desc: 'Clear service reports and records for property managers and owners.' },
         { title: 'Environmentally conscious', desc: 'Use of tested, eco-friendly cleaning agents and methods throughout.' }
       ],
-      testimonialsEyebrow: 'Customer reviews',
-      testimonialsTitle: 'What our customers say.',
-      testimonialsSubtitle: 'Real feedback from businesses and property managers who rely on VIEL.',
       projectsEyebrow: 'References',
       projectsTitle: 'Successful projects.',
       projectsSubtitle: 'A selection of completed properties and deployments in Berlin and the surrounding area.',
       projectsInquiry: 'Send enquiry',
       cases: [
-        { title: 'Large-scale Office Cleaning in Berlin-Mitte', client: 'Technology startup, 5,000 m²', challenge: 'Daily cleaning for 200+ employees with high hygiene standards', solution: 'Structured evening teams with property-specific checklists and weekly quality reviews', result: 'Measurably cleaner work areas and consistently satisfied staff', image: sharedImages.caseOffice },
+        { title: 'Large-scale Office Cleaning in Berlin-Mitte', client: 'Technology startup, 5,000 m²', challenge: 'Daily cleaning for 200+ employees with high hygiene standards', solution: 'Structured evening teams with property-specific checklists and weekly quality checks', result: 'Measurably cleaner work areas and consistently satisfied staff', image: sharedImages.caseOffice },
         { title: 'Winter Service for a Commercial Park', client: 'Commercial park in Friedrichshain, 50,000 m²', challenge: '24/7 snow clearing and gritting during severe weather across the full season', solution: 'On-call schedule with documented inspection rounds and direct weather-response', result: 'Safe paths, punctual opening times, and complete documentation', image: sharedImages.winter },
         { title: 'Post-Construction Cleaning after Full Renovation', client: 'Private investor, Berlin-Prenzlauer Berg, 800 m²', challenge: 'Full building clean of a residential property after months of renovation work', solution: '2-day deployment with specialist cleaning technology and careful detail finish', result: 'Spotless handover to new tenants — on schedule and without any complaints', image: serviceImages.deep }
-      ],
-      testimonials: [
-        { name: 'Thomas Müller', company: 'Berliner Immobilienverwaltung GmbH', text: 'VIEL Gebäudeservice exceeded our expectations. Their reliability and professionalism are impressive. We have worked together for 3 years.' },
-        { name: 'Sandra Weber', company: 'Bürocenter Berlin-Mitte', text: 'Very good communication, fair prices, and flexible solutions. VIEL Gebäudeservice is our reliable partner for all cleaning tasks.' },
-        { name: 'Petra Schmidt', company: 'Verwaltung Friedrichshain Wohnkomplex', text: 'VIEL winter services are excellent. Fast, reliable, and always punctual. We are very satisfied with the cooperation.' },
-        { name: 'Marcus König', company: 'König Facilities GmbH, Berlin', text: 'We have relied on VIEL Gebäudeservice for all cleaning work across our commercial properties for years. Clean, punctual and always reachable.' }
       ],
       serviceOptions: [
         { value: 'Büroreinigung', label: 'Office Cleaning' },
