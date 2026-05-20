@@ -11,7 +11,6 @@
 
 .site-footer__logo {
   height: 58px;
-  filter: brightness(0) invert(1);
 }
 
 .site-footer__logo-link {
