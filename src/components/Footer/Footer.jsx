@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="container site-footer__grid">
         <div>
           <Link to="/" className="site-footer__logo-link" aria-label="VIEL Gebäudeservice Startseite" onClick={scrollHomeTop}>
-            <img src={asset('logo-white.png')} alt="VIEL Gebäudeservice" className="site-footer__logo" />
+            <img src={asset('logo-blue.png')} alt="VIEL Gebäudeservice" className="site-footer__logo" />
           </Link>
           <p>{copy.footer.tagline}</p>
           <p>{copy.footer.description}</p>
