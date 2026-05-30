@@ -46,7 +46,7 @@ export default function Footer() {
         <div>
           <h3>{copy.footer.contact}</h3>
           <div className="site-footer__contact">
-            <p><MapPin size={16} /> VIEL Gebäudeservice<br />Berlin</p>
+            <p><MapPin size={16} /> Erich-Kuttner-Straße 31, 10369 Berlin</p>
             <a href="tel:03021467832"><Phone size={16} /> 030 21467832</a>
             <a href="mailto:Info@viel-gs.de"><Mail size={16} /> Info@viel-gs.de</a>
           </div>
