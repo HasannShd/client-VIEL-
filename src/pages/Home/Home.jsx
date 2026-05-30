@@ -450,14 +450,10 @@ export default function Home() {
             className="location-map-link"
             aria-label={home.locationOpen}
           >
-            <iframe
-              title="VIEL Gebäudeservice – Standort Berlin"
-              src="https://maps.google.com/maps?q=52.5068766,13.4247534&hl=de&z=16&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, display: 'block', pointerEvents: 'none' }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+            <img
+              src="/assets/viel/map-location.png"
+              alt="VIEL Gebäudeservice – Standort Berlin, Erich-Kuttner-Straße 31"
+              className="location-map-img"
             />
             <div className="location-map-overlay">
               <MapPin size={28} />
