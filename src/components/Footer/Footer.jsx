@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container site-footer__bottom">
-        <span>© {new Date().getFullYear()} VIEL Gebäudeservice. {copy.footer.rights}</span>
+        <span>© {new Date().getFullYear()} VIEL Gebäudeservice. {copy.footer.rights} · <a href="https://www.webiqq.com" target="_blank" rel="noopener noreferrer" style={{color:'inherit',opacity:0.6,textDecoration:'none'}}>Built by Webiqq</a></span>
         <div>
           <Link to="/impressum">{copy.footer.imprint}</Link>
           <Link to="/datenschutz">{copy.footer.privacy}</Link>
