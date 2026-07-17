@@ -253,9 +253,9 @@ export const dictionary = {
         ['8. Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter: Info@viel-gs.de.']
       ],
       imprintSections: [
-        ['Angaben gemäß § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Deutschland'],
+        ['Angaben gemäß § 5 TMG', 'VIEL Gebäudeservice GmbH\nBerlin, Deutschland'],
         ['Kontakt', 'Telefon: 030 21467832\nE-Mail: Info@viel-gs.de'],
-        ['Verantwortlich für den Inhalt', 'VIEL Gebäudeservice'],
+        ['Verantwortlich für den Inhalt', 'VIEL Gebäudeservice GmbH'],
         ['Haftung für Inhalte', 'Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich.'],
         ['Kontakt zum Datenschutz', 'Für Fragen zum Datenschutz oder zu dieser Website kontaktieren Sie uns bitte unter: Info@viel-gs.de.']
       ],
@@ -528,9 +528,9 @@ export const dictionary = {
         ['8. Data Protection Contact', 'For privacy questions or to exercise your rights, please contact us at: Info@viel-gs.de.']
       ],
       imprintSections: [
-        ['Information according to § 5 TMG', 'VIEL Gebäudeservice\nBerlin, Germany'],
+        ['Information according to § 5 TMG', 'VIEL Gebäudeservice GmbH\nBerlin, Germany'],
         ['Contact', 'Phone: 030 21467832\nEmail: Info@viel-gs.de'],
-        ['Responsible for Content', 'VIEL Gebäudeservice'],
+        ['Responsible for Content', 'VIEL Gebäudeservice GmbH'],
         ['Liability for Content', 'As a service provider, we are responsible for our own content on these pages according to general laws.'],
         ['Data Protection Contact', 'For privacy questions or questions about this website, please contact us at: Info@viel-gs.de.']
       ],
