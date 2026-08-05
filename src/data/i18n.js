@@ -1,12 +1,12 @@
 import { asset } from './siteData.js';
 
 const serviceImages = {
-  office: asset('office-cleaning-pro.webp'),
-  glass: asset('glass-cleaning-highrise.webp'),
-  deep: asset('bauendreinigung-pro.webp'),
-  maintenance: asset('viel-unterhaltsreinigung.webp'),
-  stairs: asset('viel-treppenhaus.webp'),
-  construction: asset('viel-bauend-original.webp')
+  office: asset('viel-bueroreinigung-schreibtisch.webp'),
+  glass: asset('viel-glasreinigung-eingang.webp'),
+  deep: asset('viel-bodenreinigung-flur.webp'),
+  maintenance: asset('viel-waschraum-pflege.webp'),
+  stairs: asset('viel-treppenhaus-gelaender.webp'),
+  construction: asset('viel-treppenhaus-staubwischen.webp')
 };
 
 const sharedImages = {
@@ -14,28 +14,28 @@ const sharedImages = {
   logoBlue: asset('logo-blue.png'),
   hero: asset('modern-glass-building.webp'),
   winter: asset('winter-snow-removal.jpeg'),
-  team: asset('cleaning-team-pro.webp'),
+  team: asset('viel-mitarbeiter-portrait.webp'),
   worker: asset('viel-mitarbeiter-1.webp'),
-  workerTwo: asset('viel-mitarbeiterin-2.webp'),
-  caseOffice: asset('office-cleaning-team.webp')
+  workerTwo: asset('viel-spiegelreinigung.webp'),
+  caseOffice: asset('viel-buero-detailpflege.webp')
 };
 
 const servicesDe = [
-  { value: 'Büroreinigung', title: 'Büroreinigung', desc: 'Tägliche, wöchentliche oder individuelle Reinigung Ihrer Büroflächen nach höchsten Hygienestandards.', image: serviceImages.office },
+  { value: 'Bauendreinigung', title: 'Bauendreinigung', desc: 'Professionelle Endreinigung nach Bau, Umbau oder Renovierung bis zur sauberen Übergabe.', image: serviceImages.construction },
   { value: 'Glasreinigung', title: 'Glas- & Fensterreinigung', desc: 'Streifenfreie Reinigung von Fenstern, Glasfassaden und Schaufenstern mit professioneller Ausrüstung.', image: serviceImages.glass },
   { value: 'Grundreinigung', title: 'Grundreinigung', desc: 'Intensive Reinigung stark beanspruchter Flächen bis ins Detail, ideal bei besonderen Anforderungen.', image: serviceImages.deep },
   { value: 'Unterhaltsreinigung', title: 'Unterhaltsreinigung', desc: 'Regelmäßige Reinigung für dauerhaft gepflegte Immobilien, Büros und Wohnanlagen.', image: serviceImages.maintenance },
   { value: 'Treppenhausreinigung', title: 'Treppenhausreinigung', desc: 'Zuverlässige Pflege von Eingängen, Fluren, Handläufen, Aufzügen und Gemeinschaftsflächen.', image: serviceImages.stairs },
-  { value: 'Bauendreinigung', title: 'Bauendreinigung', desc: 'Professionelle Endreinigung nach Bau, Umbau oder Renovierung bis zur sauberen Übergabe.', image: serviceImages.construction }
+  { value: 'Büroreinigung', title: 'Büroreinigung', desc: 'Tägliche, wöchentliche oder individuelle Reinigung Ihrer Büroflächen nach höchsten Hygienestandards.', image: serviceImages.office }
 ];
 
 const servicesEn = [
-  { value: 'Büroreinigung', title: 'Office Cleaning', desc: 'Daily, weekly, or custom cleaning for office spaces with high hygiene standards.', image: serviceImages.office },
+  { value: 'Bauendreinigung', title: 'Post-Construction Cleaning', desc: 'Professional final cleaning after construction, remodeling, or renovation before handover.', image: serviceImages.construction },
   { value: 'Glasreinigung', title: 'Glass & Window Cleaning', desc: 'Streak-free cleaning for windows, glass facades, and storefronts with professional equipment.', image: serviceImages.glass },
   { value: 'Grundreinigung', title: 'Deep Cleaning', desc: 'Intensive cleaning for heavily used surfaces and spaces that need detailed care.', image: serviceImages.deep },
   { value: 'Unterhaltsreinigung', title: 'Maintenance Cleaning', desc: 'Regular cleaning for consistently well-kept offices, properties, and residential buildings.', image: serviceImages.maintenance },
   { value: 'Treppenhausreinigung', title: 'Stairwell Cleaning', desc: 'Reliable care for entrances, corridors, handrails, elevators, and shared areas.', image: serviceImages.stairs },
-  { value: 'Bauendreinigung', title: 'Post-Construction Cleaning', desc: 'Professional final cleaning after construction, remodeling, or renovation before handover.', image: serviceImages.construction }
+  { value: 'Büroreinigung', title: 'Office Cleaning', desc: 'Daily, weekly, or custom cleaning for office spaces with high hygiene standards.', image: serviceImages.office }
 ];
 
 const makeBlogArticles = (posts, paragraphs) => Object.fromEntries(
